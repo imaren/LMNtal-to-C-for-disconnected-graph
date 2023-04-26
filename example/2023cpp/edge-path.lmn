@@ -1,0 +1,5 @@
+edge(1,2),edge(2,3),edge(3,4).
+//edge(3,4).
+
+edge(A,B) \ :- uniq(A,B) | path(A,B).
+edge(A,B), path(B2,C) \:- B =:= B2, int(A), int(C), uniq(A,B,C) | path(A,C).

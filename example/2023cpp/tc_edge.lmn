@@ -1,0 +1,3 @@
+edge(1,2),edge(2,3),edge(2,1).
+//edge(3,4).
+edge(A,B), edge(B2,C) \:- B =:= B2, int(A), int(C), uniq(A,B,C) | edge(A,C).
