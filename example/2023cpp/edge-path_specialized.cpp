@@ -9,8 +9,10 @@
 #include <unordered_set>
 #include <string>
 #include <iterator>
+#include <fstream>
+#include <chrono>
 
-#define S 4
+// #define S 4
 using namespace std;
 
 
@@ -25,7 +27,7 @@ int min(int a, int b){
     else return b;
 }
 
-void print_arr(int src[][S]){
+void print_arr(int** src, int S){
     for (int i = 0; i < S; i++)
     {
         for (int j = 0; j < S; j++)
@@ -37,7 +39,7 @@ void print_arr(int src[][S]){
     cout << endl;
 }
 
-void print_arr_color(int src[][S], int x, int y){
+void print_arr_color(int** src, int x, int y, int S){
     for (int i = 0; i < S; i++)
     {
         for (int j = 0; j < S; j++)
@@ -59,7 +61,7 @@ bool add_history(unordered_set<string> *history, string str){
 }
 
 // 0 だったところを変更したとき，そいつについて再帰的にマッチング成功するかどうか確かめる
-void rec_rewrite(int src1[][S], int src2[][S], int x, int j, int k, unordered_set<string> *history){
+void rec_rewrite(int** src1, int** src2, int x, int j, int k, unordered_set<string> *history){
     // edge[x][j] path[j][k] に対してマッチングが成功して， path[x][k] が追加された．
         for (int i = 0; i < x; i++)
         {
@@ -94,23 +96,68 @@ void rec_rewrite(int src1[][S], int src2[][S], int x, int j, int k, unordered_se
 
 
 
-int main(void){
-    int edge[S][S] = {
-        {0,1,0,0}, 
-        {0,0,1,0}, 
-        {0,0,0,1}, 
-        {0,0,0,0}
-    };
-    int path[S][S] = {
-        {0,1,0,0},{0,0,1,0},{0,0,0,1},{0,0,0,0}
-    };
-    cout << "init" << endl;
-    print_arr(edge);
-    print_arr(path);
+int main(int argc, char *argv[]){
+
+    /* 
+    * 入力めんどくさいからとりあえず配列の形で渡すことにする
+    * めんどくさいから頂点番号の最大値もわかってることにする
+    * 
+    * 入力形式
+    *   <頂点番号の最大値>
+    *   <edge_0> <edge_1>
+    *   ...
+    *   <edge_0> <edge_1>
+    */
+    string filename = "input.txt";
+    if(argc >= 2){
+        filename = argv[1];
+    }
+
+    // 出力用ファイル 
+    string filename2 = "output.csv";
+
+
+    ifstream i_file(filename);
+    if(!i_file.is_open()){
+        cerr << "Could not open input file - " << filename << endl;
+        return 1;
+    }
+    int S;
+
+    i_file >> S; 
+
+    int** edge = new int*[S];
+    int** path = new int*[S];
+
+    for (int i = 0; i < S; i++)
+    {
+        edge[i] = new int[S]; path[i] = new int[S];
+        for (int j = 0; j < S; j++)
+        {
+            edge[i][j] = 0; path[i][j]=0;
+        }
+        
+    }
+
+    int link1, link2;
+    while (i_file >> link1)
+    {
+        i_file >> link2;
+        edge[link1][link2]++; path[link1][link2]++;
+    }
+    
+    // input end 
+
+    // cout << "init" << endl;
+    // print_arr(edge,S);
+    // print_arr(path,S);
 
     unordered_set<string> history;
     
+
     //edge に対してループを回して，対応する path を見る
+
+    auto start = std::chrono::steady_clock::now();
     for (int j = 0; j < S; j++)
     {
         for (int i = 0; i < S; i++)
@@ -146,10 +193,27 @@ int main(void){
             }   
         }
     }
-    cout << "end calc closure" << endl;
+    auto end = std::chrono::steady_clock::now();
+    long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-    print_arr(edge);
-    print_arr(path);
+    ofstream o_file;
+    o_file.open(filename2, ios::app);
+
+    o_file << duration << endl;
+
+    // cout << "end calc closure" << endl;
+
+    // print_arr(edge,S);
+    // print_arr(path,S);
+
+    // for (int i = 0; i < S; i++)
+    // {
+    //     delete[] edge[i];
+    //     delete[] path[i];
+    // }
+    // delete[] edge;
+    // delete[] path;
+    
     
     return 0;
 }
