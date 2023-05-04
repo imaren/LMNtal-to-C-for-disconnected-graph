@@ -1,0 +1,21 @@
+
+
+edge(1,2,1), edge(2,3,1), edge(2,3,3).
+
+edge(X1,Y1,I) \ edge(X2,Y2,J) :- X1 =:=  X2, Y1 =:= Y2, I < J | .
+
+edge(X,Y1,I), edge(Y2,Z,J) \
+    :- Y1 =:= Y2, int(X), int(Z), K = I+J,  uniq(X,Y1,Z,I,J)  
+    | edge(X,Z,K). 
+
+
+// hyperlink
+
+% edge(!L1,!L2,1), edge(!L2,!L3,1), edge(!L2,!L3,3).
+
+% edge(!X,!Y,I) \ edge(!X,!Y,J) :- I < J | .
+
+% edge(!X,!Y,I), edge(!Y,!Z,J) \
+%     :- K = I+J,  uniq(!X,!Y,!Z,I,J)  
+%     | edge(!X,!Z,K). 
+

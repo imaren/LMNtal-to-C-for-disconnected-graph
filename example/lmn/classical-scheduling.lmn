@@ -1,0 +1,33 @@
+{
+    redundant@@ leq(!X,N) \ leq(!X,M) :- M =< N | .
+
+    optimize@@ leq(!S,N), leq(!S,M,!E) \:- I=N+M, uniq(!S,N,M,!E) | leq(!E,I).
+
+% classical example --------------------------------------
+	
+    build_house([!Start,!A,!B,!C,!D,!E,!F,!G,!H,!I,!J,!End]) :-
+        leq(!Start,0,!A),
+        leq(!A,7,!B),
+        leq(!A,7,!D),
+        leq(!B,3,!C),
+        leq(!C,1,!E),
+        leq(!D,8,!E),
+        leq(!C,1,!G),
+        leq(!D,8,!G),
+        leq(!D,8,!F),
+        leq(!C,1,!F),
+        leq(!F,1,!H),
+        leq(!H,3,!I),
+        leq(!G,1,!J),
+        leq(!E,2,!J),
+        leq(!I,2,!J),
+        leq(!J,1,!End),
+        n(!Start,start),n(!A,a),n(!B,b),n(!C,c),n(!D,d),n(!E,e),
+        n(!F,f),n(!G,g),n(!H,h),n(!I,i),n(!J,j),n(!End,end),
+        leq(!Start,0).
+
+    build_house([!Start,!A,!B,!C,!D,!E,!F,!G,!H,!I,!J,!End]).
+}.
+
+{leq(!X,N,!Y), $p[],@r}/ :- int(N) |{$p[],@r}.
+{leq(!X,N), n(!X,U), $p[],@r}/ :- int(N), unary(U) |{U=N, $p[],@r}.
