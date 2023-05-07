@@ -1,0 +1,57 @@
+// https://scmopt.github.io/opt100/81shift-minimization.html
+/*
+*    問題文引用
+*   | 複数のジョブを作業員に割り当てたい。
+*   | ジョブには開始時刻と終了時刻が与えられており、
+*   | ジョブの処理には1人の作業員が必要で、 同時に2つのジョブの処理はできないものとする。
+*   | 作業員には固定費用があり、使用する作業員の総固定費用を最小化せよ。
+*   
+*  input : ジョブの開始時刻と終了時刻, 作業員とその固定費用と遂行できるタスク
+*   
+*  *上の問題では作業員には作業資格があるが，本プログラムではそれを省略する
+*/
+{
+test.
+
+test :- 
+    // nj : number of jobs
+    nj(3),
+    // j : job
+    j(!J1,0,1), j(!J2,1,5), j(!J3,2,6), 
+    // c : cost
+    c(!W1,5), c(!W2,3).
+
+start@@ 
+j(!J,S,E), c(!W,C) \ :- int(C), uniq(!J,!W) | w(!J,!W,C).
+
+consecutive@@
+j(!J1,S1,E1), j(!J2,S2,E2) \:- S1 < S2, E1 > S2, uniq(!J1,!J2) | csec(!J1,!J2).
+
+false1@@
+{w(!J,!W1), w(!J,!W2), $p[]} :- .
+false2@@
+csec(!J1,!J2) \ {w(!J1,!W1), w(!J2,!W1), $p[]} :- .
+
+fin@@ 
+{w(!J,!W,!T), nj(N), $p[]} :- N =:= 1 | {w(!J,!W), nj(N), $p[]}.
+
+opt@@
+{nj(N1), t(C1), $p1[]}, {nj(N2), t(C2), $p2[]} :- N1 =:= 1, N2 =:= 1, C1 =< C2 | {nj(N1), t(C1), $p1[]}.
+
+
+workflowtree@@
+w(!J,!W,C), nj(N) \ :- int(C), int(N), uniq(!J,!W) | {t(C),w(!J,!W,!This),nj(N)}.
+
+closure@@
+w(!J2,!W2,C1) \ {w(!J1,!W1,!T), nj(N), t(C2), $p[]} 
+    :- !J1 \== !J2, C = C1+C2, NN = N-1, N > 1, int(C1), uniq(!J1,!J2,!W1,!W2,!T)
+    | {w(!J1,!W1,!T), nj(N), t(C2), $p[]}, {w(!J1,!W1), w(!J2,!W2,!New), nj(NN), t(C), $p[]}.
+
+}.
+
+format@@
+{{nj(N), $p[]}, $p1[], @r}/ :- N > 1 |{$p1[],@r}.
+
+% c(!W,N)\ :- uniq(!W) | flow(0,!Root,!ID).
+% j(!J,S,E), c(!W,C), flow(N,!Prev,!ID)\:- M=N+C, ground(List), uniq(!J,!W,!ID) | flow(M,[!W|List],!ID).
+
