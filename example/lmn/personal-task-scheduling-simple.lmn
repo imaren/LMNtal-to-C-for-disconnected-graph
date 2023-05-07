@@ -35,10 +35,6 @@ csec(!J1,!J2) \ {w(!J1,!W1), w(!J2,!W1), $p[]} :- .
 fin@@ 
 {w(!J,!W,!T), nj(N), $p[]} :- N =:= 1 | {w(!J,!W), nj(N), $p[]}.
 
-opt@@
-{nj(N1), t(C1), $p1[]}, {nj(N2), t(C2), $p2[]} :- N1 =:= 1, N2 =:= 1, C1 =< C2 | {nj(N1), t(C1), $p1[]}.
-
-
 workflowtree@@
 w(!J,!W,C), nj(N) \ :- int(C), int(N), uniq(!J,!W) | {t(C),w(!J,!W,!This),nj(N)}.
 
@@ -48,6 +44,8 @@ w(!J2,!W2,C1) \ {w(!J1,!W1,!T), nj(N), t(C2), $p[]}
     | {w(!J1,!W1,!T), nj(N), t(C2), $p[]}, {w(!J1,!W1), w(!J2,!W2,!New), nj(NN), t(C), $p[]}.
 
 }.
+opt@@
+{{nj(N1), t(C1), $p1[]}, {nj(N2), t(C2), $p2[]},$p[],@r}/ :- N1 =:= 1, N2 =:= 1, C1 =< C2 | {{nj(N1), t(C1), $p1[]},$p[],@r}.
 
 format@@
 {{nj(N), $p[]}, $p1[], @r}/ :- N > 1 |{$p1[],@r}.
