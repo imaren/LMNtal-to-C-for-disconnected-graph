@@ -43,7 +43,26 @@ void test(int num){
     }
 }
 
-
+void test_cost1(int num){
+    int i=1, j=2, k=0;
+    int count=1;
+    printf("edge(%d,%d,1)",i,j);
+    i++; j++;
+    while(count < num){
+        if(j < i+6){
+            count++;
+            printf(",edge(%d,%d,1)",i,j);
+            j++;
+        }
+        // if(j < i+21){
+        //     count++;
+        //     printf(",edge(%d,%d)",i,j);
+        //     j++;
+        else{
+            i=j-1;
+        }
+    }
+}
 
 void test2(int num){
     int i=2, j=3, k=0;
@@ -125,6 +144,27 @@ void test_cpp(int num){
     }
 }
 
+void test_cpp_cost1(int num){
+    int i=1, j=2, k=0;
+    int count=1;
+    printf("%d\n",num+2);
+    printf("%d %d 1\n",i,j);
+    i++; j++;
+    while(count < num){
+        if(j < i+6){
+            count++;
+            printf("%d %d 1\n",i,j);
+            j++;
+        }
+        // if(j < i+21){
+        //     count++;
+        //     printf(",edge(%d,%d)",i,j);
+        //     j++;
+        else{
+            i=j-1;
+        }
+    }
+}
 
 void dummy(int num){
     printf("edge(1,0)");
@@ -200,10 +240,12 @@ void gcd2(int num){
 int main(void){
 
     int num = NUM ;
-    test_cpp(num);
+    // test_cpp(num);
+    test_cpp_cost1(num);
+    // test_cost1(num);
     // test_hl(num);
     // dummy(num);
-    // test2(41);
+    // test(num);
     // school(num);
     // gcd2(num);
 

@@ -24,7 +24,7 @@ struct i_pair{
 
 void print_list(list<i_pair> ls, string name){
     for(i_pair i : ls){
-        cout << name << "(" << i.first << "," << i.second << "), ";
+        cout << name << "(" << i.first << "," << i.second << "). ";
     }
 }
 

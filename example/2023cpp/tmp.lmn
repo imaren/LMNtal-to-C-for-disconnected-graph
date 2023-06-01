@@ -1,8 +1,9 @@
-a(V1),        b(V4),        c(V8),        d(V12),
-i(V1,V2,H1),  i(V4,V5,H1),  i(V8,V9,H2),  i(V12,V13,H2),
-i(V5,V6,H3),  i(V9,V10,H3),
-i(V2,V3,H4),  i(V6,V7,H4),  i(V10,V11,H5),i(V13,V14,H5),
-w(V3),        x(V7),        w(V11),       z(V14).
+edge(1,2,1),edge(2,3,1),edge(2,4,1),edge(2,5,1),edge(2,6,1),edge(2,7,1),edge(7,8,1),edge(7,9,1),edge(7,10,1),edge(7,11,1),edge(7,12,1),edge(12,13,1),edge(12,14,1),edge(12,15,1),edge(12,16,1),edge(12,17,1),edge(17,18,1),edge(17,19,1),edge(17,20,1),edge(17,21,1),edge(17,22,1),edge(22,23,1),edge(22,24,1),edge(22,25,1),edge(22,26,1),edge(22,27,1),edge(27,28,1),edge(27,29,1),edge(27,30,1),edge(27,31,1),edge(27,32,1),edge(32,33,1),edge(32,34,1),edge(32,35,1),edge(32,36,1),edge(32,37,1),edge(37,38,1),edge(37,39,1),edge(37,40,1),edge(37,41,1),edge(37,42,1),edge(42,43,1),edge(42,44,1),edge(42,45,1),edge(42,46,1),edge(42,47,1),edge(47,48,1),edge(47,49,1),edge(47,50,1),edge(47,51,1),edge(47,52,1),edge(52,53,1),edge(52,54,1),edge(52,55,1),edge(52,56,1),edge(52,57,1),edge(57,58,1),edge(57,59,1),edge(57,60,1),edge(57,61,1),edge(57,62,1),edge(62,63,1),edge(62,64,1),edge(62,65,1),edge(62,66,1),edge(62,67,1),edge(67,68,1),edge(67,69,1),edge(67,70,1),edge(67,71,1),edge(67,72,1),edge(72,73,1),edge(72,74,1),edge(72,75,1),edge(72,76,1),edge(72,77,1),edge(77,78,1),edge(77,79,1),edge(77,80,1),edge(77,81,1),edge(77,82,1),edge(82,83,1),edge(82,84,1),edge(82,85,1),edge(82,86,1),edge(82,87,1),edge(87,88,1),edge(87,89,1),edge(87,90,1),edge(87,91,1),edge(87,92,1),edge(92,93,1),edge(92,94,1),edge(92,95,1),edge(92,96,1),edge(92,97,1),edge(97,98,1),edge(97,99,1),edge(97,100,1),edge(97,101,1) .
 
-i(V1,V2,H),i(V3,V4,H) :- V1 = V4, V2 = V3.
 
+ruleB@@
+edge(X,Y1,I), edge(Y2,Z,J) \
+    :- Y1 =:= Y2, int(X), int(Z), K = I+J,  uniq(X,Y1,Z,I,J)  
+    | edge(X,Z,K). 
+ruleA@@
+edge(X1,Y1,I) \ edge(X2,Y2,J) :- X1 =:=  X2, Y1 =:= Y2, I =< J | .

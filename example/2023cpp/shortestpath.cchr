@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "tmp_cchr.h"
+
+cchr{
+    constraint start(int), edge(int,int,int);
+    begin @ start(_) <=> VAR ;
+    del @ edge(A,B,I), edge(A,B,J) <=> I =< J | edge(A,B,I);
+    calc  @ edge(X,Y), edge(Y,Z) ==> 
+            | edge(X,Z,I+J);
+}
+
+
+int main (int argc, char **argv){
+    cchr_runtime_init();
+    cchr_add_start_1(1);
+    cchr_consloop(j,edge_3,{
+        printf("path(%i,%i,%i)\n",
+            cchr_consarg(j,edge_3,1), cchr_consarg(j,edge_3,2)), cchr_consarg(j,edge_3,3);
+    });
+    cchr_runtime_free();
+    return 0;
+}
