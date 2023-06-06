@@ -1,0 +1,10 @@
+VAR .
+
+
+
+ruleA@@
+edge(X,Y1,I), edge(Y2,Z,J) \
+    :- Y1 =:= Y2, int(X), int(Z), K = I+J,  uniq(X,Y1,Z,I,J)  
+    | edge(X,Z,K). 
+ruleB@@
+edge(X1,Y1,I) \ edge(X2,Y2,J) :- X1 =:=  X2, Y1 =:= Y2, I < J | .

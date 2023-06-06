@@ -12,14 +12,26 @@
 #include <chrono>
 #include <list>
 #include <algorithm>
+#include "flat_hash_map.hpp"
 
 // #define S 4
 using namespace std;
 
 
+#define H_P1 101
+#define H_P2 269
+#define H_P3 443 
+
+
 struct i_pair{
     int first;
     int second;
+};
+
+struct hist1{
+    int a;
+    int b;
+    int c;
 };
 
 void print_list(list<i_pair> ls, string name){
@@ -46,7 +58,7 @@ int main(int argc, char *argv[]){
     }
 
     // 出力用ファイル 
-    string filename2 = "result_stl.csv";
+    string filename2 = "result_hist-flat_hash_struct.csv";
 
 
     ifstream i_file(filename);
@@ -77,14 +89,21 @@ int main(int argc, char *argv[]){
     }
 
     
+    // ska::flat_hash_set<int*> history; 
 
     // std::cout << history.bucket_count() << " : ";
+    using el_type = std::tuple<int, int, int>;
+    const auto hash = [](const el_type &element) {
+    return std::hash<int>{}(std::get<0>(element)) ^
+           (std::hash<int>{}(std::get<1>(element)) << 1) ^
+           (std::hash<int>{}(std::get<2>(element)) << 2);
+    };
+  
+
     //start calculate transitive closure
     auto start = std::chrono::steady_clock::now();
     i_pair path_tmp;
-    
-    unordered_set<string> history; 
-    
+    std::unordered_set<el_type, decltype(hash)> history{3, hash};
     while (true)
     {
         if(push_atom_path.empty()) break;
@@ -94,9 +113,11 @@ int main(int argc, char *argv[]){
         path_list.push_back(path_tmp);
         
         for(i_pair i : edge_list[path_tmp.first]){
-            string nhist = to_string(i.first) + ":" + to_string(i.second) + ":" + to_string(path_tmp.second);
+            // el_type nhist = {i.first,i.second,path_tmp.second};
+            // string nhist = to_string(i.first) + ":" + to_string(i.second) + ":" + to_string(path_tmp.second);
+            // int nhist[3] = {i.first,i.second,path_tmp.second};
             // 履歴の追加に成功（＝マッチングに成功）したら
-            if(history.insert(nhist).second){
+            if(history.insert({i.first,i.second,path_tmp.second}).second){
                 i_pair ins = {i.first, path_tmp.second};
                 push_atom_path.push_back(ins);
             }
@@ -106,13 +127,12 @@ int main(int argc, char *argv[]){
     auto end = std::chrono::steady_clock::now();
     long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-    // std::cout << history.bucket_count() << endl;
-
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
     o_file << duration << endl;
-    // std::cout << history.max_size() << endl;
+
+    // std::cout << history.bucket_count() << endl;
 
     // for(int i : used_edge_list){
     //     print_list(edge_list[i], "edge");

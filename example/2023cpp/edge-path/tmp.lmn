@@ -1,0 +1,11 @@
+main.
+main :-
+ io.read_line(io.stdin, I, L),
+ loop(L, I, io.stdout).
+
+loop(eof, I, O) :-
+  io.free_port(I), io.free_port(O).
+loop(L0, I0, O0) :- L0 \= 'eof' |
+  io.print_line(O0, L0, O),
+  io.read_line(I0, I, L),
+  loop(L, I, O).

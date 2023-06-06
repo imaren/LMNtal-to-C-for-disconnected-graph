@@ -30,6 +30,6 @@ do
     fi
     if [ $count -ge 10000 ]; then exit 0
     fi
-    count=`expr $count + 100`
+    count=`expr $count + 500`
 
 done

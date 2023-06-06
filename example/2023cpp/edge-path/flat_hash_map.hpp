@@ -929,14 +929,6 @@ private:
 
 struct prime_number_hash_policy
 {
-    template<size_t size>
-    constexpr auto mod(size_t hash){
-        if  constexpr (size == 0) return 0;
-        return hash % size;
-    }
-
-
-
     static size_t mod0(size_t) { return 0llu; }
     static size_t mod2(size_t hash) { return hash % 2llu; }
     static size_t mod3(size_t hash) { return hash % 3llu; }

@@ -34,7 +34,7 @@ void edge(){
     while(getline(if1, tmp)){
         istringstream st(tmp);
         while(getline(st, in, '.')){
-            cout << in << endl;
+            // cout << in << endl;
             mset.insert(in);
         }
     }
@@ -42,12 +42,12 @@ void edge(){
     while(getline(if2, tmp)){
         istringstream st(tmp);
         while(getline(st, in, '.')){
-            cout << in << endl;
+            // cout << in << endl;
             mset2.insert(in);
         }
     }
     for(auto it = mset2.begin(); it != mset2.end();){
-        cout << "\n*iter = " << *it << endl;
+        cout << "\n*iter = " << *it << " : ";
         cout << "\tf1 = " << mset.count(*it) << " f2 = " << mset2.count(*it) << endl;
         if(mset2.count(*it) == mset.count(*it)){
             mset.erase(mset.find(*it));
@@ -57,7 +57,12 @@ void edge(){
             return;
         }
     }
-    cout << "succeeded" << endl;
+    if(mset.empty() && mset2.empty()){
+       cout << "succeeded" << endl; 
+    }
+    else{
+        cout << "failed" << endl;
+    }
     return ;
 }
 

@@ -30,7 +30,7 @@ struct i_pair{
 
 void print_list(list<i_pair> ls, string name){
     for(i_pair i : ls){
-        cout << name << "(" << i.first << "," << i.second << "). ";
+        cout << " " << name << "(" << i.first << "," << i.second << ").";
     }
 }
 
@@ -82,14 +82,15 @@ int main(int argc, char *argv[]){
         push_atom_path.push_back(in);
     }
 
-    ska::flat_hash_set<string> history; 
+    
+    // ska::flat_hash_set<int*> history; 
 
-    std::cout << history.bucket_count() << " : ";
+    // std::cout << history.bucket_count() << " : ";
 
     //start calculate transitive closure
     auto start = std::chrono::steady_clock::now();
     i_pair path_tmp;
-
+    ska::flat_hash_set<string> history; 
     while (true)
     {
         if(push_atom_path.empty()) break;
@@ -100,6 +101,7 @@ int main(int argc, char *argv[]){
         
         for(i_pair i : edge_list[path_tmp.first]){
             string nhist = to_string(i.first) + ":" + to_string(i.second) + ":" + to_string(path_tmp.second);
+            // int nhist[3] = {i.first,i.second,path_tmp.second};
             // 履歴の追加に成功（＝マッチングに成功）したら
             if(history.insert(nhist).second){
                 i_pair ins = {i.first, path_tmp.second};
@@ -116,13 +118,13 @@ int main(int argc, char *argv[]){
 
     o_file << duration << endl;
 
-    std::cout << history.bucket_count() << endl;
+    // std::cout << history.bucket_count() << endl;
 
-    // for(int i : used_edge_list){
-    //     print_list(edge_list[i], "edge");
-    // }
-    // print_list(path_list, "path");
-    // cout << "@4." << endl;
+    for(int i : used_edge_list){
+        print_list(edge_list[i], "edge");
+    }
+    print_list(path_list, "path");
+    cout << "@4." << endl;
 
     return 0;
 }

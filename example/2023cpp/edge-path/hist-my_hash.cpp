@@ -30,7 +30,7 @@ struct i_pair{
 
 void print_list(list<i_pair> ls, string name){
     for(i_pair i : ls){
-        cout << name << "(" << i.first << "," << i.second << "). ";
+        cout << " " << name << "(" << i.first << "," << i.second << ").";
     }
 }
 
@@ -87,14 +87,16 @@ int main(int argc, char *argv[]){
         exit(0);
     }
     // cout << S << ": " << S*S*S << endl;
-    ihash::hash_table history = ihash::hash_table(INT_MAX/10,3); 
+    
 
     // std::cout << history.bucket_count() << " : ";
 
     //start calculate transitive closure
     auto start = std::chrono::steady_clock::now();
     i_pair path_tmp;
-
+    
+    ihash::hash_table history = ihash::hash_table(INT_MAX/100,3); 
+    
     while (true)
     {
         if(push_atom_path.empty()) break;
@@ -124,12 +126,13 @@ int main(int argc, char *argv[]){
     o_file << duration << endl;
 
     // std::cout << history.bucket_count() << endl;
+    // delete(history);
 
-    for(int i : used_edge_list){
-        print_list(edge_list[i], "edge");
-    }
-    print_list(path_list, "path");
-    cout << "@4." << endl;
+    // for(int i : used_edge_list){
+    //     print_list(edge_list[i], "edge");
+    // }
+    // print_list(path_list, "path");
+    // cout << "@4." << endl;
 
     return 0;
 }

@@ -12,9 +12,19 @@
 #include <chrono>
 #include <list>
 #include <algorithm>
+#include "flat_hash_map.hpp"
+#include <fmt/core.h>
+#include <fmt/format.h>
+#include <fmt/format-inl.h>
+#include "/home/imagawa/LMNtal-to-C-for-disconnected-graph/fmt/src/format.cc"
 
 // #define S 4
 using namespace std;
+
+
+#define H_P1 101
+#define H_P2 269
+#define H_P3 443 
 
 
 struct i_pair{
@@ -46,7 +56,7 @@ int main(int argc, char *argv[]){
     }
 
     // 出力用ファイル 
-    string filename2 = "result_stl.csv";
+    string filename2 = "result_hist-flat_hash_fmt.csv";
 
 
     ifstream i_file(filename);
@@ -77,14 +87,14 @@ int main(int argc, char *argv[]){
     }
 
     
+    // ska::flat_hash_set<int*> history; 
 
     // std::cout << history.bucket_count() << " : ";
+
     //start calculate transitive closure
     auto start = std::chrono::steady_clock::now();
     i_pair path_tmp;
-    
-    unordered_set<string> history; 
-    
+    ska::flat_hash_set<string> history; 
     while (true)
     {
         if(push_atom_path.empty()) break;
@@ -94,7 +104,11 @@ int main(int argc, char *argv[]){
         path_list.push_back(path_tmp);
         
         for(i_pair i : edge_list[path_tmp.first]){
-            string nhist = to_string(i.first) + ":" + to_string(i.second) + ":" + to_string(path_tmp.second);
+            fmt::format_int f(i.first), s(i.second), t(path_tmp.second);
+            string a = f.c_str(), b = s.c_str(), c = t.c_str();
+            string nhist = a + ":" + b + ":" + c;
+            // string nhist = to_string(i.first) + ":" + to_string(i.second) + ":" + to_string(path_tmp.second);
+            // int nhist[3] = {i.first,i.second,path_tmp.second};
             // 履歴の追加に成功（＝マッチングに成功）したら
             if(history.insert(nhist).second){
                 i_pair ins = {i.first, path_tmp.second};
@@ -106,13 +120,12 @@ int main(int argc, char *argv[]){
     auto end = std::chrono::steady_clock::now();
     long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-    // std::cout << history.bucket_count() << endl;
-
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
     o_file << duration << endl;
-    // std::cout << history.max_size() << endl;
+
+    // std::cout << history.bucket_count() << endl;
 
     // for(int i : used_edge_list){
     //     print_list(edge_list[i], "edge");

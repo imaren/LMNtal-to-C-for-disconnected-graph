@@ -91,6 +91,12 @@ int main(int argc, char *argv[]){
     }
     
     
+    
+
+    //start calculate transitive closure
+    auto start = std::chrono::steady_clock::now();
+    i_pair path_tmp;
+
     uint8_t *history = (uint8_t *)calloc(100000000000, sizeof(uint8_t));
 
     // cout << "calloc " << (int)b_needed << endl;
@@ -99,10 +105,6 @@ int main(int argc, char *argv[]){
         cout << "calloc error" << endl;
         exit(EXIT_FAILURE);
     }
-
-    //start calculate transitive closure
-    auto start = std::chrono::steady_clock::now();
-    i_pair path_tmp;
 
     while (true)
     {
@@ -133,11 +135,11 @@ int main(int argc, char *argv[]){
 
     free(history);
 
-    for(int i : used_edge_list){
-        print_list(edge_list[i], "edge");
-    }
-    print_list(path_list, "path");
-    cout << "@4." << endl;
+    // for(int i : used_edge_list){
+    //     print_list(edge_list[i], "edge");
+    // }
+    // print_list(path_list, "path");
+    // cout << "@4." << endl;
 
     return 0;
 }
