@@ -1,0 +1,25 @@
+
+list= [1,push(5)];
+
+list(N),'.'(1,N1,N), '.'(push(5),N2,N1), '[]'(N2).
+
+'.'(push(N),Next,Prev) :- '.'(N,Next,Prev).
+
+push(list(N,1),result).
+
+--> push(new_lsit[N,!New]).
+
+head() - push() - list(Content,Prev) - '.'(1,N1,Content) ...
+
+push(2,List,Prev),list(Content,List)  :- list(push(2,Content),Prev).
+
+'.'(push(I),N,P) :- '.'(I,N,P).
+
+use_return(pop(list)). -> use_return(result(List,Value)).
+
+use_return(result(L,N)) :- int(N) | hoge(N).
+
+list(N), '.'(pop(5),N1,N), '.'(5,N2,N1), '[]'(N2).
+
+'.'(pop(I1),N1,N), '.'(I2,N2,N1) :- I1 =:= I2 | N = N2.
+'.'(pop(I1),N1,N), '.'(I2,N2,N1) :- I1 \== I2 | '.'(I2,N1,N), '.'(pop(I1),N2,N1).

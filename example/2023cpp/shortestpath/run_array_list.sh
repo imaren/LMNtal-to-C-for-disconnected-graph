@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # rm output2.csv
-count=100
+count=250
 
 
 DIR='/home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/shortestpath'
@@ -31,8 +31,8 @@ do
 
     if [ $? -eq 124 ]; then exit 0
     fi
-    if [ $count -ge 800 ]; then exit 0
+    if [ $count -ge 3000 ]; then exit 0
     fi
-    count=`expr $count + 100`
+    count=`expr $count + 250`
 
 done

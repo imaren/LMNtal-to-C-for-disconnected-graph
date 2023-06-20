@@ -237,7 +237,7 @@ int main(int argc, char *argv[]){
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
-    o_file << duration << endl;
+    o_file << duration << ",";
 
     // elist.print();
     return 0;

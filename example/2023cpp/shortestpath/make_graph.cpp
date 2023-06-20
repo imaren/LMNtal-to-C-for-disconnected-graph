@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<cmath>
+#include<random>
 using namespace std;
 
 void grid(int num){
@@ -237,11 +238,108 @@ void gcd2(int num){
     printf("gcd(3)");
 }
 
+void uniform_edge(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("edge(%d,%d)",(int)dist(engine),(int)dist(engine));
+    for (int i = 1; i < num; i++)
+    {
+            printf(", edge(%d,%d)",(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_spath(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("edge(%d,%d)",(int)dist(engine),(int)dist(engine));
+    for (int i = 1; i < num; i++)
+    {
+            printf(", edge(%d,%d,%d)\n",(int)dist(engine),(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_cpp_edge(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("%d\n",num+2);
+    for (int i = 0; i < num; i++)
+    {
+            printf("%d %d\n",(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_cpp_spath(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("%d\n",num+2);
+    for (int i = 0; i < num; i++)
+    {
+            printf("%d %d %d\n",(int)dist(engine),(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_cpp_edge_times2(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("%d\n",num+2);
+    for (int i = 0; i < num*2; i++)
+    {
+            printf("%d %d\n",(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_cpp_spath_times2(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("%d\n",num+2);
+    for (int i = 0; i < num*2; i++)
+    {
+            printf("%d %d %d\n",(int)dist(engine),(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_cpp_edge_times3(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("%d\n",num+2);
+    for (int i = 0; i < num*3; i++)
+    {
+            printf("%d %d\n",(int)dist(engine),(int)dist(engine));
+    }   
+}
+
+void uniform_cpp_spath_times3(int num){
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    //一様分布
+    std::uniform_real_distribution<float> dist(0, num);
+    printf("%d\n",num+2);
+    for (int i = 0; i < num*3; i++)
+    {
+            printf("%d %d %d\n",(int)dist(engine),(int)dist(engine),(int)dist(engine));
+    }   
+}
+
 int main(void){
 
     int num = NUM ;
+    uniform_cpp_spath_times2(num);
     // test_cpp(num);
-    test_cpp_cost1(num);
+    // test_cpp_cost1(num);
     // test_cost1(num);
     // test_hl(num);
     // dummy(num);

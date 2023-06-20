@@ -116,15 +116,15 @@ int main(int argc, char *argv[]){
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
-    o_file << duration << endl;
+    o_file << duration << ",";
 
     // std::cout << history.bucket_count() << endl;
 
-    for(int i : used_edge_list){
-        print_list(edge_list[i], "edge");
-    }
-    print_list(path_list, "path");
-    cout << "@4." << endl;
+    // for(int i : used_edge_list){
+    //     print_list(edge_list[i], "edge");
+    // }
+    // print_list(path_list, "path");
+    // cout << "@4." << endl;
 
     return 0;
 }

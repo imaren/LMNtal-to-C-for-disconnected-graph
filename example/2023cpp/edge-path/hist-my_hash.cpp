@@ -14,6 +14,8 @@
 #include <algorithm>
 #include "hash_original.hpp"
 
+
+
 // #define S 4
 using namespace std;
 
@@ -95,7 +97,7 @@ int main(int argc, char *argv[]){
     auto start = std::chrono::steady_clock::now();
     i_pair path_tmp;
     
-    ihash::hash_table history = ihash::hash_table(INT_MAX/100,3); 
+    ihash::hash_table history = ihash::hash_table(INT_MAX/10,3,S); 
     
     while (true)
     {
@@ -123,7 +125,7 @@ int main(int argc, char *argv[]){
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
-    o_file << duration << endl;
+    o_file << duration << ",";
 
     // std::cout << history.bucket_count() << endl;
     // delete(history);

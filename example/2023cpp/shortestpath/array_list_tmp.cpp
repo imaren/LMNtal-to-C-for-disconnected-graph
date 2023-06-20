@@ -126,7 +126,7 @@ int main(int argc, char *argv[]){
 
     i_file >> S1; 
 
-    constexpr size_t S = 800 +2;
+    constexpr size_t S = 300 +2;
 
     // edge_list elist = edge_list();
     // vector<vector<vector<edge_elem*>>> rule1(S, vector<vector<edge_elem*>>(S));
@@ -237,7 +237,7 @@ int main(int argc, char *argv[]){
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
-    o_file << duration << endl;
+    o_file << duration << ",";
 
     // elist.print();
     return 0;

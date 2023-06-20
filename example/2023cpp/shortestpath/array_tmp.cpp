@@ -126,7 +126,7 @@ int main(int argc, char *argv[]){
 
     i_file >> S1; 
 
-    constexpr size_t S = 100 +2;
+    constexpr size_t S = 800 +2;
 
     // edge_list elist = edge_list();
     // vector<vector<vector<edge_elem*>>> rule1(S, vector<vector<edge_elem*>>(S));
@@ -203,7 +203,6 @@ int main(int argc, char *argv[]){
                 rule2_2[d][target->used[2]]->used[2] = target->used[2];
                 rule2_2[d].pop_back();
                 target->del();
-                cout << "del" << endl;
             }
         }
         if(r1_f)continue;

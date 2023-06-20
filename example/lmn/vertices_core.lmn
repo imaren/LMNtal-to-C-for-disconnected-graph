@@ -1,0 +1,16 @@
+{
+e(!H0,!H1),e(!H0,!H2),
+e(!H1,!H2),e(!H1,!H5),
+e(!H2,!H3),e(!H2,!H4),e(!H2,!H5),e(!H2,!H6),
+e(!H3,!H4),e(!H3,!H6),e(!H3,!H7),
+e(!H4,!H6),e(!H4,!H7),
+e(!H5,!H8),e(!H5,!H6),
+e(!H6,!H8),e(!H6,!H7).
+
+:- uniq | core(1).
+
+core(K) \ e(!H1,!H2) :- num(!H1) < K, KK = K-1 | c(!H1,KK).
+core(K) \ e(!H1,!H2) :- num(!H2) < K, KK = K-1 | c(!H2,KK).
+}.
+
+{core(N), e(!H1,!H2), $p[], @r}/ :- M = N+1 | {core(M), e(!H1,!H2), $p[], @r}.
