@@ -1,0 +1,11 @@
+// 昼食を希望する人々から、お金を預かっている．
+// お釣りが出ないように、食べ物1つと飲み物1つを提供したい．
+// 提供できるならその組み合わせを全て出力する.
+
+// hl を使っても良いかも
+
+food("fish", 500), food("beef", 700), food("onigiri", 200).
+drink("water", 100), drink("tea", 200), drink("coffee", 400).
+money("taro", 1000), money("hanako", 700).
+
+money(N,M), food(F,C1), drink(D,C2)\ :- M =:= C1+C2, uniq(N,F,D) | couple(N,F,D).

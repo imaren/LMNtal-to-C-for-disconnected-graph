@@ -17,6 +17,8 @@ private:
     std::vector<atom> head_remain;
     std::vector<guard> guards;
     std::vector<atom> body;
+    bool uniq_flag = false;
+    bool uniq_rule = false;
     bool target_delflag;
 
 public:
@@ -118,10 +120,15 @@ RuleStructure::RuleStructure(std::string rule)
             std::string tmp_g = tmp.substr(1,bar-1), tmp2;
             std::istringstream b(tmp_g);
             if(bar != std::string::npos){
-                std::cout << "guard & body: " << tmp_g << std::endl;
+                // std::cout << "guard & body: " << tmp_g << std::endl;
 
                 while(getline(b,tmp2,',')){
                     if(tmp2 != ""){
+                        if(tmp2.find("uniq(") != std::string::npos){
+                            uniq_flag = true;
+                        }else if(tmp2.find("uniq") != std::string::npos){
+                            uniq_rule = true;
+                        }
                         guards.push_back(guard(tmp2));
                     }
                 }
