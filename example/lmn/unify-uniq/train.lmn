@@ -1,0 +1,27 @@
+// union と uniq が同時に使いたい例題
+// 複数の鉄道会社(や、路線)について駅間の移動にかかる時間の集合が与えられる．
+// 各鉄道会社について，全ての駅間の移動にかかる時間を求める（閉包）
+// 1つの鉄道会社を使用した移動時間を計算するが、
+// あとからユーザが複数の鉄道会社を指定することができる．
+// その時、複数の鉄道会社を利用した移動時間を計算する．(簡単のため、乗り換えの時間は考慮しない)
+
+// これを正しく計算するためには、
+//      uniq が併合後に履歴を引き継ぐ　　：整数値を表す T1, T2 を uniq の引数に含める
+//      uniq が併合後に履歴を引き継がない：以下のプログラムそのまま
+
+init.
+
+init :-  
+    s(!Akiba, "akiba"), s(!Tokyo, "tokyo"), s(!Shinagawa, "shinagawa"), s(!Kawasaki, "kawasaki"),
+    time(!Akiba, !Tokyo, 5, !Yamanote), time(!Tokyo, !Shinagawa, 5, !Yamanote), time(!Shinagawa, !Osaki, 5, !Yamanote),
+    time(!Akiba, !Tokyo, 4, !Kehin), time(!Tokyo, !Shinagawa, 6, !Kehin), time(!Shinagawa, !Kawasaki, 10, !Kehin),
+    unify(!Yamanote,!Kehin).
+
+time(!S1,!S2,T1,!C) \ time(!S1,!S2,T2,!C) :- T2 > T1 | .
+
+% time(!S1,!S2,T1,!C), time(!S2,!S3,T2,!C) \:- T3 = T1+T2, uniq(!S1,!S2,!S3,!T1,!T2,!C) | time(!S1,!S3,T3,!C).
+
+// 今の slim では間違い
+time(!S1,!S2,T1,!C), time(!S2,!S3,T2,!C) \:- T3 = T1+T2, uniq(!S1,!S2,!S3,!C) | time(!S1,!S3,T3,!C).
+
+unify(!C1,!C2) :- !C1 >< !C2.

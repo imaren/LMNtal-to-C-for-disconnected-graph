@@ -1,0 +1,20 @@
+//average1.lmn, average2.lmn をちゃんと動くように直すと uniq が消滅する
+init.
+
+init :-
+    n(50.0,!A), n(60.0,!A), n(70.0,!A),elemnum(3,!A),
+    n(80.0,!B), n(85.0,!B), n(10.0,!B),elemnum(3,!B),
+    unify(!A,!B).
+
+add@@
+n(F,!SET) , calc_avg(SUM,COUNT,!SET):- S = SUM+.F, C = COUNT+1 | n_t(F,!SET), calc_avg(S,C,!SET).
+init@@
+n(F,!H) \:- float(F), uniq(!H) | calc_avg(0.0,0,!H). 
+
+average@@
+elemnum(I,!SET) \ calc_avg(SUM,COUNT,!SET) :- I =:= COUNT, Ans = SUM/.float(COUNT) | average(Ans,SUM,COUNT, !SET).
+
+unify@@
+unify(!A,!B), average(AVG1,SUM1,CNT1,!A), average(AVG2,SUM2,CNT2,!B), elemnum(I,!A), elemnum(J,!B) 
+    :- float(AVG1), float(AVG2), S = SUM1 +. SUM2, C = CNT1 + CNT2, Ans = S /. float(C), K = I+J
+    |  average(Ans,S,C,!A), elemnum(K,!A), !A >< !B.

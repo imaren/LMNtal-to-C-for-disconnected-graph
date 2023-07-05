@@ -1,0 +1,35 @@
+// 間違い発覚。正しく計算できない（uniq の部分）。一応残す。
+
+// 集合の要素の平均値を持ち運ぶ
+// コード長くなるけど（たぶん）効率的：履歴を保持する
+// コードが短いけど（たぶん）非効率的：履歴を保持しない
+
+
+init,test.
+
+test :- 
+    n(50.0,!C), n(60.0,!C), n(70.0,!C),elemnum(6,!C),
+    n(80.0,!C), n(85.0,!C), n(10.0,!C).
+
+init :-
+    // elemnum n アトムの要素数を持っておく
+    // num(!A) では n アトムの数は数えられない. uniq(I,!H) では整数値が等しかったら1回しか数えない.
+    // n アトムだけに繋がる HL を持っておいたり、n アトムを別の名前に一時的に変更したりするなど対策はある．
+    // けど今回はめんどくさいので補助情報を渡すことにする
+    n(50.0,!A), n(60.0,!A), n(70.0,!A),elemnum(3,!A),
+    n(80.0,!B), n(85.0,!B), n(10.0,!B),elemnum(3,!B),
+    unify(!A,!B).
+
+add@@
+n(F,!SET) \ average(SUM,COUNT,!SET):- S = SUM+.F, C = COUNT+1, uniq(F,!SET) | average(S,C,!SET).
+init@@
+n(F,!H) \:- float(F), uniq(!H) | average(0.0,0,!H). 
+
+average@@
+elemnum(I,!SET) \ average(SUM,COUNT,!SET) :- I =:= COUNT, Ans = SUM/.float(COUNT) | average(Ans,SUM,COUNT, !SET).
+
+// 履歴を保持しても保持しなくても・・・
+unify@@
+unify(!A,!B), average(AVG1,SUM1,CNT1,!A), average(AVG2,SUM2,CNT2,!B), elemnum(I,!A), elemnum(J,!B) 
+    :- float(AVG1), float(AVG2), S = SUM1 +. SUM2, C = CNT1 + CNT2, Ans = S /. float(C), K = I+J
+    |  average(Ans,S,C,!A), elemnum(K,!A), !A >< !B.

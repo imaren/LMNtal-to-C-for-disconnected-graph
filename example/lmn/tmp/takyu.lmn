@@ -1,0 +1,13 @@
+// 連結なグラフ毎に1つの ID を持たせることができるなら…
+
+{a(s,!I1), target(t,!I1), target(r,!I1)}.
+{a(s,!I2), target(t,!I2), b(u,!I2)}.
+
+{target(X,!ID), $p[X]} :- uniq(!ID) | {tmp(X,!ID), cnt(1), $p[X]}.
+{target(X,!ID), cnt(I), $p[X]} :- J = I+1 | {tmp(X,!ID), cnt(J), $p[X]}.
+{t(I), tmp(X,!ID), $p[X]} :- J = I-1, I>0  | {target(X,!ID), t(J), $p[X]}.
+{t(0), $p[]} :- {$p[]}.
+
+{a(X,!ID), cnt(I), $p[]} :-ground(X), I = num(!ID) - 1 | {t(I), $p[]}.
+
+{cnt(I), $p[I]}/ :- {t(I), $p[I]}.

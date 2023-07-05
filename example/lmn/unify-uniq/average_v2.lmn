@@ -1,0 +1,20 @@
+init.
+
+init :-
+    n(50.0,!A), n(60.0,!A), n(70.0,!A),
+    n(80.0,!B), n(85.0,!B), n(10.0,!B),
+    unify(!A,!B).
+
+init@@
+n(F,!H) :- float(F) | avg(F,F,1,!H), n_t(F,!H).
+
+calc@@
+n(F,!H), avg(Avg,Sum,Cnt,!H) 
+    :- S = Sum+.F, C = Cnt+1, float(Avg), A = S /. float(C) |  n_t(F,!H), avg(A,S,C,!H).
+
+merge@@
+avg(Avg,Sum,Cnt,!H), avg(Avg2,Sum2,Cnt2,!H) 
+    :-  S = Sum+.Sum2, C = Cnt+Cnt2, float(Avg), float(Avg2), A = S /. float(C) | avg(A,S,C,!H).
+
+unify@@
+unify(!A,!B) :- !A >< !B.
