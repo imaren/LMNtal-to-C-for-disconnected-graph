@@ -66,5 +66,6 @@
         "typeindex": "cpp",
         "variant": "cpp",
         "filesystem": "cpp"
-    }
+    },
+    "git.terminalAuthentication": true
 }
