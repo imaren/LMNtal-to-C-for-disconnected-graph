@@ -1,0 +1,35 @@
+
+start(!X) :- between(0,!X,0).
+
+max@@ R = max(A,B) :- A > B | R = A.
+max@@ R = max(A,B) :- A =< B | R = B.
+min@@ R = min(A,B) :- A > B | R = B.
+min@@ R = min(A,B) :- A =< B | R = A. 
+
+inconsistent@@ 
+between(A,!X,B) :- A > B | fail.
+
+intersect@@ 
+between(A,!Y,B), between(C,!Y,D) :- between(min(A,C),!Y,max(B,D)).
+
+propagate_forward@@
+between(A,!Y,B), distance(C,!Y,!Z,D) \ 
+    :- AC=A+C, BD=B+D, uniq(A,!Y,B,C,!Z,D) 
+    | between(AC,!Z,BD).
+
+% propagate_backward@@
+% between(A,!Y,B), distance(C,!Z,!Y,D) \ 
+%     :- AC=A-D, BD=B-C, uniq(A,!Y,B,C,!Z,D) 
+%     | between(AC,!Z,BD).
+
+
+% start(X), distance(3,!X,!Y,10), distance(4,!Y,!Z,5).
+% % distance(4,!X,!Y,15).distance(4,!Y,!Z,5).
+% distance(4,!Z,!Y,5).
+% start(!Y).
+
+% start(!E), distance(10,!E,!F,20), distance(10,!H,!G,20), distance(30,!F,!G,40), 
+% distance(40,!H,!I,50),distance(60,!E,!I,120). 
+
+start(!T1), distance(3,!T1,!T2,5), distance(2,!T2,!T3,10), 
+distance(3,!T4,!T3,7), distance(4,!T1,!T3,14).

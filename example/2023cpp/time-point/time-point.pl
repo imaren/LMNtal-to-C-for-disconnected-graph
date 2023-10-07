@@ -23,6 +23,14 @@ intersect @
 A=<*Y=<*B , C=<*Y=<*D <=> AC is max(A,C), BD is min(B,D), AC=<*Y=<*BD
                          pragma already_in_heads.
 
+# already_in_heads
+# https://sicstus.sics.se/sicstus/docs/3.11.1/html/sicstus/CHR-Pragmas.html
+# The intention of simplification and simpagation rules is often to combine the heads into a stronger version of one of them. 
+# Depending on the strength of the guard, the new constraint may be identical to one of the heads to removed by the rule. 
+# This removal followed by addition is inefficient and may even cause termination problems. 
+# If the pragma is used, this situation is detected and the corresponding problems are avoided. 
+# The pragma applies to all constraints removed by the rule.
+#
 propagate_forward @
 A=<*Y=<*B,C=<+Y-Z=<+D ==> AC is A+C, BD is B+D, AC=<*Z=<*BD.
 propagate_backward @

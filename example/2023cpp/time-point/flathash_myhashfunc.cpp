@@ -149,13 +149,11 @@ int main(int argc, char *argv[]){
             if(history_rule3.insert({get<0>(*i),arg2,get<2>(*i),arg1,arg3,arg4}).second){
                 int AC = get<0>(*i) + arg1;
                 int BD = get<2>(*i) + arg4; 
-                cout << "forward" << AC << ", " << BD << endl;
                 push_between_ihi.push_back({AC,arg3,BD});
             }   
             if(history_rule4.insert({get<0>(*i),arg2,get<2>(*i),arg1,arg3,arg4}).second){
                 int AC = get<0>(*i) - arg4;
                 int BD = get<2>(*i) - arg1; 
-                cout << "backward" << AC << ", " << BD << endl;
                 push_between_ihi.push_back({AC,arg3,BD});
             }
         }
@@ -167,8 +165,7 @@ int main(int argc, char *argv[]){
     }
     
     // relates' of between atom
-    while (!(push_between_ihi.empty()))
-    {
+    while (!(push_between_ihi.empty())){
 
         tuple<int,int,int> tmp = push_between_ihi.back();
         int arg1 = get<0>(tmp);
