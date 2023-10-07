@@ -3,3 +3,5 @@ measure*/
 fmt*/
 *.txt
 *.csv
+compiler/lmntal-compiler
+nodec
