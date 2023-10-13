@@ -178,7 +178,7 @@ vector<vector<bool>> make_edge(int num_E, int num_V){
         if(check.empty()){
             break;
         }
-        cout << "check is not empty" << endl;
+        // cout << "check is not empty" << endl;
         int tmp = 0;
         for(auto itr: check){
             if(tmp < 5)
@@ -363,6 +363,14 @@ void timepoint_both(int num_E, int num_V){
     cout << endl;
 }
 
+int sigma(int a){
+    int ans = 0;
+    for(int i = 1; i < a+1; i++){
+        ans+=i;
+    }
+    return ans;
+}
+
 
 
 int main(int argc, char *argv[]){
@@ -375,7 +383,8 @@ int main(int argc, char *argv[]){
     }
     // lmn_timepoint(2*num, num);
     // cpp_timepoint(2*num, num);
-    timepoint_both(2*num, num);
+    // timepoint_both(2*num, num);
+    timepoint_both(sigma(num)/3, num);
 
     return 0;
 }

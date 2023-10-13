@@ -6,8 +6,8 @@ max@@ R = max(A,B) :- A =< B | R = B.
 min@@ R = min(A,B) :- A > B | R = B.
 min@@ R = min(A,B) :- A =< B | R = A. 
 
-% inconsistent@@ 
-% between2(A,!X,B) :- A > B | fail(A,!X,B).
+inconsistent@@ 
+between(A,!X,B) :- A > B | fail(A,!X,B).
 
 intersect@@ 
 between(A,!Y,B), between(C,!Y,D) :- between(max(A,C),!Y,min(B,D)).

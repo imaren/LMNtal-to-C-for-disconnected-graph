@@ -1,0 +1,23 @@
+erase@@ distance(A,!X,!X,B) \ distance(C,!X,!X,D) :-  int(C), int(D) | .
+
+a@@ distance(A,!X,!Y,B), distance(C,!Y,!Z,D), distance(E,!Z,!W,F) \:- 
+    !X \= !Y, !X \= !Z, !X \= !W, !Y \= !Z, !Y \= !W, !Z \= !W |  
+    !X >< !Y.
+
+b@@ distance(A,!X,!Y,B), distance(C,!Y,!Z,D), distance(E,!Z,!X,F) :- 
+    int(A),int(B),int(C),int(D),int(E),int(F),
+    !X \= !Y, !X \= !Z, !Y \= !Z, uniq(!X,!Y) |
+    cycle(!X,!Y).
+
+c@@ distance(A,!X,!Y,B), distance(C,!Y,!X,D):- 
+    int(A),int(B),int(C),int(D),
+    uniq(!X,!Y) |
+    cycle(!X,!Y).
+
+% d@@ distance(A,!X,!Y,B), distance(C,!Y,!Z,D)\:- 
+%     int(A),int(B),int(C),int(D), !X\=!Y, !X\=!Z, !Y\=!Z,
+%     uniq(!X,!Y) |
+%     !X >< !Y.
+
+% distance(1,!H0,!H1,1), distance(1,!H1,!H2,1), distance(1,!H2,!H4,1). 
+% distance(1,!H3,!H0,1).

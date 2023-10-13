@@ -9,13 +9,15 @@ min@@ R = min(A,B) :- A =< B | R = A.
 inconsistent@@ 
 between(A,!X,B) :- A > B | fail.
 
-intersect@@ 
-between(A,!Y,B), between(C,!Y,D) :- between(min(A,C),!Y,max(B,D)).
+% intersect@@ 
+% between(A,!Y,B), between(C,!Y,D) :- between(min(A,C),!Y,max(B,D)).
 
 propagate_forward@@
 between(A,!Y,B), distance(C,!Y,!Z,D) \ 
     :- AC=A+C, BD=B+D, uniq(A,!Y,B,C,!Z,D) 
     | between(AC,!Z,BD).
+
+between(A,!Y,B), between(C,!Y,D) :- between(min(A,C),!Y,max(B,D)).
 
 % propagate_backward@@
 % between(A,!Y,B), distance(C,!Z,!Y,D) \ 

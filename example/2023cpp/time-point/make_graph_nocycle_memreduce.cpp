@@ -170,7 +170,7 @@ vector<pair<int,int>> make_edge(int num_E, int num_V){
      * 
      * 最後に、ちょうどいい辺のコストを適当に決める
     */
-   num_E -= (num_V - 1);
+   num_E -= (num_V - 2);
     while(true){
         
         if(num_E <= 0){
@@ -386,7 +386,13 @@ void timepoint_both(int num_E, int num_V){
     cout << endl;
 }
 
-
+int sigma(int a){
+    int ans = 0;
+    for(int i = 1; i < a+1; i++){
+        ans+=i;
+    }
+    return ans;
+}
 
 int main(int argc, char *argv[]){
 
@@ -399,6 +405,7 @@ int main(int argc, char *argv[]){
     // lmn_timepoint(2*num, num);
     // cpp_timepoint(2*num, num);
     // timepoint_both(2*num, num);
-    timepoint_both(3*num, num);
+    // timepoint_both(3*num, num);
+    timepoint_both(sigma(num)/2, num);
     return 0;
 }

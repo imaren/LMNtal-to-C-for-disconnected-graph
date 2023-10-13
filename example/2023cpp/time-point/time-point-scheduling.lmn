@@ -3,12 +3,17 @@ start(!X) :- between(0,!X,0).
 
 max@@ R = max(A,B) :- A > B | R = A.
 max@@ R = max(A,B) :- A =< B | R = B.
+min@@ R = min(A,B) :- A > B | R = B.
+min@@ R = min(A,B) :- A =< B | R = A. 
 
 inconsistent@@ 
 between(A,!X,B) :- A > B | fail.
 
+subset@@
+between(A,!Y,B) \ between(C,!Y,D) :- A>=C, B=<D | .
+
 intersect@@ 
-between(A,!Y,B), between(C,!Y,D) :- between(max(A,C),!Y,max(B,D)).
+between(A,!Y,B), between(C,!Y,D) :- between(min(A,C),!Y,max(B,D)).
 
 propagate_forward@@
 between(A,!Y,B), distance(C,!Y,!Z,D) \ 
