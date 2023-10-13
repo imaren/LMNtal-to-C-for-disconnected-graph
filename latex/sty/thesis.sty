@@ -1,0 +1,36 @@
+% LMNtal
+\def\means{\mathrel{\!\texttt{:-}}}
+\def\equals{\mathop{\texttt{=}}}
+\newcommand{\rulevar}{\texttt{@}}
+\newcommand{\procvar}{\texttt{\$}}
+\newcommand{\fvstar}{\texttt{*}}
+\newcommand{\react}{{\,\,\texttt{:-}\,\,}}
+\newcommand{\guard}{{\,\texttt{|}\,}}
+\newcommand{\negate}{\texttt{\char '134+}}
+\newcommand{\zero}{\textbf{0}}
+\newcommand{\pc}{\texttt{,}}
+\newcommand{\lmem}{\texttt{\char '173}}
+\newcommand{\rmem}{\texttt{\char '175}}
+\newcommand{\lpar}{\texttt{\(}}
+\newcommand{\rpar}{\texttt{\)}}
+\newcommand{\mem}[1]{\lmem{#1}\rmem}
+
+% headingsに下線を入れる。
+\def\ps@lineheadings{\let\ps@jpl@in\ps@headnombre
+  \let\@oddfoot\@empty\let\@evenfoot\@empty
+  \def\@evenhead{%
+     \underline{\hbox to\textwidth{\thepage\hfil\leftmark}}}%
+  \def\@oddhead{%
+     \underline{\hbox to\textwidth{\rightmark\hfil\thepage}}}%
+  \let\@mkboth\markboth
+  \def\chaptermark##1{\markboth{%
+     \ifnum \c@secnumdepth >\m@ne%
+         \@chapapp\thechapter\@chappos\hskip1zw
+     \fi
+     ##1}{}}%
+  \def\sectionmark##1{\markright{%
+     \ifnum \c@secnumdepth >\z@ \thesection\hskip1zw\fi%
+     ##1}}%
+}
+
+\renewcommand{\bibname}{参考文献}

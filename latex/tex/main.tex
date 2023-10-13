@@ -1,0 +1,133 @@
+\documentclass[report,12pt]{jsbook}
+\pagestyle{headings}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{stmaryrd}
+\usepackage{ascmac}
+\usepackage{moreverb}
+\usepackage{longtable}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings,sty/jlisting}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{comment}
+\usepackage{float}
+
+
+
+\newcommand{\True}{\textbf{true}}
+\newcommand{\False}{\textbf{false}}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=1zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-1.5ex
+}
+
+
+% LMNtal
+\def\means{\mathrel{\!\texttt{:-}}}
+\def\equals{\mathop{\texttt{=}}}
+\newcommand{\rulevar}{\texttt{@}}
+\newcommand{\procvar}{\texttt{\$}}
+\newcommand{\fvstar}{\texttt{*}}
+\newcommand{\react}{{\,\,\texttt{:-}\,\,}}
+\newcommand{\guard}{{\,\texttt{|}\,}}
+\newcommand{\negate}{\texttt{\char '134+}}
+\newcommand{\zero}{\textbf{0}}
+\newcommand{\pc}{\texttt{,}}
+\newcommand{\lmem}{\texttt{\char '173}}
+\newcommand{\rmem}{\texttt{\char '175}}
+\newcommand{\lpar}{\texttt{\(}}
+\newcommand{\rpar}{\texttt{\)}}
+\newcommand{\mem}[1]{\lmem{#1}\rmem}
+
+
+\newcommand{\CALL}[1]{\textbf{Call} #1}
+
+% 定理環境
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem{definition}[theorem]{定義}
+
+\pagestyle{headings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 本文
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 表紙
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+    \begin{center}
+        {\Large メモ\\[2.5truecm]}
+        {\huge
+            例題の定義\\[0.7cm]
+        }
+        % {\Large
+        %     \begin{tabular}{ll}
+        %         提出日 : & 2022年1月21日     \\
+        %         指導   : & 上田 \ 和紀  教授
+        %     \end{tabular}\\[3truecm]
+        %     早稲田大学 基幹理工学部\\
+        %     情報理工学科\\[0.8truecm]
+        %     学籍番号 : 1W182043-1\\
+        %     今川 \ 連\\}
+    \end{center}
+\end{titlepage}
+
+% 概要
+\frontmatter
+\include{tex/abstract-jp}
+% \include{tex/abstract-en}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 目次
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagenumbering{roman}       % 目次のページ数はローマ字表記
+% \tableofcontents            % 目次出力
+% \listoffigures              % 図目次
+%\listoftables               % 表目次
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 本体
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+% メモ
+\include{tex/memo}
+
+
+% 参考文献
+\bibliographystyle{junsrt}
+\bibliography{ref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 付録
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\include{tex/sources}
+
+\end{document}
+
