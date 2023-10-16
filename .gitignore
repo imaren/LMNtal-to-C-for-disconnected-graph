@@ -6,3 +6,4 @@ fmt*/
 compiler/lmntal-compiler
 example/postgres/libpqxx
 nodec
+z3
