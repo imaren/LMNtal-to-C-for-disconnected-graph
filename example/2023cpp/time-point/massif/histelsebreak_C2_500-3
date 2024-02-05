@@ -1,0 +1,1884 @@
+desc: --pages-as-heap=yes --massif-out-file=./massif/histelsebreak_C2_500-3
+cmd: ./memreduce testcase/C2_500-3
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=8192
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=8607486
+mem_heap_B=21020672
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=14321516
+mem_heap_B=21426176
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=22148687
+mem_heap_B=22142976
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=29723129
+mem_heap_B=22548480
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=36597536
+mem_heap_B=23109632
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=41459636
+mem_heap_B=23535616
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=49733791
+mem_heap_B=24076288
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=57154136
+mem_heap_B=25112576
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n5: 25112576 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 3563520 0x533DA1B: brk (brk.c:36)
+  n1: 3563520 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 3563520 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 3563520 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 3563520 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 3563520 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 3428352 0x52C8261: malloc (malloc.c:3321)
+        n6: 3428352 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 1216512 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 946176 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 675840 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 270336 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 405504 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 405504 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n1: 315392 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 315392 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 139264 in 1 place, below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n1: 1253376 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 1253376 0x5341C17: mmap (mmap64.c:46)
+   n1: 1253376 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 1253376 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 1253376 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 1253376 0x52C8261: malloc (malloc.c:3321)
+       n1: 1253376 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 1253376 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 942080 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 311296 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 299008 0x0: ???
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=61468737
+mem_heap_B=25071616
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=69773188
+mem_heap_B=25612288
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=73909132
+mem_heap_B=25882624
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=81450150
+mem_heap_B=26607616
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=91755806
+mem_heap_B=27283456
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=97954736
+mem_heap_B=27688960
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=106238061
+mem_heap_B=28229632
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=111771686
+mem_heap_B=29782016
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=117292162
+mem_heap_B=29421568
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=125561889
+mem_heap_B=29962240
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=135871673
+mem_heap_B=31551488
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=146962652
+mem_heap_B=32833536
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=154540270
+mem_heap_B=32337920
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=160738324
+mem_heap_B=32743424
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=171051375
+mem_heap_B=33419264
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=177252474
+mem_heap_B=33824768
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=185527027
+mem_heap_B=34365440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=191732753
+mem_heap_B=34770944
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=200058328
+mem_heap_B=35311616
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=206300748
+mem_heap_B=35717120
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=210454603
+mem_heap_B=35987456
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=218666753
+mem_heap_B=36528128
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 36528128 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n5: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 454656 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n1: 7938048 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 7938048 0x5341C17: mmap (mmap64.c:46)
+   n1: 5373952 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 5373952 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 5373952 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 5373952 0x52C8261: malloc (malloc.c:3321)
+       n4: 5373952 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 2535424 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 1351680 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1081344 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 270336 in 1 place, below massif's threshold (1.00%)
+        n0: 811008 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 675840 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 2564096 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 2564096 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 2564096 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 2564096 0x52C8261: malloc (malloc.c:3321)
+       n1: 2564096 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 2564096 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1282048 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1282048 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=224367437
+mem_heap_B=39395328
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=229993613
+mem_heap_B=39395328
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 39395328 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 10805248 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 10805248 0x5341C17: mmap (mmap64.c:46)
+   n1: 5644288 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 5644288 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 5644288 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 5644288 0x52C8261: malloc (malloc.c:3321)
+       n4: 5644288 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 2670592 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 1351680 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1081344 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 270336 in 1 place, below massif's threshold (1.00%)
+        n0: 811008 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 811008 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 5160960 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 5160960 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 5160960 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 5160960 0x52C8261: malloc (malloc.c:3321)
+       n1: 5160960 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 5160960 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 3878912 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1282048 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n5: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 454656 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=33
+#-----------
+time=236578083
+mem_heap_B=38653952
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=244720949
+mem_heap_B=39194624
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=252978168
+mem_heap_B=39735296
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=261208024
+mem_heap_B=40275968
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=267384936
+mem_heap_B=40681472
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=273617133
+mem_heap_B=41086976
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=281911477
+mem_heap_B=41627648
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=288030979
+mem_heap_B=42033152
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=294157682
+mem_heap_B=44630016
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 44630016 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 16039936 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 16039936 0x5341C17: mmap (mmap64.c:46)
+   n1: 9564160 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 9564160 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 9564160 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 9564160 0x52C8261: malloc (malloc.c:3321)
+       n4: 9564160 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 4022272 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 2568192 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 1892352 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1351680 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 1081344 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 6475776 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 6475776 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 6475776 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 6475776 0x52C8261: malloc (malloc.c:3321)
+       n1: 6475776 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 6475776 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 3878912 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n5: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 454656 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=303880882
+mem_heap_B=44023808
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=310045719
+mem_heap_B=44429312
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=318339641
+mem_heap_B=44969984
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=324559325
+mem_heap_B=45375488
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=332794693
+mem_heap_B=45916160
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=336904967
+mem_heap_B=46186496
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=345084053
+mem_heap_B=46727168
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=351201556
+mem_heap_B=47132672
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 47132672 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 18542592 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 18542592 0x5341C17: mmap (mmap64.c:46)
+   n1: 13348864 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 13348864 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 13348864 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 13348864 0x52C8261: malloc (malloc.c:3321)
+       n4: 13348864 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 5509120 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 3379200 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 2703360 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2027520 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 675840 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 1757184 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 5193728 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 5193728 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 5193728 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 5193728 0x52C8261: malloc (malloc.c:3321)
+       n1: 5193728 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 5193728 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n5: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 454656 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=357295471
+mem_heap_B=47538176
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=363480738
+mem_heap_B=47943680
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=367596497
+mem_heap_B=48214016
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=373684570
+mem_heap_B=48619520
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=379841402
+mem_heap_B=49025024
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=385999361
+mem_heap_B=49430528
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=392147697
+mem_heap_B=49836032
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=398274439
+mem_heap_B=50241536
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=402411496
+mem_heap_B=50511872
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=406624438
+mem_heap_B=50782208
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 50782208 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 22192128 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 22192128 0x5341C17: mmap (mmap64.c:46)
+   n1: 16998400 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 16998400 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 16998400 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 16998400 0x52C8261: malloc (malloc.c:3321)
+       n4: 16998400 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 6590464 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 4190208 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 3919872 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 3108864 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 811008 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 2297856 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 5193728 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 5193728 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 5193728 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 5193728 0x52C8261: malloc (malloc.c:3321)
+       n1: 5193728 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 5193728 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n5: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 454656 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=410846022
+mem_heap_B=51052544
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=414976572
+mem_heap_B=51322880
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=421119219
+mem_heap_B=51728384
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=425246883
+mem_heap_B=51998720
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=429442335
+mem_heap_B=52269056
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=433576502
+mem_heap_B=52539392
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=437722886
+mem_heap_B=52809728
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=441845376
+mem_heap_B=53080064
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=447957099
+mem_heap_B=53485568
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=453974823
+mem_heap_B=53891072
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 53891072 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 25300992 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 25300992 0x5341C17: mmap (mmap64.c:46)
+   n1: 20107264 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 20107264 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 20107264 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 20107264 0x52C8261: malloc (malloc.c:3321)
+       n4: 20107264 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 7806976 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 5001216 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 4055040 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 4730880 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 2568192 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 5193728 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 5193728 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 5193728 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 5193728 0x52C8261: malloc (malloc.c:3321)
+       n1: 5193728 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 5193728 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n5: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 540672 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 454656 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=466041474
+mem_heap_B=59162624
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 59162624 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 30572544 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 30572544 0x5341C17: mmap (mmap64.c:46)
+   n1: 20107264 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 20107264 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 20107264 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 20107264 0x52C8261: malloc (malloc.c:3321)
+       n4: 20107264 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 7806976 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 5001216 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 4055040 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 4730880 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 2568192 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 10465280 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 10465280 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 10465280 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 10465280 0x52C8261: malloc (malloc.c:3321)
+       n1: 10465280 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 10465280 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 7868416 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n4: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 995328 in 3 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=71
+#-----------
+time=471561759
+mem_heap_B=56971264
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=477630441
+mem_heap_B=57376768
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=481752375
+mem_heap_B=57647104
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=485905125
+mem_heap_B=57917440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=490039930
+mem_heap_B=58187776
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=496134283
+mem_heap_B=58593280
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=500308817
+mem_heap_B=58863616
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=504446090
+mem_heap_B=59133952
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=508581223
+mem_heap_B=59404288
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=512757125
+mem_heap_B=59674624
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 59674624 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 31084544 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 31084544 0x5341C17: mmap (mmap64.c:46)
+   n1: 23216128 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 23216128 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 23216128 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 23216128 0x52C8261: malloc (malloc.c:3321)
+       n4: 23216128 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 8753152 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 6082560 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 4730880 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1351680 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 5271552 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 3108864 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 7868416 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 7868416 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 7868416 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 7868416 0x52C8261: malloc (malloc.c:3321)
+       n1: 7868416 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 7868416 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 5271552 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n4: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 995328 in 3 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=81
+#-----------
+time=516907422
+mem_heap_B=59944960
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=522982189
+mem_heap_B=60350464
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=527172084
+mem_heap_B=60620800
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=533312290
+mem_heap_B=61026304
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=537462700
+mem_heap_B=61296640
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=541645293
+mem_heap_B=61566976
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=545828915
+mem_heap_B=61837312
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=551908946
+mem_heap_B=62242816
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=556030125
+mem_heap_B=62513152
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=562147537
+mem_heap_B=62918656
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 62918656 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 34328576 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 34328576 0x5341C17: mmap (mmap64.c:46)
+   n1: 26460160 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 26460160 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 26460160 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 26460160 0x52C8261: malloc (malloc.c:3321)
+       n4: 26460160 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 9969664 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 7163904 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 5677056 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1486848 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 6082560 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 3244032 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 7868416 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 7868416 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 7868416 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 7868416 0x52C8261: malloc (malloc.c:3321)
+       n1: 7868416 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 7868416 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 5271552 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 2596864 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n4: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 995328 in 3 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=91
+#-----------
+time=574160669
+mem_heap_B=68190208
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=peak
+n4: 68190208 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 39600128 0x5341C17: __mmap64 (mmap64.c:58)
+  n2: 39600128 0x5341C17: mmap (mmap64.c:46)
+   n1: 26460160 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 26460160 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 26460160 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 26460160 0x52C8261: malloc (malloc.c:3321)
+       n4: 26460160 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n0: 9969664 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n2: 7163904 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 5677056 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1486848 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 6082560 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+        n0: 3244032 0x10B4E3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 13139968 0x52C54B7: sysmalloc_mmap.constprop.0 (malloc.c:2441)
+    n1: 13139968 0x52C628B: sysmalloc (malloc.c:2594)
+     n1: 13139968 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 13139968 0x52C8261: malloc (malloc.c:3321)
+       n1: 13139968 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 13139968 0x10BB66: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 7868416 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 5271552 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF00062A: ???
+                 n0: 6828032 0x1FFF000636: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF00062A: ???
+                 n0: 3207168 0x1FFF000636: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF00062A: ???
+                n0: 2998272 0x1FFF000636: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8294400 0x533DA1B: brk (brk.c:36)
+  n1: 8294400 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8294400 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8294400 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8294400 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8294400 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8159232 0x52C8261: malloc (malloc.c:3321)
+        n4: 8159232 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n0: 2703360 0x10B5C6: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n2: 2568192 0x10BA99: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 1622016 0x10B59A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+          n0: 946176 0x10B4B3: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 1892352 0x10B621: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+         n0: 995328 in 3 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=92
+#-----------
+time=579677891
+mem_heap_B=65998848
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=638361120
+mem_heap_B=66265088
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=683993965
+mem_heap_B=60993536
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

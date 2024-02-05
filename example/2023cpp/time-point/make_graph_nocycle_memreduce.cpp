@@ -368,7 +368,7 @@ void timepoint_both(int num_E, int num_V){
     // start_1 atom の数
     cout << 1 << endl;
     // distance_4 atom の数 (edge の数) 
-    cout << num_E << endl;
+    cout << cost.size() << endl;
     // hl id の数 (node の数)
     cout << num_V << endl;
     //start !H0
@@ -404,8 +404,8 @@ int main(int argc, char *argv[]){
     }
     // lmn_timepoint(2*num, num);
     // cpp_timepoint(2*num, num);
-    // timepoint_both(2*num, num);
+    timepoint_both(2*num, num);
     // timepoint_both(3*num, num);
-    timepoint_both(sigma(num)/2, num);
+    // timepoint_both(sigma(num)/2, num);
     return 0;
 }

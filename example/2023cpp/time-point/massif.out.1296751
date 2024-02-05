@@ -1,0 +1,1537 @@
+desc: --time-unit=B --stacks=yes
+cmd: ./memreduce testcase/C2_50-1
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=147680
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1856
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=342728
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1704
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=538296
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1416
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=737136
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1936
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=886640
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1936
+heap_tree=detailed
+n0: 0 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+#-----------
+snapshot=6
+#-----------
+time=1036144
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1936
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1185648
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1936
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1419800
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1384
+heap_tree=detailed
+n0: 0 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+#-----------
+snapshot=9
+#-----------
+time=1567920
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1600
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1716000
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1856
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1877656
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1384
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2081584
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1856
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2285568
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1904
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=2399152
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1600
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2580512
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=1712
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2785464
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=664
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=2988840
+mem_heap_B=73728
+mem_heap_extra_B=8
+mem_stacks_B=352
+heap_tree=detailed
+n1: 73728 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+#-----------
+snapshot=18
+#-----------
+time=3137872
+mem_heap_B=86550
+mem_heap_extra_B=226
+mem_stacks_B=2408
+heap_tree=detailed
+n6: 86550 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10A827: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10A902: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10AA32: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1006 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=3338144
+mem_heap_B=88022
+mem_heap_extra_B=594
+mem_stacks_B=2408
+heap_tree=detailed
+n7: 88022 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1920 0x10ACAF: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10A827: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10A902: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10AA32: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 558 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=3604304
+mem_heap_B=107598
+mem_heap_extra_B=2194
+mem_stacks_B=2208
+heap_tree=detailed
+n9: 107598 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 2920 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 1400 0x10C33A: void std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > >::_M_realloc_insert<std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&>(__gnu_cxx::__normal_iterator<std::_List_iterator<std::tuple<int, int, int, int, int, int> >*, std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > > >, std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1400 in 2 places, all below massif's threshold (1.00%)
+ n0: 1238 in 6 places, all below massif's threshold (1.00%)
+ n0: 1208 0x10A827: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10A902: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 1208 0x10AA32: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=21
+#-----------
+time=3771400
+mem_heap_B=117782
+mem_heap_extra_B=6690
+mem_stacks_B=2192
+heap_tree=detailed
+n8: 117782 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 5920 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 3440 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 2480 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 5718 in 11 places, all below massif's threshold (1.00%)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 2208 0x10C1DA: void std::__cxx11::list<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_insert<std::tuple<int, int, int> >(std::_List_iterator<std::tuple<int, int, int> >, std::tuple<int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1888 0x10B6DB: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 320 in 1 place, below massif's threshold (1.00%)
+ n1: 1760 0x10C33A: void std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > >::_M_realloc_insert<std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&>(__gnu_cxx::__normal_iterator<std::_List_iterator<std::tuple<int, int, int, int, int, int> >*, std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > > >, std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1760 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=22
+#-----------
+time=3893648
+mem_heap_B=122494
+mem_heap_extra_B=8738
+mem_stacks_B=2192
+heap_tree=detailed
+n9: 122494 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 10480 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 6120 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 4360 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 4558 in 11 places, all below massif's threshold (1.00%)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 1952 0x10C1DA: void std::__cxx11::list<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_insert<std::tuple<int, int, int> >(std::_List_iterator<std::tuple<int, int, int> >, std::tuple<int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1632 0x10B6DB: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 320 in 1 place, below massif's threshold (1.00%)
+ n1: 1760 0x10C33A: void std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > >::_M_realloc_insert<std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&>(__gnu_cxx::__normal_iterator<std::_List_iterator<std::tuple<int, int, int, int, int, int> >*, std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > > >, std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1760 in 2 places, all below massif's threshold (1.00%)
+ n0: 1568 0x10B78E: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=23
+#-----------
+time=4082120
+mem_heap_B=129630
+mem_heap_extra_B=11578
+mem_stacks_B=2192
+heap_tree=detailed
+n9: 129630 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 17520 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 11200 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 6320 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 4558 in 11 places, all below massif's threshold (1.00%)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 2048 0x10C1DA: void std::__cxx11::list<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_insert<std::tuple<int, int, int> >(std::_List_iterator<std::tuple<int, int, int> >, std::tuple<int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1696 0x10B6DB: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 352 in 1 place, below massif's threshold (1.00%)
+ n1: 1760 0x10C33A: void std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > >::_M_realloc_insert<std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&>(__gnu_cxx::__normal_iterator<std::_List_iterator<std::tuple<int, int, int, int, int, int> >*, std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > > >, std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1760 in 2 places, all below massif's threshold (1.00%)
+ n0: 1568 0x10B78E: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=24
+#-----------
+time=4229480
+mem_heap_B=135014
+mem_heap_extra_B=13746
+mem_stacks_B=2192
+heap_tree=detailed
+n9: 135014 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 23000 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 15320 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 7680 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 4558 in 11 places, all below massif's threshold (1.00%)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 1952 0x10C1DA: void std::__cxx11::list<std::tuple<int, int, int>, std::allocator<std::tuple<int, int, int> > >::_M_insert<std::tuple<int, int, int> >(std::_List_iterator<std::tuple<int, int, int> >, std::tuple<int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1632 0x10B6DB: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 320 in 1 place, below massif's threshold (1.00%)
+ n1: 1760 0x10C33A: void std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > >::_M_realloc_insert<std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&>(__gnu_cxx::__normal_iterator<std::_List_iterator<std::tuple<int, int, int, int, int, int> >*, std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > > >, std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1760 in 2 places, all below massif's threshold (1.00%)
+ n0: 1568 0x10B78E: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=25
+#-----------
+time=4456760
+mem_heap_B=142958
+mem_heap_extra_B=16986
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 142958 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 31360 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 21400 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 9960 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 7662 in 13 places, all below massif's threshold (1.00%)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 1760 0x10C33A: void std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > >::_M_realloc_insert<std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&>(__gnu_cxx::__normal_iterator<std::_List_iterator<std::tuple<int, int, int, int, int, int> >*, std::vector<std::_List_iterator<std::tuple<int, int, int, int, int, int> >, std::allocator<std::_List_iterator<std::tuple<int, int, int, int, int, int> > > > >, std::_List_iterator<std::tuple<int, int, int, int, int, int> > const&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 1760 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=4657760
+mem_heap_B=150278
+mem_heap_extra_B=19938
+mem_stacks_B=2040
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=4832600
+mem_heap_B=156838
+mem_heap_extra_B=22562
+mem_stacks_B=2192
+heap_tree=detailed
+n6: 156838 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 45400 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 32040 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 13360 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9262 in 14 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=28
+#-----------
+time=5012672
+mem_heap_B=163590
+mem_heap_extra_B=25258
+mem_stacks_B=2192
+heap_tree=detailed
+n6: 163590 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 52120 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 36360 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 15760 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9294 in 14 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=29
+#-----------
+time=5205352
+mem_heap_B=187102
+mem_heap_extra_B=27754
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 187102 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 58520 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 41280 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17240 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n2: 16496 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD2C: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8974 in 14 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=30
+#-----------
+time=5450248
+mem_heap_B=187966
+mem_heap_extra_B=31354
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 187966 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 67440 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 47200 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 20240 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9166 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=31
+#-----------
+time=5624368
+mem_heap_B=194486
+mem_heap_extra_B=33962
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 194486 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 73960 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 51720 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 22240 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9166 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=32
+#-----------
+time=5761552
+mem_heap_B=199534
+mem_heap_extra_B=35986
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 199534 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 79040 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 55120 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 23920 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9134 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=33
+#-----------
+time=6001288
+mem_heap_B=208334
+mem_heap_extra_B=39530
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 208334 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 88000 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 61760 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 26240 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8974 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=34
+#-----------
+time=6147520
+mem_heap_B=213798
+mem_heap_extra_B=41706
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 213798 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 93400 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 65000 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 28400 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9038 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=35
+#-----------
+time=6359048
+mem_heap_B=221414
+mem_heap_extra_B=44786
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=6621256
+mem_heap_B=231390
+mem_heap_extra_B=48762
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 231390 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 111120 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 76480 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 34640 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8910 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=37
+#-----------
+time=6789856
+mem_heap_B=237614
+mem_heap_extra_B=51266
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 237614 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 117440 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 80760 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 36680 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8814 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=38
+#-----------
+time=6955552
+mem_heap_B=243966
+mem_heap_extra_B=53778
+mem_stacks_B=2192
+heap_tree=detailed
+n7: 243966 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 123600 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 84640 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 38960 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n1: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 9006 in 14 places, all below massif's threshold (1.00%)
+ n2: 8248 0x10BABE: std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_Hashtable(unsigned long, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const&, std::equal_to<std::tuple<int, int, int, int, int, int> > const&, std::allocator<std::tuple<int, int, int, int, int, int> > const&) [clone .constprop.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 8248 0x10AD22: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=39
+#-----------
+time=7168216
+mem_heap_B=269886
+mem_heap_extra_B=56074
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=7330376
+mem_heap_B=283774
+mem_heap_extra_B=57994
+mem_stacks_B=2048
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=7583880
+mem_heap_B=293566
+mem_heap_extra_B=61882
+mem_stacks_B=2192
+heap_tree=detailed
+n6: 293566 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 143920 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 98040 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 45880 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8910 in 15 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=42
+#-----------
+time=7725936
+mem_heap_B=298750
+mem_heap_extra_B=63970
+mem_stacks_B=2192
+heap_tree=detailed
+n6: 298750 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 149200 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 101800 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 47400 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8814 in 15 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=43
+#-----------
+time=7867128
+mem_heap_B=304062
+mem_heap_extra_B=66090
+mem_stacks_B=2192
+heap_tree=detailed
+n6: 304062 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 154480 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 105840 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 48640 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 8846 in 15 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=44
+#-----------
+time=8144056
+mem_heap_B=314374
+mem_heap_extra_B=70210
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=8317824
+mem_heap_B=320566
+mem_heap_extra_B=72730
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 320566 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 171240 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 117160 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 54080 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12350 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=46
+#-----------
+time=8535712
+mem_heap_B=328566
+mem_heap_extra_B=75930
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=8689672
+mem_heap_B=334214
+mem_heap_extra_B=78194
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=8874552
+mem_heap_B=341246
+mem_heap_extra_B=81002
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 341246 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 191920 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 129600 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 62320 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12350 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=49
+#-----------
+time=8935640
+mem_heap_B=343494
+mem_heap_extra_B=81906
+mem_stacks_B=2112
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=8955000
+mem_heap_B=344286
+mem_heap_extra_B=82218
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 344286 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 194960 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 131600 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 63360 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12350 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=51
+#-----------
+time=9038520
+mem_heap_B=347342
+mem_heap_extra_B=83450
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 347342 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 198080 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 133920 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 64160 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12286 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=52
+#-----------
+time=9127320
+mem_heap_B=350430
+mem_heap_extra_B=84714
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 350430 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 201360 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 136520 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 64840 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12094 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=53
+#-----------
+time=9208872
+mem_heap_B=353606
+mem_heap_extra_B=85970
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 353606 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 204440 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 138560 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 65880 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12190 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=54
+#-----------
+time=9298680
+mem_heap_B=356798
+mem_heap_extra_B=87242
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 356798 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 207600 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 140320 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 67280 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12222 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=55
+#-----------
+time=9388560
+mem_heap_B=359982
+mem_heap_extra_B=88530
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 359982 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 210880 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 141720 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 69160 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12126 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=56
+#-----------
+time=9477600
+mem_heap_B=363206
+mem_heap_extra_B=89834
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 363206 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 214200 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 143960 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 70240 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12030 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=57
+#-----------
+time=9560472
+mem_heap_B=366486
+mem_heap_extra_B=91122
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 366486 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 217320 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 145840 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 71480 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12190 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=58
+#-----------
+time=9654816
+mem_heap_B=369782
+mem_heap_extra_B=92474
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 369782 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 220840 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 148200 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 72640 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 11966 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=59
+#-----------
+time=9748176
+mem_heap_B=373134
+mem_heap_extra_B=93810
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 373134 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 224160 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 150160 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 74000 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 11998 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=60
+#-----------
+time=9827352
+mem_heap_B=376534
+mem_heap_extra_B=95122
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 376534 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 227240 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 151640 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 75600 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12318 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=61
+#-----------
+time=9927192
+mem_heap_B=379958
+mem_heap_extra_B=96530
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 379958 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 230920 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 154520 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 76400 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12062 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=62
+#-----------
+time=10015824
+mem_heap_B=383414
+mem_heap_extra_B=97898
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 383414 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 234280 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 156560 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 77720 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12158 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=63
+#-----------
+time=10111920
+mem_heap_B=386878
+mem_heap_extra_B=99298
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 386878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 237840 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 159120 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 78720 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12062 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=64
+#-----------
+time=10208424
+mem_heap_B=390366
+mem_heap_extra_B=100698
+mem_stacks_B=2192
+heap_tree=detailed
+n5: 390366 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 241360 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 161040 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 80320 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12030 in 16 places, all below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+#-----------
+snapshot=65
+#-----------
+time=10288136
+mem_heap_B=401038
+mem_heap_extra_B=101578
+mem_stacks_B=2176
+heap_tree=peak
+n5: 401038 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 243720 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 162440 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 81280 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 55056 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 37624 0x10B744: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n1: 16384 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n2: 16384 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n0: 8192 0x10B406: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 12150 in 16 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=10401760
+mem_heap_B=383630
+mem_heap_extra_B=98306
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=10515376
+mem_heap_B=362590
+mem_heap_extra_B=89890
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=10628992
+mem_heap_B=341550
+mem_heap_extra_B=81474
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=10742608
+mem_heap_B=320510
+mem_heap_extra_B=73058
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=10856224
+mem_heap_B=299470
+mem_heap_extra_B=64642
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=10969840
+mem_heap_B=278430
+mem_heap_extra_B=56226
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=11083456
+mem_heap_B=257390
+mem_heap_extra_B=47810
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=11197072
+mem_heap_B=236350
+mem_heap_extra_B=39394
+mem_stacks_B=2080
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=11310688
+mem_heap_B=184686
+mem_heap_extra_B=33762
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=11424304
+mem_heap_B=163646
+mem_heap_extra_B=25346
+mem_stacks_B=2144
+heap_tree=detailed
+n6: 163646 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x4AAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x1: ???
+       n1: 73728 0x1FFF00066A: ???
+        n0: 73728 0x1FFF000676: ???
+ n2: 58400 0x10BC19: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 58400 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 17432 0x10BCE6: std::pair<std::__detail::_Node_iterator<std::tuple<int, int, int, int, int, int>, true, true>, bool> std::_Hashtable<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::allocator<std::tuple<int, int, int, int, int, int> >, std::__detail::_Identity, std::equal_to<std::tuple<int, int, int, int, int, int> >, main::{lambda(std::tuple<int, int, int, int, int, int> const&)#1} const, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::_M_insert<std::tuple<int, int, int, int, int, int>, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > >(std::tuple<int, int, int, int, int, int>&&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::tuple<int, int, int, int, int, int>, true> > > const&, std::integral_constant<bool, true>) [clone .constprop.0] [clone .isra.0] (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 17432 0x10B6A0: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x4B19043: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n2: 8192 0x4B1CEB1: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+   n1: 8192 0x4B1D731: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+    n0: 8192 0x10A7BE: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 3760 0x10B1AC: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/memreduce)
+ n0: 2134 in 15 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=76
+#-----------
+time=11537920
+mem_heap_B=142606
+mem_heap_extra_B=16930
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=11651536
+mem_heap_B=121566
+mem_heap_extra_B=8514
+mem_stacks_B=2144
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=11765168
+mem_heap_B=86566
+mem_heap_extra_B=1658
+mem_stacks_B=2048
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=11910944
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=560
+heap_tree=empty

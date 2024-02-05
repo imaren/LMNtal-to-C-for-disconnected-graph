@@ -1,0 +1,40 @@
+//cap(cap)
+// example: https://www.msi.co.jp/solution/nuopt/docs/examples/html/02-07-00.html
+% cap(!X,!A,4),cap(!A,!C,5),cap(!C,!Y,8),
+% cap(!X,!B,6),cap(!B,!C,4),cap(!B,!D,3),
+% cap(!D,!Y,5).
+
+% start(!X).goal(!Y).
+
+
+:- uniq | step(!H), do(!H).
+cap(!F,!T,C) \:- int(C), uniq(!F,!T) | flow(!F,!T,0).
+
+min@@R = min(A,B) :- A >= B | R=B.
+min@@R = min(A,B) :- A < B | R=A.
+
+find_startpath@@
+start(!A),cap(!A,!B,M),flow(!A,!B,N),step(!ST),do(!ST)\
+    :- R = M-N, R > 0, uniq(!ST,!B)
+    |path([!B,!A], R, !ST).
+
+increase_flow@@
+inc([!B,!A|L], F, !ST), flow(!A,!B,N) :- M = N+F | inc([!A|L], F, !ST), flow(!A,!B,M).
+
+next_step@@
+inc([!S], F, !ST), step(!ST) :- int(F) | step(!New), do(!New).
+
+check_path@@
+step(!ST), goal(!G) \ path([!G|L], F, !ST), do(!ST)
+    :-  
+    |  inc([!G|L], F, !ST).
+
+// 増加道は1ステップに1つ見つかればいいので、同じパスを使うのは高々1回でOK
+propagate_path@@
+step(!ST), do(!ST), path([!A|L], F, !ST),cap(!A,!B,M),flow(!A,!B,N) \
+    :- int(F), ground(L), R = M-N, R > 0, uniq(!ST,!A,!B)
+    | path([!B,!A|L], min(F,R), !ST).
+
+// 整形用。計測時外す。上から実行前提
+% do(!Stop) \ path(L,F,!H) :- ground(L), int(F) | .
+

@@ -1,0 +1,4 @@
+% job(C,N,H) :- int(C), int(N), int(H) |.
+job(C,N,!H) :- int(C), int(N) |.
+
+n(10).job(3,3,!J0).job(4,4,!J1).job(6,9,!J2).job(3,10,!J3).job(6,4,!J4).job(11,2,!J5).job(7,2,!J6).job(4,19,!J7).job(9,5,!J8).job(6,2,!J9).

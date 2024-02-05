@@ -1,0 +1,20 @@
+
+start(!X) :- between(0,!X,0).
+
+
+max@@ R = max(A,B) :- A > B | R = A.
+max@@ R = max(A,B) :- A =< B | R = B.
+min@@ R = min(A,B) :- A > B | R = B.
+min@@ R = min(A,B) :- A =< B | R = A. 
+
+
+intersect@@ between(A,!Y,B), between(C,!Y,D) :- between(max(A,C),!Y,min(B,D)).
+
+fpropagate_forward@@between(A,!Y,B), distance(C,!Y,!Z,D) \ :- AC=A+C, BD=B+D, uniq(A,!Y,B,C,!Z,D) | between(AC,!Z,BD).
+
+bpropagate_backward@@between(A,!Y,B), distance(C,!Z,!Y,D) \ :- AC=A-D, BD=B-C, uniq(A,!Y,B,C,!Z,D) | between(AC,!Z,BD).
+
+start(!E0), distance(1,!E0,!E1,5), distance(1,!E1,!E3,5).
+distance(3,!E2,!E3,7), 
+distance(3,!E0,!E3,4).
+

@@ -1,0 +1,1469 @@
+desc: --pages-as-heap=yes --massif-out-file=./massif/set_C2_450-3
+cmd: ./mem_set testcase/C2_450-3
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=8192
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=2162288
+mem_heap_B=20353024
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=peak
+n3: 20353024 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 20054016 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 20054016 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 155648 in 3 places, all below massif's threshold (1.00%)
+ n0: 299008 0x0: ???
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=16116916
+mem_heap_B=21377024
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=34481821
+mem_heap_B=22458368
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=44222719
+mem_heap_B=22999040
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=58756412
+mem_heap_B=23810048
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=68148582
+mem_heap_B=24350720
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=82170228
+mem_heap_B=25161728
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=98638022
+mem_heap_B=26107904
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=120467715
+mem_heap_B=27324416
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=130264338
+mem_heap_B=27865088
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=147106231
+mem_heap_B=29724672
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=165869058
+mem_heap_B=29859840
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=178254289
+mem_heap_B=30535680
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 30535680 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n1: 1859584 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 1859584 0x5341C17: mmap (mmap64.c:46)
+   n1: 1859584 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 1859584 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 1859584 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 1859584 0x52C8261: malloc (malloc.c:3321)
+       n1: 1859584 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 1859584 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 1724416 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=190161839
+mem_heap_B=31211520
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=207159237
+mem_heap_B=32157696
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=229047497
+mem_heap_B=33374208
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=246626963
+mem_heap_B=34320384
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=258853910
+mem_heap_B=34996224
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=278166885
+mem_heap_B=36077568
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=288375070
+mem_heap_B=36618240
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 36618240 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n1: 7942144 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 7942144 0x5341C17: mmap (mmap64.c:46)
+   n1: 7942144 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 7942144 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 7942144 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 7942144 0x52C8261: malloc (malloc.c:3321)
+       n1: 7942144 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 7942144 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 5103616 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 2838528 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=305309805
+mem_heap_B=37564416
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=322809396
+mem_heap_B=38510592
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=333606567
+mem_heap_B=39051264
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=351340659
+mem_heap_B=39997440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=364187440
+mem_heap_B=40673280
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=374226744
+mem_heap_B=41213952
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=391417848
+mem_heap_B=42160128
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=401280796
+mem_heap_B=42700800
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=421293913
+mem_heap_B=43782144
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=434107193
+mem_heap_B=44457984
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=451681354
+mem_heap_B=45404160
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=474459145
+mem_heap_B=46620672
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=495327999
+mem_heap_B=47702016
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=513050843
+mem_heap_B=48648192
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=525147001
+mem_heap_B=49324032
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=540614695
+mem_heap_B=50135040
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=550986157
+mem_heap_B=50675712
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=566338816
+mem_heap_B=51486720
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=584069245
+mem_heap_B=52432896
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=603804940
+mem_heap_B=53514240
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=614247950
+mem_heap_B=54054912
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=629449766
+mem_heap_B=54865920
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=639818454
+mem_heap_B=55406592
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=657130005
+mem_heap_B=56352768
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=667425379
+mem_heap_B=56893440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=682808418
+mem_heap_B=57704448
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=703714235
+mem_heap_B=58785792
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=721218684
+mem_heap_B=59731968
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=731810681
+mem_heap_B=60272640
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=742241707
+mem_heap_B=60813312
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=752434264
+mem_heap_B=61353984
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=762933686
+mem_heap_B=61894656
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=772876695
+mem_heap_B=62435328
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=782977417
+mem_heap_B=62976000
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=793352087
+mem_heap_B=63516672
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=803722815
+mem_heap_B=64057344
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 64057344 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 35381248 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 35381248 0x5341C17: mmap (mmap64.c:46)
+   n1: 35381248 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 35381248 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 35381248 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 35381248 0x52C8261: malloc (malloc.c:3321)
+       n1: 35381248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 35381248 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 23891968 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 11489280 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=813642632
+mem_heap_B=64598016
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=824542196
+mem_heap_B=65138688
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=834843450
+mem_heap_B=65679360
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=845382972
+mem_heap_B=66220032
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=855456364
+mem_heap_B=66760704
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=865231322
+mem_heap_B=67301376
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=875207275
+mem_heap_B=67842048
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=884941952
+mem_heap_B=68382720
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=895181311
+mem_heap_B=68923392
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=905789315
+mem_heap_B=69464064
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 69464064 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 40787968 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 40787968 0x5341C17: mmap (mmap64.c:46)
+   n1: 40787968 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 40787968 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 40787968 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 40787968 0x52C8261: malloc (malloc.c:3321)
+       n1: 40787968 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 40787968 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 27676672 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 13111296 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=916645309
+mem_heap_B=70004736
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=927387036
+mem_heap_B=70545408
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=937978297
+mem_heap_B=71086080
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=947972908
+mem_heap_B=71626752
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=958612835
+mem_heap_B=72167424
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=968506351
+mem_heap_B=72708096
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=978958459
+mem_heap_B=73248768
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=989154527
+mem_heap_B=73789440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=999632004
+mem_heap_B=74330112
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=1009700631
+mem_heap_B=74870784
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 74870784 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 46194688 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 46194688 0x5341C17: mmap (mmap64.c:46)
+   n1: 46194688 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 46194688 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 46194688 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 46194688 0x52C8261: malloc (malloc.c:3321)
+       n1: 46194688 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 46194688 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 31055872 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 15138816 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=77
+#-----------
+time=1020188707
+mem_heap_B=75411456
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=1030499619
+mem_heap_B=75952128
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=1040441997
+mem_heap_B=76492800
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=1051036258
+mem_heap_B=77033472
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=1060862678
+mem_heap_B=77574144
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=1070974030
+mem_heap_B=78114816
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=1080822915
+mem_heap_B=78655488
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=1090823612
+mem_heap_B=79196160
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=1100604129
+mem_heap_B=79736832
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=1110777289
+mem_heap_B=80277504
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 80277504 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 51601408 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 51601408 0x5341C17: mmap (mmap64.c:46)
+   n1: 51601408 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 51601408 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 51601408 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 51601408 0x52C8261: malloc (malloc.c:3321)
+       n1: 51601408 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 51601408 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 34435072 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 17166336 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=87
+#-----------
+time=1120834782
+mem_heap_B=80818176
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=1131255149
+mem_heap_B=81358848
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=1141406749
+mem_heap_B=81899520
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=1151826227
+mem_heap_B=82440192
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=1162400529
+mem_heap_B=82980864
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=1172463109
+mem_heap_B=83521536
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=1182136480
+mem_heap_B=84062208
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=1191953059
+mem_heap_B=84602880
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=95
+#-----------
+time=1201855988
+mem_heap_B=85143552
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=96
+#-----------
+time=1211634163
+mem_heap_B=85684224
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 85684224 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 57008128 0x5341C17: __mmap64 (mmap64.c:58)
+  n1: 57008128 0x5341C17: mmap (mmap64.c:46)
+   n1: 57008128 0x52C4E61: sysmalloc_mmap_fallback.constprop.0 (malloc.c:2526)
+    n1: 57008128 0x52C6335: sysmalloc (malloc.c:2752)
+     n1: 57008128 0x52C78DC: _int_malloc (malloc.c:4407)
+      n1: 57008128 0x52C8261: malloc (malloc.c:3321)
+       n1: 57008128 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+        n2: 57008128 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 37679104 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 19329024 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+ n1: 19996672 0x4026CB7: __mmap64 (mmap64.c:58)
+  n5: 19996672 0x4026CB7: mmap (mmap64.c:46)
+   n1: 6828032 0x4009F1D: _dl_map_segment (dl-map-segments.h:37)
+    n1: 6828032 0x4009F1D: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F1D: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 6828032 0x4009F75: _dl_map_segment (dl-map-segments.h:45)
+    n1: 6828032 0x4009F75: _dl_map_segments (dl-map-segments.h:102)
+     n1: 6828032 0x4009F75: _dl_map_object_from_fd (dl-load.c:1258)
+      n1: 6828032 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 6828032 0x4003494: openaux (dl-deps.c:64)
+        n1: 6828032 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 6828032 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 6828032 0x402339F: dl_main (rtld.c:1970)
+           n1: 6828032 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 6828032 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 6828032 0x4021597: _dl_start (rtld.c:596)
+              n1: 6828032 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 6828032 0x1: ???
+                n1: 6828032 0x1FFF000632: ???
+                 n0: 6828032 0x1FFF00063C: ???
+   n1: 3227648 0x4008F1B: _dl_map_segment (dl-map-segments.h:29)
+    n1: 3227648 0x4008F1B: _dl_map_segments (dl-map-segments.h:102)
+     n1: 3227648 0x4008F1B: _dl_map_object_from_fd (dl-load.c:1258)
+      n2: 3227648 0x400A600: _dl_map_object (dl-load.c:2327)
+       n1: 3207168 0x4003494: openaux (dl-deps.c:64)
+        n1: 3207168 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+         n1: 3207168 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+          n1: 3207168 0x402339F: dl_main (rtld.c:1970)
+           n1: 3207168 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+            n1: 3207168 0x4021597: _dl_start_final (rtld.c:507)
+             n1: 3207168 0x4021597: _dl_start (rtld.c:596)
+              n1: 3207168 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 3207168 0x1: ???
+                n1: 3207168 0x1FFF000632: ???
+                 n0: 3207168 0x1FFF00063C: ???
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n1: 3014656 0x4009098: _dl_map_segments (dl-map-segments.h:140)
+    n1: 3014656 0x4009098: _dl_map_object_from_fd (dl-load.c:1258)
+     n2: 3014656 0x400A600: _dl_map_object (dl-load.c:2327)
+      n1: 2998272 0x4003494: openaux (dl-deps.c:64)
+       n1: 2998272 0x401D349: _dl_catch_exception (dl-error-skeleton.c:208)
+        n1: 2998272 0x4003C7B: _dl_map_object_deps (dl-deps.c:248)
+         n1: 2998272 0x402339F: dl_main (rtld.c:1970)
+          n1: 2998272 0x401F83B: _dl_sysdep_start (dl-sysdep.c:256)
+           n1: 2998272 0x4021597: _dl_start_final (rtld.c:507)
+            n1: 2998272 0x4021597: _dl_start (rtld.c:596)
+             n1: 2998272 0x4020297: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+              n1: 2998272 0x1: ???
+               n1: 2998272 0x1FFF000632: ???
+                n0: 2998272 0x1FFF00063C: ???
+      n0: 16384 in 1 place, below massif's threshold (1.00%)
+   n0: 98304 in 3 places, all below massif's threshold (1.00%)
+ n1: 8380416 0x533DA1B: brk (brk.c:36)
+  n1: 8380416 0x533DAE3: __sbrk (sbrk.c:74)
+   n1: 8380416 0x533DAE3: sbrk (sbrk.c:36)
+    n1: 8380416 0x52C55C5: __glibc_morecore (morecore.c:29)
+     n1: 8380416 0x52C65F8: sysmalloc (malloc.c:2727)
+      n2: 8380416 0x52C78DC: _int_malloc (malloc.c:4407)
+       n1: 8245248 0x52C8261: malloc (malloc.c:3321)
+        n2: 8245248 0x4AB2627: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+         n2: 7974912 0x10BE68: std::pair<std::_Rb_tree_iterator<std::tuple<int, int, int, int, int, int> >, bool> std::_Rb_tree<std::tuple<int, int, int, int, int, int>, std::tuple<int, int, int, int, int, int>, std::_Identity<std::tuple<int, int, int, int, int, int> >, std::less<std::tuple<int, int, int, int, int, int> >, std::allocator<std::tuple<int, int, int, int, int, int> > >::_M_insert_unique<std::tuple<int, int, int, int, int, int> >(std::tuple<int, int, int, int, int, int>&&) (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 5406720 0x10B54A: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+          n0: 2568192 0x10B492: main (in /home/imagawa/LMNtal-to-C-for-disconnected-graph/example/2023cpp/time-point/mem_set)
+         n0: 270336 in 2 places, all below massif's threshold (1.00%)
+       n0: 135168 in 1 place, below massif's threshold (1.00%)
+ n0: 299008 in 2 places, all below massif's threshold (1.00%)

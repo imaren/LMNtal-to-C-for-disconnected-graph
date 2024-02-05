@@ -1,0 +1,1377 @@
+desc: (none)
+cmd: slim --no-dump tmp.il
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=83866489
+mem_heap_B=1549074
+mem_heap_extra_B=66702
+mem_stacks_B=0
+heap_tree=peak
+n6: 1549074 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1037888 0x1270B5: allocate (new_allocator.h:115)
+  n1: 1037888 0x1270B5: allocate (alloc_traits.h:460)
+   n1: 1037888 0x1270B5: _M_allocate (stl_vector.h:346)
+    n1: 1037888 0x1270B5: void std::vector<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, std::allocator<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> > >::_M_realloc_insert<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> >(__gnu_cxx::__normal_iterator<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>*, std::vector<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, std::allocator<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> > > >, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&&) (vector.tcc:440)
+     n2: 1037888 0x127220: void std::vector<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, std::allocator<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> > >::emplace_back<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> >(slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&&) (vector.tcc:121)
+      n1: 1035584 0x120E6E: push_back (stl_vector.h:1204)
+       n1: 1035584 0x120E6E: il::parser::parse() (il_parser.ypp:218)
+        n1: 1035584 0x1191B5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:281)
+         n1: 1035584 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+          n1: 1035584 0x10F721: load_input_files (main.cpp:714)
+           n0: 1035584 0x10F721: main (main.cpp:799)
+      n0: 2304 in 2 places, all below massif's threshold (1.00%)
+ n1: 285696 0x126EE6: allocate (new_allocator.h:115)
+  n1: 285696 0x126EE6: allocate (alloc_traits.h:460)
+   n1: 285696 0x126EE6: _M_allocate (stl_vector.h:346)
+    n1: 285696 0x126EE6: void std::vector<Instruction, std::allocator<Instruction> >::_M_realloc_insert<Instruction>(__gnu_cxx::__normal_iterator<Instruction*, std::vector<Instruction, std::allocator<Instruction> > >, Instruction&&) (vector.tcc:440)
+     n1: 285696 0x1204F0: emplace_back<Instruction> (vector.tcc:121)
+      n1: 285696 0x1204F0: push_back (stl_vector.h:1204)
+       n1: 285696 0x1204F0: il::parser::parse() (il_parser.ypp:186)
+        n1: 285696 0x1191B5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:281)
+         n1: 285696 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+          n1: 285696 0x10F721: load_input_files (main.cpp:714)
+           n0: 285696 0x10F721: main (main.cpp:799)
+ n1: 73728 0x4EAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x2: ???
+       n1: 73728 0x1FFF000676: ???
+        n1: 73728 0x1FFF00067B: ???
+         n0: 73728 0x1FFF000685: ???
+ n2: 68800 0x189C9C: lmn_realloc(void*, unsigned long) (alloc.cpp:150)
+  n1: 65536 0x11B3C2: expand_byte_sec (byte_encoder.hpp:109)
+   n1: 65536 0x11B3C2: write_at<long int> (byte_encoder.hpp:157)
+    n1: 65536 0x11B3C2: write<long int> (byte_encoder.hpp:143)
+     n1: 65536 0x11B3C2: write_forward<long int> (byte_encoder.hpp:150)
+      n1: 65536 0x11B3C2: load (byte_encoder.hpp:168)
+       n1: 65536 0x11B3C2: operator()<const il::functor::integer&> (byte_encoder.hpp:116)
+        n1: 65536 0x11B3C2: visit_impl<3, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:141)
+         n1: 65536 0x11B3C2: visit_impl<2, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+          n1: 65536 0x11B3C2: visit_impl<1, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+           n1: 65536 0x11B3C2: visit_impl<0, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+            n1: 65536 0x11B3C2: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>(ByteEncoder::loader&&, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&) (variant.hpp:150)
+             n1: 65536 0x11CFEE: load (byte_encoder.hpp:205)
+              n1: 65536 0x11CFEE: operator()<const il::instr_arg::functor&> (byte_encoder.hpp:116)
+               n1: 65536 0x11CFEE: visit_impl<5, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:141)
+                n1: 65536 0x11CFEE: visit_impl<4, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                 n1: 65536 0x11CFEE: visit_impl<3, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                  n1: 65536 0x11CFEE: decltype ({parm#1}((get<2ul>)((forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2})))) slim::element::visit_impl<2ul, ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&, std::tuple<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, decltype(nullptr)>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:142)
+                   n1: 65536 0x11D253: visit_impl<1, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                    n1: 65536 0x11D253: visit_impl<0, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                     n1: 65536 0x11D253: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:150)
+                      n1: 65536 0x11D472: load (byte_encoder.hpp:131)
+                       n1: 65536 0x11D472: ByteEncoder::load(InstBlock const&) (byte_encoder.hpp:88)
+                        n1: 65536 0x118393: ByteEncoder (byte_encoder.hpp:72)
+                         n1: 65536 0x118393: encode_rule_ast (byte_encoder.hpp:65)
+                          n1: 65536 0x118393: load_rule(Rule const&) (load.cpp:118)
+                           n1: 65536 0x118670: load_ruleset (load.cpp:125)
+                            n1: 65536 0x118670: load_il(IL const&) (load.cpp:144)
+                             n1: 65536 0x1191C5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:284)
+                              n1: 65536 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+                               n1: 65536 0x10F721: load_input_files (main.cpp:714)
+                                n0: 65536 0x10F721: main (main.cpp:799)
+  n0: 3264 in 4 places, all below massif's threshold (1.00%)
+ n0: 44562 in 38 places, all below massif's threshold (1.00%)
+ n1: 38400 0x1278F0: allocate (new_allocator.h:115)
+  n1: 38400 0x1278F0: allocate (alloc_traits.h:460)
+   n1: 38400 0x1278F0: _M_allocate (stl_vector.h:346)
+    n1: 38400 0x1278F0: _M_allocate_and_copy<const il::parser::stack_symbol_type*> (stl_vector.h:1511)
+     n1: 38400 0x1278F0: std::vector<il::parser::stack_symbol_type, std::allocator<il::parser::stack_symbol_type> >::reserve(unsigned long) (vector.tcc:85)
+      n1: 38400 0x11E5E1: stack (stack.hh:57)
+       n1: 38400 0x11E5E1: il::parser::parser(il::lexer*, std::unique_ptr<IL, std::default_delete<IL> >*, std::unique_ptr<Rule, std::default_delete<Rule> >*) (il_parser.cpp:158)
+        n1: 38400 0x1191AC: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:279)
+         n1: 38400 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+          n1: 38400 0x10F721: load_input_files (main.cpp:714)
+           n0: 38400 0x10F721: main (main.cpp:799)
+#-----------
+snapshot=2
+#-----------
+time=1206285278
+mem_heap_B=496979
+mem_heap_extra_B=55501
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2757621324
+mem_heap_B=525874
+mem_heap_extra_B=68214
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3722062652
+mem_heap_B=538944
+mem_heap_extra_B=74568
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=4935544620
+mem_heap_B=558141
+mem_heap_extra_B=81899
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=6323463063
+mem_heap_B=571758
+mem_heap_extra_B=88546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=6977603942
+mem_heap_B=580443
+mem_heap_extra_B=91725
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=8416711679
+mem_heap_B=595698
+mem_heap_extra_B=98046
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=9457647544
+mem_heap_B=606090
+mem_heap_extra_B=102726
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=10481520274
+mem_heap_B=614413
+mem_heap_extra_B=107235
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=11164101267
+mem_heap_B=622293
+mem_heap_extra_B=110651
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=12301736231
+mem_heap_B=630952
+mem_heap_extra_B=115368
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=13098082341
+mem_heap_B=639395
+mem_heap_extra_B=118861
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=14008191828
+mem_heap_B=647140
+mem_heap_extra_B=122516
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=15216931557
+mem_heap_B=665816
+mem_heap_extra_B=127096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=16786867137
+mem_heap_B=676234
+mem_heap_extra_B=132358
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=17768076789
+mem_heap_B=682488
+mem_heap_extra_B=135824
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=19141771226
+mem_heap_B=696655
+mem_heap_extra_B=140465
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=19730499558
+mem_heap_B=700618
+mem_heap_extra_B=142366
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=21104195481
+mem_heap_B=711796
+mem_heap_extra_B=147060
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=22281647998
+mem_heap_B=701500
+mem_heap_extra_B=150572
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=23655342703
+mem_heap_B=728892
+mem_heap_extra_B=155028
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=24440313032
+mem_heap_B=733575
+mem_heap_extra_B=157409
+mem_stacks_B=0
+heap_tree=detailed
+n12: 733575 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 288268 0x189C3D: lmn_malloc(unsigned long) (alloc.cpp:138)
+  n1: 143176 0x19188D: memory_pool_malloc(memory_pool_*) (memory_pool.cpp:74)
+   n3: 143176 0x189AF7: lmn_new_atom(unsigned short) (alloc.cpp:73)
+    n1: 64752 0x16314F: lmn_copy_satom(LmnSymbolAtom*) (atom.cpp:219)
+     n1: 64752 0x1631C2: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:236)
+      n1: 64752 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+       n1: 64752 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+        n1: 64752 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+         n1: 64752 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+          n1: 64752 0x17EF6F: react_ruleset (task.cpp:361)
+           n1: 64752 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+            n1: 64752 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+             n1: 64752 0x10F94C: slim_exec (main.cpp:737)
+              n0: 64752 0x10F94C: main (main.cpp:810)
+    n1: 61096 0x172746: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1712)
+     n1: 61096 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 61096 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 41856 0x17EF6F: react_ruleset (task.cpp:361)
+        n1: 41856 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+         n1: 41856 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+          n1: 41856 0x10F94C: slim_exec (main.cpp:737)
+           n0: 41856 0x10F94C: main (main.cpp:810)
+       n1: 19240 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 19240 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 19240 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 19240 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 19240 0x10F94C: slim_exec (main.cpp:737)
+            n0: 19240 0x10F94C: main (main.cpp:810)
+    n1: 17328 0x166E9E: lmn_hyperlink_new() (hyperlink.cpp:105)
+     n1: 17328 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+      n1: 17328 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 17328 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 17328 0x17EF6F: react_ruleset (task.cpp:361)
+         n1: 17328 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+          n1: 17328 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+           n1: 17328 0x10F94C: slim_exec (main.cpp:737)
+            n0: 17328 0x10F94C: main (main.cpp:810)
+  n1: 130304 0x194041: st_add_direct_inner (st.cpp:346)
+   n2: 130304 0x194041: st_add_direct(st_table*, unsigned long, unsigned long) (st.cpp:350)
+    n2: 65152 0x169689: lmn_intern(char const*) (symbol.cpp:106)
+     n1: 61856 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 61856 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 61856 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 61856 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 61856 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 61856 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 61856 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 61856 0x10F94C: slim_exec (main.cpp:737)
+             n0: 61856 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+    n2: 65152 0x16969C: lmn_intern(char const*) (symbol.cpp:107)
+     n1: 61856 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 61856 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 61856 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 61856 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 61856 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 61856 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 61856 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 61856 0x10F94C: slim_exec (main.cpp:737)
+             n0: 61856 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+  n0: 14788 in 19 places, all below massif's threshold (1.00%)
+ n1: 77320 0x14F345: allocate (new_allocator.h:115)
+  n1: 77320 0x14F345: allocate (alloc_traits.h:460)
+   n1: 77320 0x14F345: _M_get_node (stl_tree.h:584)
+    n1: 77320 0x14F345: _M_create_node<unsigned int const&> (stl_tree.h:634)
+     n1: 77320 0x14F345: operator()<unsigned int const&> (stl_tree.h:552)
+      n1: 77320 0x14F345: _M_insert_<unsigned int const&, std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_Alloc_node> (stl_tree.h:1816)
+       n1: 77320 0x14F345: std::pair<std::_Rb_tree_iterator<unsigned int>, bool> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique<unsigned int const&>(unsigned int const&) (stl_tree.h:2159)
+        n1: 77320 0x17E165: insert (stl_set.h:512)
+         n1: 77320 0x17E165: add_history (rule.hpp:120)
+          n1: 77320 0x17E165: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2778)
+           n1: 77320 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+            n1: 77320 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+             n1: 77320 0x17F1DB: react_ruleset (task.cpp:361)
+              n1: 77320 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+               n1: 77320 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                n1: 77320 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                 n1: 77320 0x10F94C: slim_exec (main.cpp:737)
+                  n0: 77320 0x10F94C: main (main.cpp:810)
+ n1: 73728 0x4EAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x2: ???
+       n1: 73728 0x1FFF000676: ???
+        n1: 73728 0x1FFF00067B: ???
+         n0: 73728 0x1FFF000685: ???
+ n2: 72896 0x189C9C: lmn_realloc(void*, unsigned long) (alloc.cpp:150)
+  n1: 65536 0x11B3C2: expand_byte_sec (byte_encoder.hpp:109)
+   n1: 65536 0x11B3C2: write_at<long int> (byte_encoder.hpp:157)
+    n1: 65536 0x11B3C2: write<long int> (byte_encoder.hpp:143)
+     n1: 65536 0x11B3C2: write_forward<long int> (byte_encoder.hpp:150)
+      n1: 65536 0x11B3C2: load (byte_encoder.hpp:168)
+       n1: 65536 0x11B3C2: operator()<const il::functor::integer&> (byte_encoder.hpp:116)
+        n1: 65536 0x11B3C2: visit_impl<3, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:141)
+         n1: 65536 0x11B3C2: visit_impl<2, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+          n1: 65536 0x11B3C2: visit_impl<1, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+           n1: 65536 0x11B3C2: visit_impl<0, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+            n1: 65536 0x11B3C2: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>(ByteEncoder::loader&&, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&) (variant.hpp:150)
+             n1: 65536 0x11CFEE: load (byte_encoder.hpp:205)
+              n1: 65536 0x11CFEE: operator()<const il::instr_arg::functor&> (byte_encoder.hpp:116)
+               n1: 65536 0x11CFEE: visit_impl<5, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:141)
+                n1: 65536 0x11CFEE: visit_impl<4, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                 n1: 65536 0x11CFEE: visit_impl<3, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                  n1: 65536 0x11CFEE: decltype ({parm#1}((get<2ul>)((forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2})))) slim::element::visit_impl<2ul, ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&, std::tuple<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, decltype(nullptr)>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:142)
+                   n1: 65536 0x11D253: visit_impl<1, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                    n1: 65536 0x11D253: visit_impl<0, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                     n1: 65536 0x11D253: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:150)
+                      n1: 65536 0x11D472: load (byte_encoder.hpp:131)
+                       n1: 65536 0x11D472: ByteEncoder::load(InstBlock const&) (byte_encoder.hpp:88)
+                        n1: 65536 0x118393: ByteEncoder (byte_encoder.hpp:72)
+                         n1: 65536 0x118393: encode_rule_ast (byte_encoder.hpp:65)
+                          n1: 65536 0x118393: load_rule(Rule const&) (load.cpp:118)
+                           n1: 65536 0x118670: load_ruleset (load.cpp:125)
+                            n1: 65536 0x118670: load_il(IL const&) (load.cpp:144)
+                             n1: 65536 0x1191C5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:284)
+                              n1: 65536 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+                               n1: 65536 0x10F721: load_input_files (main.cpp:714)
+                                n0: 65536 0x10F721: main (main.cpp:799)
+  n0: 7360 in 5 places, all below massif's threshold (1.00%)
+ n1: 71872 0x1677A1: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:308)
+  n1: 71872 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+   n1: 71872 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+    n1: 71872 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+     n1: 71872 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 71872 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 70528 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 70528 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 70528 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 70528 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 70528 0x10F94C: slim_exec (main.cpp:737)
+            n0: 70528 0x10F94C: main (main.cpp:810)
+       n0: 1344 in 1 place, below massif's threshold (1.00%)
+ n1: 48351 0x56CB58E: strdup (strdup.c:42)
+  n2: 48351 0x169666: lmn_intern(char const*) (symbol.cpp:103)
+   n1: 47168 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+    n1: 47168 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+     n1: 47168 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+      n1: 47168 0x17F1DB: react_ruleset (task.cpp:361)
+       n1: 47168 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+        n1: 47168 0x17F4F8: mem_oriented_loop (task.cpp:262)
+         n1: 47168 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+          n1: 47168 0x10F94C: slim_exec (main.cpp:737)
+           n0: 47168 0x10F94C: main (main.cpp:810)
+   n0: 1183 in 11 places, all below massif's threshold (1.00%)
+ n1: 23936 0x19126C: hashset_extend (internal_hash.cpp:221)
+  n1: 23936 0x19126C: HashSet::add(unsigned long) (internal_hash.cpp:243)
+   n1: 23936 0x1671EB: HyperLink::unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:462)
+    n1: 23936 0x16775C: HyperLink::lmn_unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:491)
+     n1: 23936 0x1677EC: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:311)
+      n1: 23936 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+       n1: 23936 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+        n1: 23936 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+         n1: 23936 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+          n2: 23936 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+           n1: 17120 0x17F1DB: react_ruleset (task.cpp:361)
+            n1: 17120 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+             n1: 17120 0x17F4F8: mem_oriented_loop (task.cpp:262)
+              n1: 17120 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+               n1: 17120 0x10F94C: slim_exec (main.cpp:737)
+                n0: 17120 0x10F94C: main (main.cpp:810)
+           n0: 6816 in 1 place, below massif's threshold (1.00%)
+ n1: 19200 0x166EDA: lmn_hyperlink_new() (hyperlink.cpp:107)
+  n1: 19200 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+   n1: 19200 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+    n1: 19200 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+     n1: 19200 0x17EF6F: react_ruleset (task.cpp:361)
+      n1: 19200 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+       n1: 19200 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+        n1: 19200 0x10F94C: slim_exec (main.cpp:737)
+         n0: 19200 0x10F94C: main (main.cpp:810)
+ n1: 16512 0x183895: allocate (new_allocator.h:115)
+  n1: 16512 0x183895: allocate (alloc_traits.h:460)
+   n1: 16512 0x183895: _M_allocate (stl_vector.h:346)
+    n1: 16512 0x183895: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::_M_realloc_insert<std::function<LmnRegister ()> >(__gnu_cxx::__normal_iterator<std::function<LmnRegister ()>*, std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > > >, std::function<LmnRegister ()>&&) (vector.tcc:440)
+     n2: 16512 0x18394C: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::emplace_back<std::function<LmnRegister ()> >(std::function<LmnRegister ()>&&) (vector.tcc:121)
+      n1: 16384 0x16E9B1: push_back (stl_vector.h:1204)
+       n1: 16384 0x16E9B1: operator= (stl_iterator.h:622)
+        n1: 16384 0x16E9B1: transform<slim::element::range_remove_if<slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)>, AtomListEntry::const_iterator>::remove_if_iterator, std::back_insert_iterator<std::vector<std::function<LmnRegister()> > >, slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)> > (stl_algo.h:4313)
+         n1: 16384 0x16E9B1: slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:775)
+          n1: 16384 0x16F32C: slim::vm::interpreter::findatom_through_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:852)
+           n1: 16384 0x170FB5: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1402)
+            n1: 16384 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+             n1: 16384 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+              n1: 16384 0x17F1DB: react_ruleset (task.cpp:361)
+               n1: 16384 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+                n1: 16384 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                 n1: 16384 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                  n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+                   n0: 16384 0x10F94C: main (main.cpp:810)
+      n0: 128 in 1 place, below massif's threshold (1.00%)
+ n1: 16384 0x17F3AE: allocate (new_allocator.h:115)
+  n1: 16384 0x17F3AE: allocate (alloc_traits.h:460)
+   n1: 16384 0x17F3AE: _M_allocate (stl_vector.h:346)
+    n1: 16384 0x17F3AE: _M_create_storage (stl_vector.h:361)
+     n1: 16384 0x17F3AE: _Vector_base (stl_vector.h:305)
+      n1: 16384 0x17F3AE: vector (stl_vector.h:511)
+       n1: 16384 0x17F3AE: RuleContext (react_context.hpp:100)
+        n1: 16384 0x17F3AE: LmnReactCxt (react_context.hpp:170)
+         n1: 16384 0x17F3AE: MemReactContext (react_context.hpp:201)
+          n1: 16384 0x17F3AE: make_unique<MemReactContext, LmnMembrane*&> (util.h:218)
+           n1: 16384 0x17F3AE: Task::lmn_run(Vector*) (task.cpp:183)
+            n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+             n0: 16384 0x10F94C: main (main.cpp:810)
+ n0: 12724 in 80 places, all below massif's threshold (1.00%)
+ n1: 12384 0x190ABD: allocate (new_allocator.h:115)
+  n1: 12384 0x190ABD: allocate (alloc_traits.h:460)
+   n1: 12384 0x190ABD: _M_get_node (stl_tree.h:584)
+    n1: 12384 0x190ABD: _M_create_node<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:634)
+     n1: 12384 0x190ABD: operator()<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:552)
+      n1: 12384 0x190ABD: std::_Rb_tree_iterator<std::pair<LmnInstruction const, InstrSpec> > std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_M_insert_<std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node&) (stl_tree.h:1816)
+       n1: 12384 0x18EBDF: _M_insert_unique_<const std::pair<const LmnInstruction, InstrSpec>&, std::_Rb_tree<LmnInstruction, std::pair<const LmnInstruction, InstrSpec>, std::_Select1st<std::pair<const LmnInstruction, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<const LmnInstruction, InstrSpec> > >::_Alloc_node> (stl_tree.h:2267)
+        n1: 12384 0x18EBDF: _M_insert_range_unique<const std::pair<const LmnInstruction, InstrSpec>*> (stl_tree.h:1109)
+         n1: 12384 0x18EBDF: map (stl_map.h:232)
+          n1: 12384 0x18EBDF: __static_initialization_and_destruction_0(int, int) (instruction.cpp:41)
+           n1: 12384 0x1908E7: _GLOBAL__sub_I_instr_spec (instruction.cpp:283)
+            n1: 12384 0x19DA5C: __libc_csu_init (in /usr/local/bin/slim)
+             n1: 12384 0x564CE1B: __libc_start_main@@GLIBC_2.34 (libc-start.c:375)
+              n0: 12384 0x10E9A9: (below main) (in /usr/local/bin/slim)
+#-----------
+snapshot=24
+#-----------
+time=25421525512
+mem_heap_B=741117
+mem_heap_extra_B=160595
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=26402741279
+mem_heap_B=745545
+mem_heap_extra_B=163271
+mem_stacks_B=0
+heap_tree=detailed
+n12: 745545 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 294156 0x189C3D: lmn_malloc(unsigned long) (alloc.cpp:138)
+  n1: 143176 0x19188D: memory_pool_malloc(memory_pool_*) (memory_pool.cpp:74)
+   n3: 143176 0x189AF7: lmn_new_atom(unsigned short) (alloc.cpp:73)
+    n1: 64752 0x16314F: lmn_copy_satom(LmnSymbolAtom*) (atom.cpp:219)
+     n1: 64752 0x1631C2: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:236)
+      n1: 64752 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+       n1: 64752 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+        n1: 64752 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+         n1: 64752 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+          n1: 64752 0x17EF6F: react_ruleset (task.cpp:361)
+           n1: 64752 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+            n1: 64752 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+             n1: 64752 0x10F94C: slim_exec (main.cpp:737)
+              n0: 64752 0x10F94C: main (main.cpp:810)
+    n1: 61096 0x172746: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1712)
+     n1: 61096 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 61096 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 41856 0x17EF6F: react_ruleset (task.cpp:361)
+        n1: 41856 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+         n1: 41856 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+          n1: 41856 0x10F94C: slim_exec (main.cpp:737)
+           n0: 41856 0x10F94C: main (main.cpp:810)
+       n1: 19240 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 19240 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 19240 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 19240 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 19240 0x10F94C: slim_exec (main.cpp:737)
+            n0: 19240 0x10F94C: main (main.cpp:810)
+    n1: 17328 0x166E9E: lmn_hyperlink_new() (hyperlink.cpp:105)
+     n1: 17328 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+      n1: 17328 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 17328 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 17328 0x17EF6F: react_ruleset (task.cpp:361)
+         n1: 17328 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+          n1: 17328 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+           n1: 17328 0x10F94C: slim_exec (main.cpp:737)
+            n0: 17328 0x10F94C: main (main.cpp:810)
+  n1: 136192 0x194041: st_add_direct_inner (st.cpp:346)
+   n2: 136192 0x194041: st_add_direct(st_table*, unsigned long, unsigned long) (st.cpp:350)
+    n2: 68096 0x169689: lmn_intern(char const*) (symbol.cpp:106)
+     n1: 64800 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 64800 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 64800 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 64800 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 64800 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 64800 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 64800 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 64800 0x10F94C: slim_exec (main.cpp:737)
+             n0: 64800 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+    n2: 68096 0x16969C: lmn_intern(char const*) (symbol.cpp:107)
+     n1: 64800 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 64800 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 64800 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 64800 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 64800 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 64800 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 64800 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 64800 0x10F94C: slim_exec (main.cpp:737)
+             n0: 64800 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+  n0: 14788 in 19 places, all below massif's threshold (1.00%)
+ n1: 81000 0x14F345: allocate (new_allocator.h:115)
+  n1: 81000 0x14F345: allocate (alloc_traits.h:460)
+   n1: 81000 0x14F345: _M_get_node (stl_tree.h:584)
+    n1: 81000 0x14F345: _M_create_node<unsigned int const&> (stl_tree.h:634)
+     n1: 81000 0x14F345: operator()<unsigned int const&> (stl_tree.h:552)
+      n1: 81000 0x14F345: _M_insert_<unsigned int const&, std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_Alloc_node> (stl_tree.h:1816)
+       n1: 81000 0x14F345: std::pair<std::_Rb_tree_iterator<unsigned int>, bool> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique<unsigned int const&>(unsigned int const&) (stl_tree.h:2159)
+        n1: 81000 0x17E165: insert (stl_set.h:512)
+         n1: 81000 0x17E165: add_history (rule.hpp:120)
+          n1: 81000 0x17E165: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2778)
+           n1: 81000 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+            n1: 81000 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+             n1: 81000 0x17F1DB: react_ruleset (task.cpp:361)
+              n1: 81000 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+               n1: 81000 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                n1: 81000 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                 n1: 81000 0x10F94C: slim_exec (main.cpp:737)
+                  n0: 81000 0x10F94C: main (main.cpp:810)
+ n1: 73728 0x4EAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x2: ???
+       n1: 73728 0x1FFF000676: ???
+        n1: 73728 0x1FFF00067B: ???
+         n0: 73728 0x1FFF000685: ???
+ n2: 72896 0x189C9C: lmn_realloc(void*, unsigned long) (alloc.cpp:150)
+  n1: 65536 0x11B3C2: expand_byte_sec (byte_encoder.hpp:109)
+   n1: 65536 0x11B3C2: write_at<long int> (byte_encoder.hpp:157)
+    n1: 65536 0x11B3C2: write<long int> (byte_encoder.hpp:143)
+     n1: 65536 0x11B3C2: write_forward<long int> (byte_encoder.hpp:150)
+      n1: 65536 0x11B3C2: load (byte_encoder.hpp:168)
+       n1: 65536 0x11B3C2: operator()<const il::functor::integer&> (byte_encoder.hpp:116)
+        n1: 65536 0x11B3C2: visit_impl<3, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:141)
+         n1: 65536 0x11B3C2: visit_impl<2, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+          n1: 65536 0x11B3C2: visit_impl<1, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+           n1: 65536 0x11B3C2: visit_impl<0, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+            n1: 65536 0x11B3C2: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>(ByteEncoder::loader&&, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&) (variant.hpp:150)
+             n1: 65536 0x11CFEE: load (byte_encoder.hpp:205)
+              n1: 65536 0x11CFEE: operator()<const il::instr_arg::functor&> (byte_encoder.hpp:116)
+               n1: 65536 0x11CFEE: visit_impl<5, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:141)
+                n1: 65536 0x11CFEE: visit_impl<4, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                 n1: 65536 0x11CFEE: visit_impl<3, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                  n1: 65536 0x11CFEE: decltype ({parm#1}((get<2ul>)((forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2})))) slim::element::visit_impl<2ul, ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&, std::tuple<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, decltype(nullptr)>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:142)
+                   n1: 65536 0x11D253: visit_impl<1, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                    n1: 65536 0x11D253: visit_impl<0, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                     n1: 65536 0x11D253: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:150)
+                      n1: 65536 0x11D472: load (byte_encoder.hpp:131)
+                       n1: 65536 0x11D472: ByteEncoder::load(InstBlock const&) (byte_encoder.hpp:88)
+                        n1: 65536 0x118393: ByteEncoder (byte_encoder.hpp:72)
+                         n1: 65536 0x118393: encode_rule_ast (byte_encoder.hpp:65)
+                          n1: 65536 0x118393: load_rule(Rule const&) (load.cpp:118)
+                           n1: 65536 0x118670: load_ruleset (load.cpp:125)
+                            n1: 65536 0x118670: load_il(IL const&) (load.cpp:144)
+                             n1: 65536 0x1191C5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:284)
+                              n1: 65536 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+                               n1: 65536 0x10F721: load_input_files (main.cpp:714)
+                                n0: 65536 0x10F721: main (main.cpp:799)
+  n0: 7360 in 5 places, all below massif's threshold (1.00%)
+ n1: 72064 0x1677A1: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:308)
+  n1: 72064 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+   n1: 72064 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+    n1: 72064 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+     n1: 72064 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 72064 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 71168 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 71168 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 71168 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 71168 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 71168 0x10F94C: slim_exec (main.cpp:737)
+            n0: 71168 0x10F94C: main (main.cpp:810)
+       n0: 896 in 1 place, below massif's threshold (1.00%)
+ n1: 50561 0x56CB58E: strdup (strdup.c:42)
+  n2: 50561 0x169666: lmn_intern(char const*) (symbol.cpp:103)
+   n1: 49378 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+    n1: 49378 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+     n1: 49378 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+      n1: 49378 0x17F1DB: react_ruleset (task.cpp:361)
+       n1: 49378 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+        n1: 49378 0x17F4F8: mem_oriented_loop (task.cpp:262)
+         n1: 49378 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+          n1: 49378 0x10F94C: slim_exec (main.cpp:737)
+           n0: 49378 0x10F94C: main (main.cpp:810)
+   n0: 1183 in 11 places, all below massif's threshold (1.00%)
+ n1: 24032 0x19126C: hashset_extend (internal_hash.cpp:221)
+  n1: 24032 0x19126C: HashSet::add(unsigned long) (internal_hash.cpp:243)
+   n1: 24032 0x1671EB: HyperLink::unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:462)
+    n1: 24032 0x16775C: HyperLink::lmn_unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:491)
+     n1: 24032 0x1677EC: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:311)
+      n1: 24032 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+       n1: 24032 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+        n1: 24032 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+         n1: 24032 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+          n2: 24032 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+           n1: 17248 0x17F1DB: react_ruleset (task.cpp:361)
+            n1: 17248 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+             n1: 17248 0x17F4F8: mem_oriented_loop (task.cpp:262)
+              n1: 17248 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+               n1: 17248 0x10F94C: slim_exec (main.cpp:737)
+                n0: 17248 0x10F94C: main (main.cpp:810)
+           n0: 6784 in 1 place, below massif's threshold (1.00%)
+ n1: 19200 0x166EDA: lmn_hyperlink_new() (hyperlink.cpp:107)
+  n1: 19200 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+   n1: 19200 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+    n1: 19200 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+     n1: 19200 0x17EF6F: react_ruleset (task.cpp:361)
+      n1: 19200 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+       n1: 19200 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+        n1: 19200 0x10F94C: slim_exec (main.cpp:737)
+         n0: 19200 0x10F94C: main (main.cpp:810)
+ n1: 16448 0x183895: allocate (new_allocator.h:115)
+  n1: 16448 0x183895: allocate (alloc_traits.h:460)
+   n1: 16448 0x183895: _M_allocate (stl_vector.h:346)
+    n1: 16448 0x183895: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::_M_realloc_insert<std::function<LmnRegister ()> >(__gnu_cxx::__normal_iterator<std::function<LmnRegister ()>*, std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > > >, std::function<LmnRegister ()>&&) (vector.tcc:440)
+     n2: 16448 0x18394C: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::emplace_back<std::function<LmnRegister ()> >(std::function<LmnRegister ()>&&) (vector.tcc:121)
+      n1: 16384 0x16E9B1: push_back (stl_vector.h:1204)
+       n1: 16384 0x16E9B1: operator= (stl_iterator.h:622)
+        n1: 16384 0x16E9B1: transform<slim::element::range_remove_if<slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)>, AtomListEntry::const_iterator>::remove_if_iterator, std::back_insert_iterator<std::vector<std::function<LmnRegister()> > >, slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)> > (stl_algo.h:4313)
+         n1: 16384 0x16E9B1: slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:775)
+          n1: 16384 0x16F32C: slim::vm::interpreter::findatom_through_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:852)
+           n1: 16384 0x170FB5: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1402)
+            n1: 16384 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+             n1: 16384 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+              n1: 16384 0x17F1DB: react_ruleset (task.cpp:361)
+               n1: 16384 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+                n1: 16384 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                 n1: 16384 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                  n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+                   n0: 16384 0x10F94C: main (main.cpp:810)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+ n1: 16384 0x17F3AE: allocate (new_allocator.h:115)
+  n1: 16384 0x17F3AE: allocate (alloc_traits.h:460)
+   n1: 16384 0x17F3AE: _M_allocate (stl_vector.h:346)
+    n1: 16384 0x17F3AE: _M_create_storage (stl_vector.h:361)
+     n1: 16384 0x17F3AE: _Vector_base (stl_vector.h:305)
+      n1: 16384 0x17F3AE: vector (stl_vector.h:511)
+       n1: 16384 0x17F3AE: RuleContext (react_context.hpp:100)
+        n1: 16384 0x17F3AE: LmnReactCxt (react_context.hpp:170)
+         n1: 16384 0x17F3AE: MemReactContext (react_context.hpp:201)
+          n1: 16384 0x17F3AE: make_unique<MemReactContext, LmnMembrane*&> (util.h:218)
+           n1: 16384 0x17F3AE: Task::lmn_run(Vector*) (task.cpp:183)
+            n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+             n0: 16384 0x10F94C: main (main.cpp:810)
+ n0: 12692 in 80 places, all below massif's threshold (1.00%)
+ n1: 12384 0x190ABD: allocate (new_allocator.h:115)
+  n1: 12384 0x190ABD: allocate (alloc_traits.h:460)
+   n1: 12384 0x190ABD: _M_get_node (stl_tree.h:584)
+    n1: 12384 0x190ABD: _M_create_node<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:634)
+     n1: 12384 0x190ABD: operator()<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:552)
+      n1: 12384 0x190ABD: std::_Rb_tree_iterator<std::pair<LmnInstruction const, InstrSpec> > std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_M_insert_<std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node&) (stl_tree.h:1816)
+       n1: 12384 0x18EBDF: _M_insert_unique_<const std::pair<const LmnInstruction, InstrSpec>&, std::_Rb_tree<LmnInstruction, std::pair<const LmnInstruction, InstrSpec>, std::_Select1st<std::pair<const LmnInstruction, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<const LmnInstruction, InstrSpec> > >::_Alloc_node> (stl_tree.h:2267)
+        n1: 12384 0x18EBDF: _M_insert_range_unique<const std::pair<const LmnInstruction, InstrSpec>*> (stl_tree.h:1109)
+         n1: 12384 0x18EBDF: map (stl_map.h:232)
+          n1: 12384 0x18EBDF: __static_initialization_and_destruction_0(int, int) (instruction.cpp:41)
+           n1: 12384 0x1908E7: _GLOBAL__sub_I_instr_spec (instruction.cpp:283)
+            n1: 12384 0x19DA5C: __libc_csu_init (in /usr/local/bin/slim)
+             n1: 12384 0x564CE1B: __libc_start_main@@GLIBC_2.34 (libc-start.c:375)
+              n0: 12384 0x10E9A9: (below main) (in /usr/local/bin/slim)
+#-----------
+snapshot=26
+#-----------
+time=27776441108
+mem_heap_B=753789
+mem_heap_extra_B=167283
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=28757654182
+mem_heap_B=759998
+mem_heap_extra_B=170098
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=29738866822
+mem_heap_B=765416
+mem_heap_extra_B=172728
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=30720081365
+mem_heap_B=771135
+mem_heap_extra_B=175409
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=31505051611
+mem_heap_B=776418
+mem_heap_extra_B=177534
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=32878748805
+mem_heap_B=783449
+mem_heap_extra_B=181007
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=33859962507
+mem_heap_B=789470
+mem_heap_extra_B=183522
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=34644936487
+mem_heap_B=791377
+mem_heap_extra_B=185319
+mem_stacks_B=0
+heap_tree=detailed
+n12: 791377 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 317244 0x189C3D: lmn_malloc(unsigned long) (alloc.cpp:138)
+  n1: 158720 0x194041: st_add_direct_inner (st.cpp:346)
+   n2: 158720 0x194041: st_add_direct(st_table*, unsigned long, unsigned long) (st.cpp:350)
+    n2: 79360 0x169689: lmn_intern(char const*) (symbol.cpp:106)
+     n1: 76064 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 76064 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 76064 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 76064 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 76064 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 76064 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 76064 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 76064 0x10F94C: slim_exec (main.cpp:737)
+             n0: 76064 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+    n2: 79360 0x16969C: lmn_intern(char const*) (symbol.cpp:107)
+     n1: 76064 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 76064 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 76064 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 76064 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 76064 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 76064 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 76064 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 76064 0x10F94C: slim_exec (main.cpp:737)
+             n0: 76064 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+  n1: 143696 0x19188D: memory_pool_malloc(memory_pool_*) (memory_pool.cpp:74)
+   n3: 143696 0x189AF7: lmn_new_atom(unsigned short) (alloc.cpp:73)
+    n1: 64752 0x16314F: lmn_copy_satom(LmnSymbolAtom*) (atom.cpp:219)
+     n1: 64752 0x1631C2: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:236)
+      n1: 64752 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+       n1: 64752 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+        n1: 64752 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+         n1: 64752 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+          n1: 64752 0x17EF6F: react_ruleset (task.cpp:361)
+           n1: 64752 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+            n1: 64752 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+             n1: 64752 0x10F94C: slim_exec (main.cpp:737)
+              n0: 64752 0x10F94C: main (main.cpp:810)
+    n1: 61616 0x172746: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1712)
+     n1: 61616 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 61616 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 41856 0x17EF6F: react_ruleset (task.cpp:361)
+        n1: 41856 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+         n1: 41856 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+          n1: 41856 0x10F94C: slim_exec (main.cpp:737)
+           n0: 41856 0x10F94C: main (main.cpp:810)
+       n1: 19760 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 19760 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 19760 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 19760 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 19760 0x10F94C: slim_exec (main.cpp:737)
+            n0: 19760 0x10F94C: main (main.cpp:810)
+    n1: 17328 0x166E9E: lmn_hyperlink_new() (hyperlink.cpp:105)
+     n1: 17328 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+      n1: 17328 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 17328 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 17328 0x17EF6F: react_ruleset (task.cpp:361)
+         n1: 17328 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+          n1: 17328 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+           n1: 17328 0x10F94C: slim_exec (main.cpp:737)
+            n0: 17328 0x10F94C: main (main.cpp:810)
+  n0: 14828 in 19 places, all below massif's threshold (1.00%)
+ n1: 95080 0x14F345: allocate (new_allocator.h:115)
+  n1: 95080 0x14F345: allocate (alloc_traits.h:460)
+   n1: 95080 0x14F345: _M_get_node (stl_tree.h:584)
+    n1: 95080 0x14F345: _M_create_node<unsigned int const&> (stl_tree.h:634)
+     n1: 95080 0x14F345: operator()<unsigned int const&> (stl_tree.h:552)
+      n1: 95080 0x14F345: _M_insert_<unsigned int const&, std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_Alloc_node> (stl_tree.h:1816)
+       n1: 95080 0x14F345: std::pair<std::_Rb_tree_iterator<unsigned int>, bool> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique<unsigned int const&>(unsigned int const&) (stl_tree.h:2159)
+        n1: 95080 0x17E165: insert (stl_set.h:512)
+         n1: 95080 0x17E165: add_history (rule.hpp:120)
+          n1: 95080 0x17E165: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2778)
+           n1: 95080 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+            n1: 95080 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+             n1: 95080 0x17F1DB: react_ruleset (task.cpp:361)
+              n1: 95080 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+               n1: 95080 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                n1: 95080 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                 n1: 95080 0x10F94C: slim_exec (main.cpp:737)
+                  n0: 95080 0x10F94C: main (main.cpp:810)
+ n1: 73728 0x4EAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x2: ???
+       n1: 73728 0x1FFF000676: ???
+        n1: 73728 0x1FFF00067B: ???
+         n0: 73728 0x1FFF000685: ???
+ n2: 72896 0x189C9C: lmn_realloc(void*, unsigned long) (alloc.cpp:150)
+  n1: 65536 0x11B3C2: expand_byte_sec (byte_encoder.hpp:109)
+   n1: 65536 0x11B3C2: write_at<long int> (byte_encoder.hpp:157)
+    n1: 65536 0x11B3C2: write<long int> (byte_encoder.hpp:143)
+     n1: 65536 0x11B3C2: write_forward<long int> (byte_encoder.hpp:150)
+      n1: 65536 0x11B3C2: load (byte_encoder.hpp:168)
+       n1: 65536 0x11B3C2: operator()<const il::functor::integer&> (byte_encoder.hpp:116)
+        n1: 65536 0x11B3C2: visit_impl<3, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:141)
+         n1: 65536 0x11B3C2: visit_impl<2, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+          n1: 65536 0x11B3C2: visit_impl<1, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+           n1: 65536 0x11B3C2: visit_impl<0, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+            n1: 65536 0x11B3C2: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>(ByteEncoder::loader&&, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&) (variant.hpp:150)
+             n1: 65536 0x11CFEE: load (byte_encoder.hpp:205)
+              n1: 65536 0x11CFEE: operator()<const il::instr_arg::functor&> (byte_encoder.hpp:116)
+               n1: 65536 0x11CFEE: visit_impl<5, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:141)
+                n1: 65536 0x11CFEE: visit_impl<4, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                 n1: 65536 0x11CFEE: visit_impl<3, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                  n1: 65536 0x11CFEE: decltype ({parm#1}((get<2ul>)((forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2})))) slim::element::visit_impl<2ul, ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&, std::tuple<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, decltype(nullptr)>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:142)
+                   n1: 65536 0x11D253: visit_impl<1, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                    n1: 65536 0x11D253: visit_impl<0, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                     n1: 65536 0x11D253: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:150)
+                      n1: 65536 0x11D472: load (byte_encoder.hpp:131)
+                       n1: 65536 0x11D472: ByteEncoder::load(InstBlock const&) (byte_encoder.hpp:88)
+                        n1: 65536 0x118393: ByteEncoder (byte_encoder.hpp:72)
+                         n1: 65536 0x118393: encode_rule_ast (byte_encoder.hpp:65)
+                          n1: 65536 0x118393: load_rule(Rule const&) (load.cpp:118)
+                           n1: 65536 0x118670: load_ruleset (load.cpp:125)
+                            n1: 65536 0x118670: load_il(IL const&) (load.cpp:144)
+                             n1: 65536 0x1191C5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:284)
+                              n1: 65536 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+                               n1: 65536 0x10F721: load_input_files (main.cpp:714)
+                                n0: 65536 0x10F721: main (main.cpp:799)
+  n0: 7360 in 5 places, all below massif's threshold (1.00%)
+ n1: 72384 0x1677A1: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:308)
+  n1: 72384 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+   n1: 72384 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+    n1: 72384 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+     n1: 72384 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 72384 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 72192 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 72192 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 72192 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 72192 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 72192 0x10F94C: slim_exec (main.cpp:737)
+            n0: 72192 0x10F94C: main (main.cpp:810)
+       n0: 192 in 1 place, below massif's threshold (1.00%)
+ n1: 59305 0x56CB58E: strdup (strdup.c:42)
+  n2: 59305 0x169666: lmn_intern(char const*) (symbol.cpp:103)
+   n1: 58122 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+    n1: 58122 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+     n1: 58122 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+      n1: 58122 0x17F1DB: react_ruleset (task.cpp:361)
+       n1: 58122 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+        n1: 58122 0x17F4F8: mem_oriented_loop (task.cpp:262)
+         n1: 58122 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+          n1: 58122 0x10F94C: slim_exec (main.cpp:737)
+           n0: 58122 0x10F94C: main (main.cpp:810)
+   n0: 1183 in 11 places, all below massif's threshold (1.00%)
+ n1: 24128 0x19126C: hashset_extend (internal_hash.cpp:221)
+  n1: 24128 0x19126C: HashSet::add(unsigned long) (internal_hash.cpp:243)
+   n1: 24128 0x1671EB: HyperLink::unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:462)
+    n1: 24128 0x16775C: HyperLink::lmn_unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:491)
+     n1: 24128 0x1677EC: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:311)
+      n1: 24128 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+       n1: 24128 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+        n1: 24128 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+         n1: 24128 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+          n2: 24128 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+           n1: 17376 0x17F1DB: react_ruleset (task.cpp:361)
+            n1: 17376 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+             n1: 17376 0x17F4F8: mem_oriented_loop (task.cpp:262)
+              n1: 17376 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+               n1: 17376 0x10F94C: slim_exec (main.cpp:737)
+                n0: 17376 0x10F94C: main (main.cpp:810)
+           n0: 6752 in 1 place, below massif's threshold (1.00%)
+ n1: 19200 0x166EDA: lmn_hyperlink_new() (hyperlink.cpp:107)
+  n1: 19200 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+   n1: 19200 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+    n1: 19200 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+     n1: 19200 0x17EF6F: react_ruleset (task.cpp:361)
+      n1: 19200 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+       n1: 19200 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+        n1: 19200 0x10F94C: slim_exec (main.cpp:737)
+         n0: 19200 0x10F94C: main (main.cpp:810)
+ n1: 16384 0x17F3AE: allocate (new_allocator.h:115)
+  n1: 16384 0x17F3AE: allocate (alloc_traits.h:460)
+   n1: 16384 0x17F3AE: _M_allocate (stl_vector.h:346)
+    n1: 16384 0x17F3AE: _M_create_storage (stl_vector.h:361)
+     n1: 16384 0x17F3AE: _Vector_base (stl_vector.h:305)
+      n1: 16384 0x17F3AE: vector (stl_vector.h:511)
+       n1: 16384 0x17F3AE: RuleContext (react_context.hpp:100)
+        n1: 16384 0x17F3AE: LmnReactCxt (react_context.hpp:170)
+         n1: 16384 0x17F3AE: MemReactContext (react_context.hpp:201)
+          n1: 16384 0x17F3AE: make_unique<MemReactContext, LmnMembrane*&> (util.h:218)
+           n1: 16384 0x17F3AE: Task::lmn_run(Vector*) (task.cpp:183)
+            n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+             n0: 16384 0x10F94C: main (main.cpp:810)
+ n1: 16384 0x183895: allocate (new_allocator.h:115)
+  n1: 16384 0x183895: allocate (alloc_traits.h:460)
+   n1: 16384 0x183895: _M_allocate (stl_vector.h:346)
+    n1: 16384 0x183895: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::_M_realloc_insert<std::function<LmnRegister ()> >(__gnu_cxx::__normal_iterator<std::function<LmnRegister ()>*, std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > > >, std::function<LmnRegister ()>&&) (vector.tcc:440)
+     n2: 16384 0x18394C: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::emplace_back<std::function<LmnRegister ()> >(std::function<LmnRegister ()>&&) (vector.tcc:121)
+      n1: 16384 0x16E9B1: push_back (stl_vector.h:1204)
+       n1: 16384 0x16E9B1: operator= (stl_iterator.h:622)
+        n1: 16384 0x16E9B1: transform<slim::element::range_remove_if<slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)>, AtomListEntry::const_iterator>::remove_if_iterator, std::back_insert_iterator<std::vector<std::function<LmnRegister()> > >, slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)> > (stl_algo.h:4313)
+         n1: 16384 0x16E9B1: slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:775)
+          n1: 16384 0x16F32C: slim::vm::interpreter::findatom_through_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:852)
+           n1: 16384 0x170FB5: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1402)
+            n1: 16384 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+             n1: 16384 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+              n1: 16384 0x17F1DB: react_ruleset (task.cpp:361)
+               n1: 16384 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+                n1: 16384 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                 n1: 16384 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                  n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+                   n0: 16384 0x10F94C: main (main.cpp:810)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 12384 0x190ABD: allocate (new_allocator.h:115)
+  n1: 12384 0x190ABD: allocate (alloc_traits.h:460)
+   n1: 12384 0x190ABD: _M_get_node (stl_tree.h:584)
+    n1: 12384 0x190ABD: _M_create_node<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:634)
+     n1: 12384 0x190ABD: operator()<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:552)
+      n1: 12384 0x190ABD: std::_Rb_tree_iterator<std::pair<LmnInstruction const, InstrSpec> > std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_M_insert_<std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node&) (stl_tree.h:1816)
+       n1: 12384 0x18EBDF: _M_insert_unique_<const std::pair<const LmnInstruction, InstrSpec>&, std::_Rb_tree<LmnInstruction, std::pair<const LmnInstruction, InstrSpec>, std::_Select1st<std::pair<const LmnInstruction, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<const LmnInstruction, InstrSpec> > >::_Alloc_node> (stl_tree.h:2267)
+        n1: 12384 0x18EBDF: _M_insert_range_unique<const std::pair<const LmnInstruction, InstrSpec>*> (stl_tree.h:1109)
+         n1: 12384 0x18EBDF: map (stl_map.h:232)
+          n1: 12384 0x18EBDF: __static_initialization_and_destruction_0(int, int) (instruction.cpp:41)
+           n1: 12384 0x1908E7: _GLOBAL__sub_I_instr_spec (instruction.cpp:283)
+            n1: 12384 0x19DA5C: __libc_csu_init (in /usr/local/bin/slim)
+             n1: 12384 0x564CE1B: __libc_start_main@@GLIBC_2.34 (libc-start.c:375)
+              n0: 12384 0x10E9A9: (below main) (in /usr/local/bin/slim)
+ n0: 12260 in 80 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=35822396884
+mem_heap_B=799429
+mem_heap_extra_B=188491
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=36999857464
+mem_heap_B=805615
+mem_heap_extra_B=191433
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=38569806249
+mem_heap_B=812623
+mem_heap_extra_B=195201
+mem_stacks_B=0
+heap_tree=detailed
+n12: 812623 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 327372 0x189C3D: lmn_malloc(unsigned long) (alloc.cpp:138)
+  n1: 168832 0x194041: st_add_direct_inner (st.cpp:346)
+   n2: 168832 0x194041: st_add_direct(st_table*, unsigned long, unsigned long) (st.cpp:350)
+    n2: 84416 0x169689: lmn_intern(char const*) (symbol.cpp:106)
+     n1: 81120 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 81120 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 81120 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 81120 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 81120 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 81120 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 81120 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 81120 0x10F94C: slim_exec (main.cpp:737)
+             n0: 81120 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+    n2: 84416 0x16969C: lmn_intern(char const*) (symbol.cpp:107)
+     n1: 81120 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+      n1: 81120 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 81120 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 81120 0x17F1DB: react_ruleset (task.cpp:361)
+         n1: 81120 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+          n1: 81120 0x17F4F8: mem_oriented_loop (task.cpp:262)
+           n1: 81120 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+            n1: 81120 0x10F94C: slim_exec (main.cpp:737)
+             n0: 81120 0x10F94C: main (main.cpp:810)
+     n0: 3296 in 11 places, all below massif's threshold (1.00%)
+  n1: 143696 0x19188D: memory_pool_malloc(memory_pool_*) (memory_pool.cpp:74)
+   n3: 143696 0x189AF7: lmn_new_atom(unsigned short) (alloc.cpp:73)
+    n1: 64752 0x16314F: lmn_copy_satom(LmnSymbolAtom*) (atom.cpp:219)
+     n1: 64752 0x1631C2: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:236)
+      n1: 64752 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+       n1: 64752 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+        n1: 64752 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+         n1: 64752 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+          n1: 64752 0x17EF6F: react_ruleset (task.cpp:361)
+           n1: 64752 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+            n1: 64752 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+             n1: 64752 0x10F94C: slim_exec (main.cpp:737)
+              n0: 64752 0x10F94C: main (main.cpp:810)
+    n1: 61616 0x172746: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1712)
+     n1: 61616 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 61616 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 41856 0x17EF6F: react_ruleset (task.cpp:361)
+        n1: 41856 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+         n1: 41856 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+          n1: 41856 0x10F94C: slim_exec (main.cpp:737)
+           n0: 41856 0x10F94C: main (main.cpp:810)
+       n1: 19760 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 19760 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 19760 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 19760 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 19760 0x10F94C: slim_exec (main.cpp:737)
+            n0: 19760 0x10F94C: main (main.cpp:810)
+    n1: 17328 0x166E9E: lmn_hyperlink_new() (hyperlink.cpp:105)
+     n1: 17328 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+      n1: 17328 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+       n1: 17328 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+        n1: 17328 0x17EF6F: react_ruleset (task.cpp:361)
+         n1: 17328 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+          n1: 17328 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+           n1: 17328 0x10F94C: slim_exec (main.cpp:737)
+            n0: 17328 0x10F94C: main (main.cpp:810)
+  n0: 14844 in 19 places, all below massif's threshold (1.00%)
+ n1: 101400 0x14F345: allocate (new_allocator.h:115)
+  n1: 101400 0x14F345: allocate (alloc_traits.h:460)
+   n1: 101400 0x14F345: _M_get_node (stl_tree.h:584)
+    n1: 101400 0x14F345: _M_create_node<unsigned int const&> (stl_tree.h:634)
+     n1: 101400 0x14F345: operator()<unsigned int const&> (stl_tree.h:552)
+      n1: 101400 0x14F345: _M_insert_<unsigned int const&, std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_Alloc_node> (stl_tree.h:1816)
+       n1: 101400 0x14F345: std::pair<std::_Rb_tree_iterator<unsigned int>, bool> std::_Rb_tree<unsigned int, unsigned int, std::_Identity<unsigned int>, std::less<unsigned int>, std::allocator<unsigned int> >::_M_insert_unique<unsigned int const&>(unsigned int const&) (stl_tree.h:2159)
+        n1: 101400 0x17E165: insert (stl_set.h:512)
+         n1: 101400 0x17E165: add_history (rule.hpp:120)
+          n1: 101400 0x17E165: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2778)
+           n1: 101400 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+            n1: 101400 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+             n1: 101400 0x17F1DB: react_ruleset (task.cpp:361)
+              n1: 101400 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+               n1: 101400 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                n1: 101400 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                 n1: 101400 0x10F94C: slim_exec (main.cpp:737)
+                  n0: 101400 0x10F94C: main (main.cpp:810)
+ n1: 73728 0x4EAE6B1: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.32)
+  n1: 73728 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 73728 0x4006567: call_init (dl-init.c:33)
+    n1: 73728 0x4006567: _dl_init (dl-init.c:117)
+     n1: 73728 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 73728 0x2: ???
+       n1: 73728 0x1FFF000676: ???
+        n1: 73728 0x1FFF00067B: ???
+         n0: 73728 0x1FFF000685: ???
+ n2: 72896 0x189C9C: lmn_realloc(void*, unsigned long) (alloc.cpp:150)
+  n1: 65536 0x11B3C2: expand_byte_sec (byte_encoder.hpp:109)
+   n1: 65536 0x11B3C2: write_at<long int> (byte_encoder.hpp:157)
+    n1: 65536 0x11B3C2: write<long int> (byte_encoder.hpp:143)
+     n1: 65536 0x11B3C2: write_forward<long int> (byte_encoder.hpp:150)
+      n1: 65536 0x11B3C2: load (byte_encoder.hpp:168)
+       n1: 65536 0x11B3C2: operator()<const il::functor::integer&> (byte_encoder.hpp:116)
+        n1: 65536 0x11B3C2: visit_impl<3, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:141)
+         n1: 65536 0x11B3C2: visit_impl<2, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+          n1: 65536 0x11B3C2: visit_impl<1, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+           n1: 65536 0x11B3C2: visit_impl<0, ByteEncoder::loader, const slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol>&> (variant.hpp:142)
+            n1: 65536 0x11B3C2: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&>(ByteEncoder::loader&&, slim::element::variant<il::functor::in_proxy, il::functor::out_proxy, il::functor::unify, il::functor::integer, il::functor::real, il::functor::string, il::functor::symbol> const&) (variant.hpp:150)
+             n1: 65536 0x11CFEE: load (byte_encoder.hpp:205)
+              n1: 65536 0x11CFEE: operator()<const il::instr_arg::functor&> (byte_encoder.hpp:116)
+               n1: 65536 0x11CFEE: visit_impl<5, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:141)
+                n1: 65536 0x11CFEE: visit_impl<4, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                 n1: 65536 0x11CFEE: visit_impl<3, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                  n1: 65536 0x11CFEE: decltype ({parm#1}((get<2ul>)((forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2})))) slim::element::visit_impl<2ul, ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&, std::tuple<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>, decltype(nullptr)>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:142)
+                   n1: 65536 0x11D253: visit_impl<1, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                    n1: 65536 0x11D253: visit_impl<0, ByteEncoder::loader, const slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list>&> (variant.hpp:142)
+                     n1: 65536 0x11D253: decltype ((visit_impl<0>)((forward<ByteEncoder::loader>)({parm#1}), (forward<slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>)({parm#2}))) slim::element::visit<ByteEncoder::loader, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&>(ByteEncoder::loader&&, slim::element::variant<slim::element::monostate, il::instr_arg::var, il::instr_arg::label, il::instr_arg::string, il::instr_arg::lineno, il::instr_arg::functor, il::instr_arg::ruleset, il::instr_arg::var_list, il::instr_arg::inst_list> const&) (variant.hpp:150)
+                      n1: 65536 0x11D472: load (byte_encoder.hpp:131)
+                       n1: 65536 0x11D472: ByteEncoder::load(InstBlock const&) (byte_encoder.hpp:88)
+                        n1: 65536 0x118393: ByteEncoder (byte_encoder.hpp:72)
+                         n1: 65536 0x118393: encode_rule_ast (byte_encoder.hpp:65)
+                          n1: 65536 0x118393: load_rule(Rule const&) (load.cpp:118)
+                           n1: 65536 0x118670: load_ruleset (load.cpp:125)
+                            n1: 65536 0x118670: load_il(IL const&) (load.cpp:144)
+                             n1: 65536 0x1191C5: load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:284)
+                              n1: 65536 0x1195CA: load_file(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (load.cpp:340)
+                               n1: 65536 0x10F721: load_input_files (main.cpp:714)
+                                n0: 65536 0x10F721: main (main.cpp:799)
+  n0: 7360 in 5 places, all below massif's threshold (1.00%)
+ n1: 72512 0x1677A1: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:308)
+  n1: 72512 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+   n1: 72512 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+    n1: 72512 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+     n1: 72512 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+      n2: 72512 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+       n1: 72512 0x17F1DB: react_ruleset (task.cpp:361)
+        n1: 72512 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+         n1: 72512 0x17F4F8: mem_oriented_loop (task.cpp:262)
+          n1: 72512 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+           n1: 72512 0x10F94C: slim_exec (main.cpp:737)
+            n0: 72512 0x10F94C: main (main.cpp:810)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 63271 0x56CB58E: strdup (strdup.c:42)
+  n2: 63271 0x169666: lmn_intern(char const*) (symbol.cpp:103)
+   n1: 62088 0x176C38: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2767)
+    n1: 62088 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+     n1: 62088 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+      n1: 62088 0x17F1DB: react_ruleset (task.cpp:361)
+       n1: 62088 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+        n1: 62088 0x17F4F8: mem_oriented_loop (task.cpp:262)
+         n1: 62088 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+          n1: 62088 0x10F94C: slim_exec (main.cpp:737)
+           n0: 62088 0x10F94C: main (main.cpp:810)
+   n0: 1183 in 11 places, all below massif's threshold (1.00%)
+ n1: 24224 0x19126C: hashset_extend (internal_hash.cpp:221)
+  n1: 24224 0x19126C: HashSet::add(unsigned long) (internal_hash.cpp:243)
+   n1: 24224 0x1671EB: HyperLink::unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:462)
+    n1: 24224 0x16775C: HyperLink::lmn_unify(HyperLink*, void*, unsigned char) (hyperlink.cpp:491)
+     n1: 24224 0x1677EC: lmn_hyperlink_copy(LmnSymbolAtom*, LmnSymbolAtom*) (hyperlink.cpp:311)
+      n1: 24224 0x1631D8: lmn_copy_data_atom(unsigned long, unsigned char) (atom.cpp:239)
+       n1: 24224 0x16320B: lmn_copy_atom(void*, unsigned char) (atom.cpp:208)
+        n1: 24224 0x178EE2: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:3333)
+         n1: 24224 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+          n2: 24224 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+           n1: 17504 0x17F1DB: react_ruleset (task.cpp:361)
+            n1: 17504 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+             n1: 17504 0x17F4F8: mem_oriented_loop (task.cpp:262)
+              n1: 17504 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+               n1: 17504 0x10F94C: slim_exec (main.cpp:737)
+                n0: 17504 0x10F94C: main (main.cpp:810)
+           n0: 6720 in 1 place, below massif's threshold (1.00%)
+ n1: 19200 0x166EDA: lmn_hyperlink_new() (hyperlink.cpp:107)
+  n1: 19200 0x176CEE: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:2830)
+   n1: 19200 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+    n1: 19200 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+     n1: 19200 0x17EF6F: react_ruleset (task.cpp:361)
+      n1: 19200 0x17EF6F: Task::react_start_rulesets(LmnMembrane*, Vector*) (task.cpp:453)
+       n1: 19200 0x17F495: Task::lmn_run(Vector*) (task.cpp:198)
+        n1: 19200 0x10F94C: slim_exec (main.cpp:737)
+         n0: 19200 0x10F94C: main (main.cpp:810)
+ n1: 16512 0x183895: allocate (new_allocator.h:115)
+  n1: 16512 0x183895: allocate (alloc_traits.h:460)
+   n1: 16512 0x183895: _M_allocate (stl_vector.h:346)
+    n1: 16512 0x183895: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::_M_realloc_insert<std::function<LmnRegister ()> >(__gnu_cxx::__normal_iterator<std::function<LmnRegister ()>*, std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > > >, std::function<LmnRegister ()>&&) (vector.tcc:440)
+     n2: 16512 0x18394C: void std::vector<std::function<LmnRegister ()>, std::allocator<std::function<LmnRegister ()> > >::emplace_back<std::function<LmnRegister ()> >(std::function<LmnRegister ()>&&) (vector.tcc:121)
+      n1: 16384 0x16E9B1: push_back (stl_vector.h:1204)
+       n1: 16384 0x16E9B1: operator= (stl_iterator.h:622)
+        n1: 16384 0x16E9B1: transform<slim::element::range_remove_if<slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)>, AtomListEntry::const_iterator>::remove_if_iterator, std::back_insert_iterator<std::vector<std::function<LmnRegister()> > >, slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxtRef, LmnRuleRef, LmnRuleInstr, SameProcCxt*, LmnMembrane*, LmnFunctor, size_t)::<lambda(LmnSymbolAtomRef)> > (stl_algo.h:4313)
+         n1: 16384 0x16E9B1: slim::vm::interpreter::findatom_original_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:775)
+          n1: 16384 0x16F32C: slim::vm::interpreter::findatom_through_hyperlink(LmnReactCxt*, LmnRule*, unsigned char*, SameProcCxt*, LmnMembrane*, unsigned short, unsigned long) (task.cpp:852)
+           n1: 16384 0x170FB5: slim::vm::interpreter::exec_command(LmnReactCxt*, LmnRule*, bool&) (task.cpp:1402)
+            n1: 16384 0x17E3F1: slim::vm::interpreter::run() (task.cpp:4421)
+             n1: 16384 0x17E57E: Task::react_rule(LmnReactCxt*, LmnMembrane*, LmnRule*) (task.cpp:392)
+              n1: 16384 0x17F1DB: react_ruleset (task.cpp:361)
+               n1: 16384 0x17F1DB: Task::react_all_rulesets(LmnReactCxt*, LmnMembrane*) (task.cpp:314)
+                n1: 16384 0x17F4F8: mem_oriented_loop (task.cpp:262)
+                 n1: 16384 0x17F4F8: Task::lmn_run(Vector*) (task.cpp:215)
+                  n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+                   n0: 16384 0x10F94C: main (main.cpp:810)
+      n0: 128 in 1 place, below massif's threshold (1.00%)
+ n1: 16384 0x17F3AE: allocate (new_allocator.h:115)
+  n1: 16384 0x17F3AE: allocate (alloc_traits.h:460)
+   n1: 16384 0x17F3AE: _M_allocate (stl_vector.h:346)
+    n1: 16384 0x17F3AE: _M_create_storage (stl_vector.h:361)
+     n1: 16384 0x17F3AE: _Vector_base (stl_vector.h:305)
+      n1: 16384 0x17F3AE: vector (stl_vector.h:511)
+       n1: 16384 0x17F3AE: RuleContext (react_context.hpp:100)
+        n1: 16384 0x17F3AE: LmnReactCxt (react_context.hpp:170)
+         n1: 16384 0x17F3AE: MemReactContext (react_context.hpp:201)
+          n1: 16384 0x17F3AE: make_unique<MemReactContext, LmnMembrane*&> (util.h:218)
+           n1: 16384 0x17F3AE: Task::lmn_run(Vector*) (task.cpp:183)
+            n1: 16384 0x10F94C: slim_exec (main.cpp:737)
+             n0: 16384 0x10F94C: main (main.cpp:810)
+ n0: 12740 in 80 places, all below massif's threshold (1.00%)
+ n1: 12384 0x190ABD: allocate (new_allocator.h:115)
+  n1: 12384 0x190ABD: allocate (alloc_traits.h:460)
+   n1: 12384 0x190ABD: _M_get_node (stl_tree.h:584)
+    n1: 12384 0x190ABD: _M_create_node<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:634)
+     n1: 12384 0x190ABD: operator()<const std::pair<const LmnInstruction, InstrSpec>&> (stl_tree.h:552)
+      n1: 12384 0x190ABD: std::_Rb_tree_iterator<std::pair<LmnInstruction const, InstrSpec> > std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_M_insert_<std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node>(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<LmnInstruction const, InstrSpec> const&, std::_Rb_tree<LmnInstruction, std::pair<LmnInstruction const, InstrSpec>, std::_Select1st<std::pair<LmnInstruction const, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<LmnInstruction const, InstrSpec> > >::_Alloc_node&) (stl_tree.h:1816)
+       n1: 12384 0x18EBDF: _M_insert_unique_<const std::pair<const LmnInstruction, InstrSpec>&, std::_Rb_tree<LmnInstruction, std::pair<const LmnInstruction, InstrSpec>, std::_Select1st<std::pair<const LmnInstruction, InstrSpec> >, std::less<LmnInstruction>, std::allocator<std::pair<const LmnInstruction, InstrSpec> > >::_Alloc_node> (stl_tree.h:2267)
+        n1: 12384 0x18EBDF: _M_insert_range_unique<const std::pair<const LmnInstruction, InstrSpec>*> (stl_tree.h:1109)
+         n1: 12384 0x18EBDF: map (stl_map.h:232)
+          n1: 12384 0x18EBDF: __static_initialization_and_destruction_0(int, int) (instruction.cpp:41)
+           n1: 12384 0x1908E7: _GLOBAL__sub_I_instr_spec (instruction.cpp:283)
+            n1: 12384 0x19DA5C: __libc_csu_init (in /usr/local/bin/slim)
+             n1: 12384 0x564CE1B: __libc_start_main@@GLIBC_2.34 (libc-start.c:375)
+              n0: 12384 0x10E9A9: (below main) (in /usr/local/bin/slim)
+#-----------
+snapshot=37
+#-----------
+time=39747266627
+mem_heap_B=819593
+mem_heap_extra_B=197895
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=40532240209
+mem_heap_B=821522
+mem_heap_extra_B=199358
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=41709700591
+mem_heap_B=827608
+mem_heap_extra_B=201984
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=42887160962
+mem_heap_B=833464
+mem_heap_extra_B=204600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=44457109871
+mem_heap_B=838638
+mem_heap_extra_B=207594
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=45634570938
+mem_heap_B=845151
+mem_heap_extra_B=210017
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=47204519162
+mem_heap_B=849389
+mem_heap_extra_B=212651
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=47989496137
+mem_heap_B=847366
+mem_heap_extra_B=214010
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=48774469892
+mem_heap_B=857244
+mem_heap_extra_B=215836
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=49951930425
+mem_heap_B=859605
+mem_heap_extra_B=217627
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=51521878840
+mem_heap_B=865775
+mem_heap_extra_B=220473
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=52306853695
+mem_heap_B=870440
+mem_heap_extra_B=222040
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=53484314572
+mem_heap_B=874731
+mem_heap_extra_B=224125
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=54073043030
+mem_heap_B=874488
+mem_heap_extra_B=224840
+mem_stacks_B=0
+heap_tree=empty

@@ -1,0 +1,17 @@
+//job(cost,duration,id)
+
+
+:- uniq | pool(!New).
+init@@
+pool(!P) \ job(C,N,!H) :- job(C,N,!H,!P).
+
+// next(!From, !ID, !To)
+// c アトムの多重集合 !From から 
+// 引数に !ID を持つ c アトム1つを削除したときの c 多重集合 !To を求める
+// これを可能な限り計算することは， c アトムの順列を求めたことを意味する
+// 同型性判定は行わないのでたくさんアトムができるけど気にしない
+shift@@
+job(C,N,!H,!P) \ :- uniq(!H,!P) | next(!P,!H,!NewPool).
+
+copy@@
+job(C,N,!H1,!P), next(!P,!H2,!P2) \ :- int(C),int(N),!H1 \== !H2, uniq(!H1,!P,!P2) | job(C,N,!H1,!P2).

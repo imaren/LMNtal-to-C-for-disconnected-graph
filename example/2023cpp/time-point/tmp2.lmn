@@ -1,0 +1,35 @@
+
+start(!X) :- between(0,!X,0).
+
+max@@ R = max(A,B) :- A > B | R = A.
+max@@ R = max(A,B) :- A =< B | R = B.
+min@@ R = min(A,B) :- A > B | R = B.
+min@@ R = min(A,B) :- A =< B | R = A. 
+
+% inconsistent@@ 
+% between(A,!X,B) :- A > B | fail(A,!X,B).
+
+intersect@@ 
+between(A,!Y,B), between(C,!Y,D) :- between(max(A,C),!Y,min(B,D)).
+
+fpropagate_forward@@
+between(A,!Y,B), distance(C,!Y,!Z,D) \ 
+    :- AC=A+C, BD=B+D, uniq(A,!Y,B,C,!Z,D) 
+    | between(AC,!Z,BD).
+
+bpropagate_backward@@
+between(A,!Y,B), distance(C,!Z,!Y,D) \ 
+    :- AC=A-D, BD=B-C, uniq(A,!Y,B,C,!Z,D) 
+    | between(AC,!Z,BD).
+
+% start(X), distance(3,!X,!Y,10), distance(4,!Y,!Z,5).
+% % distance(4,!X,!Y,15).distance(4,!Y,!Z,5).
+% distance(4,!Z,!Y,5).
+% start(!Y).
+
+% start(!E), distance(10,!E,!F,20), distance(10,!H,!G,20), distance(30,!F,!G,40), 
+% distance(40,!H,!I,50),distance(60,!E,!I,120). 
+
+% start(!A), distance(4,!A,!B,7), distance(1,!B,!C,4),between(10,!C,13).
+
+start(!H0).distance(1,!H0,!H1,5).distance(1,!H0,!H48,241).distance(1,!H1,!H2,5).distance(1,!H2,!H5,16).distance(1,!H2,!H16,69).distance(1,!H3,!H2,5).distance(1,!H3,!H36,166).distance(1,!H4,!H1,16).distance(3,!H4,!H6,9).distance(3,!H5,!H7,11).distance(1,!H6,!H8,11).distance(3,!H7,!H9,11).distance(5,!H8,!H12,19).distance(1,!H8,!H40,161).distance(3,!H9,!H11,9).distance(1,!H10,!H13,16).distance(1,!H11,!H14,14).distance(1,!H11,!H40,146).distance(4,!H12,!H15,16).distance(5,!H13,!H17,19).distance(7,!H13,!H19,31).distance(1,!H13,!H36,116).distance(4,!H14,!H17,16).distance(1,!H15,!H18,16).distance(29,!H15,!H43,139).distance(9,!H16,!H24,41).distance(5,!H17,!H21,19).distance(8,!H17,!H24,34).distance(15,!H17,!H31,69).distance(1,!H18,!H23,24).distance(9,!H18,!H26,39).distance(1,!H19,!H40,106).distance(1,!H19,!H41,109).distance(5,!H20,!H16,21).distance(1,!H21,!H24,14).distance(1,!H21,!H25,19).distance(1,!H21,!H32,56).distance(22,!H21,!H42,104).distance(5,!H22,!H18,19).distance(5,!H23,!H19,19).distance(1,!H23,!H27,19).distance(6,!H23,!H28,24).distance(10,!H23,!H32,46).distance(24,!H23,!H46,114).distance(1,!H24,!H28,21).distance(1,!H24,!H43,94).distance(1,!H25,!H33,41).distance(1,!H26,!H31,26).distance(1,!H26,!H32,31).distance(9,!H26,!H34,39).distance(13,!H26,!H38,61).distance(21,!H26,!H46,99).distance(5,!H27,!H31,21).distance(12,!H27,!H38,54).distance(7,!H28,!H34,31).distance(10,!H28,!H37,46).distance(5,!H29,!H25,19).distance(6,!H29,!H34,26).distance(8,!H29,!H36,36).distance(1,!H30,!H35,24).distance(11,!H30,!H40,49).distance(1,!H30,!H41,54).distance(19,!H30,!H48,91).distance(1,!H31,!H36,26).distance(1,!H31,!H43,61).distance(1,!H32,!H48,81).distance(1,!H33,!H35,9).distance(1,!H33,!H38,24).distance(1,!H34,!H37,16).distance(6,!H34,!H39,26).distance(1,!H34,!H45,54).distance(3,!H35,!H37,11).distance(1,!H35,!H40,26).distance(1,!H35,!H48,64).distance(3,!H36,!H38,11).distance(1,!H36,!H42,31).distance(1,!H37,!H38,5).distance(7,!H37,!H43,29).distance(1,!H38,!H39,5).distance(5,!H38,!H42,21).distance(1,!H38,!H44,31).distance(1,!H39,!H45,29).distance(8,!H39,!H46,36).distance(5,!H40,!H44,21).distance(1,!H40,!H47,34).distance(9,!H40,!H48,39).distance(3,!H42,!H44,11).distance(1,!H42,!H45,16).distance(6,!H42,!H47,24).distance(7,!H42,!H48,29).distance(8,!H42,!H49,34).distance(1,!H45,!H47,11).distance(1,!H45,!H48,16).distance(1,!H46,!H48,9).

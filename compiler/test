@@ -1,6 +1,0 @@
-a(1) :- A =\ | b.
-
-ok :- A =:= B | .
-
-edge(N), a \ edge(M) :- N <. M, gg | path(N).
-te(1).

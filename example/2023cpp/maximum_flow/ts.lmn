@@ -1,0 +1,2 @@
+cap(!H0).
+cap(!F) :- uniq(!F) | cap(!F),flow(!F).

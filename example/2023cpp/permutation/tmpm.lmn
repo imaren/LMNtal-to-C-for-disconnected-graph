@@ -1,0 +1,12 @@
+% n(3).job(5,4,!J0).job(3,2,!J1).job(2,3,!J2).
+
+:- uniq | {id(!New)}.
+
+job(C,N,!H), {id(!ID),$p[]} :- int(C), int(N) | {id(!ID),job(C,N,!H),$p[]}.
+
+{id(!ID), next(!ID2,!H),$p[]} :- !ID \== !ID2 | {id(!ID),$p[]}.
+
+{id(!ID),job(C,N,!H),job(C2,N2,!H2),$p[]} 
+:- int(C), int(N), int(C2), int(N2), uniq(!ID,!H) 
+| {id(!ID),job(C,N,!H),job(C2,N2,!H2),next(!ID,!New),$p[]}, {id(!New),job(C2,N2,!H2),$p[]}.
+n(8).job(10,1,!J0).job(4,9,!J1).job(2,13,!J2).job(5,7,!J3).job(3,2,!J4).job(18,8,!J5).job(2,2,!J6).job(7,3,!J7).

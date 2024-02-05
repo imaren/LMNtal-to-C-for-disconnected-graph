@@ -1,0 +1,238 @@
+newstart: [0,1], 36,6
+	push path[1,0,],36,6
+cap:1,2,45vsflow:1,2,0
+!!!!!!!!cap: 45-0=45
+min: 36,45=36
+	push path[2,1,0,],36,6
+cap:2,3,29vsflow:2,3,0
+!!!!!!!!cap: 29-0=29
+min: 36,29=29
+	push path[3,2,1,0,],29,6
+cap:3,4,42vsflow:3,4,0
+!!!!!!!!cap: 42-0=42
+min: 29,42=29
+	push path[4,3,2,1,0,],29,6
+push: inc[4,3,2,1,0,], 29,6
+  update: 3,4->29+0=29
+push: inc[3,2,1,0,], 29,6
+  update: 2,3->29+0=29
+push: inc[2,1,0,], 29,6
+  update: 1,2->29+0=29
+push: inc[1,0,], 29,6
+  update: 0,1->29+0=29
+push: inc[0,], 29,6
+min: 36,29=29
+	push path[0,1,0,],29,6
+cap:0,1,36vsflow:0,1,29
+!!!!cap: 36-29=7
+min: 29,7=7
+	push path[1,0,1,0,],7,6
+cap:1,2,45vsflow:1,2,29
+!!!!!!!!cap: 45-29=16
+cap:1,2,45vsflow:1,2,29
+!!!!!!!!cap: 45-29=16
+min: 36,29=29
+	push path[1,2,1,0,],29,6
+cap:1,2,45vsflow:1,2,29
+!!!!cap: 45-29=16
+cap:2,3,29vsflow:2,3,29
+!!!!!!!!cap: 29-29=0
+min: 29,29=29
+	push path[2,3,2,1,0,],29,6
+cap:2,3,29vsflow:2,3,29
+!!!!cap: 29-29=0
+cap:3,4,42vsflow:3,4,29
+!!!!!!!!cap: 42-29=13
+newstart: [0,3], 14,6
+cap:0,3,14vsflow:0,3,0
+!!!!!!!!cap: 14-0=14
+min: 29,14=14
+	push path[3,0,1,0,],14,6
+cap:3,4,42vsflow:3,4,29
+!!!!cap: 42-29=13
+	push path[3,0,],14,6
+cap:3,4,42vsflow:3,4,29
+!!!!cap: 42-29=13
+cap:2,4,47vsflow:2,4,0
+!!!!!!!!cap: 47-0=47
+min: 36,47=36
+cap:2,4,47vsflow:2,4,0
+!!!!!!!!cap: 47-0=47
+	push path[4,2,1,0,],36,6
+push: inc[4,2,1,0,], 36,6
+  update: 2,4->36+0=36
+push: inc[2,1,0,], 36,6
+  update: 1,2->36+29=65
+push: inc[1,0,], 36,6
+  update: 0,1->36+29=65
+push: inc[0,], 36,6
+newstart: [0,3], 14,7
+	push path[3,0,],14,7
+cap:3,4,42vsflow:3,4,29
+!!!!cap: 42-29=13
+min: 14,13=13
+match backward: [3,0,]
+	push path[2,3,0,],14,7
+cap:2,3,29vsflow:2,3,29
+!!!!cap: 29-29=0
+	push path[4,3,0,],13,7
+push: inc[4,3,0,], 13,7
+  update: 3,4->13+29=42
+push: inc[3,0,], 13,7
+  update: 0,3->13+0=13
+push: inc[0,], 13,7
+newstart: [0,3], 1,8
+	push path[3,0,],1,8
+match backward: [3,0,]
+match backward: [3,0,]
+	push path[2,3,0,],1,8
+cap:2,3,29vsflow:2,3,29
+!!!!cap: 29-29=0
+	push path[0,3,0,],1,8
+cap:0,3,14vsflow:0,3,13
+!!!!cap: 14-13=1
+min: 1,1=1
+	push path[3,0,3,0,],1,8
+cap:3,4,42vsflow:3,4,42
+!!!!!!!!cap: 42-42=0
+cap:3,4,42vsflow:3,4,42
+!!!!!!!!cap: 42-42=0
+cap:0,1,36vsflow:0,1,65
+!!!!!!!!cap: 36-65=-29
+min: 1,65=1
+	push path[1,2,3,0,],1,8
+cap:1,2,45vsflow:1,2,65
+!!!!cap: 45-65=-20
+match backward: [1,2,3,0,]
+	push path[0,1,2,3,0,],1,8
+cap:0,3,14vsflow:0,3,13
+!!!!cap: 14-13=1
+cap:0,1,36vsflow:0,1,65
+!!!!cap: 36-65=-29
+cap:2,4,47vsflow:2,4,36
+!!!!!!!!cap: 47-36=11
+min: 1,11=1
+	push path[4,2,3,0,],1,8
+push: inc[4,2,3,0,], 1,8
+  update: 2,4->1+36=37
+push: inc[2,3,0,], 1,8
+  update back: 2,3->29-1=28
+push: inc[3,0,], 1,8
+  update: 0,3->1+13=14
+push: inc[0,], 1,8
+newstart: [0,2], 22,9
+	push path[2,0,],22,9
+cap:2,4,47vsflow:2,4,37
+!!!!cap: 47-37=10
+min: 22,10=10
+cap:2,3,29vsflow:2,3,28
+!!!!cap: 29-28=1
+min: 22,1=1
+match backward: [2,0,]
+	push path[1,2,0,],22,9
+cap:1,2,45vsflow:1,2,65
+!!!!cap: 45-65=-20
+match backward: [1,2,0,]
+	push path[0,1,2,0,],22,9
+cap:0,2,22vsflow:0,2,0
+!!!!cap: 22-0=22
+min: 22,22=22
+cap:0,3,14vsflow:0,3,14
+!!!!cap: 14-14=0
+cap:0,1,36vsflow:0,1,65
+!!!!cap: 36-65=-29
+	push path[2,0,1,2,0,],22,9
+cap:2,4,47vsflow:2,4,37
+!!!!cap: 47-37=10
+cap:2,3,29vsflow:2,3,28
+!!!!cap: 29-28=1
+	push path[3,2,0,],1,9
+cap:3,4,42vsflow:3,4,42
+!!!!cap: 42-42=0
+match backward: [3,2,0,]
+match backward: [3,2,0,]
+	push path[2,3,2,0,],1,9
+cap:2,4,47vsflow:2,4,37
+!!!!cap: 47-37=10
+cap:2,3,29vsflow:2,3,28
+!!!!cap: 29-28=1
+	push path[0,3,2,0,],1,9
+cap:0,2,22vsflow:0,2,0
+!!!!cap: 22-0=22
+cap:0,3,14vsflow:0,3,14
+!!!!cap: 14-14=0
+cap:0,1,36vsflow:0,1,65
+!!!!cap: 36-65=-29
+	push path[4,2,0,],10,9
+push: inc[4,2,0,], 10,9
+  update: 2,4->10+37=47
+push: inc[2,0,], 10,9
+  update: 0,2->10+0=10
+push: inc[0,], 10,9
+newstart: [0,2], 12,10
+	push path[2,0,],12,10
+cap:2,3,29vsflow:2,3,28
+!!!!cap: 29-28=1
+min: 12,1=1
+match backward: [2,0,]
+match backward: [2,0,]
+	push path[1,2,0,],12,10
+cap:1,2,45vsflow:1,2,65
+!!!!cap: 45-65=-20
+match backward: [1,2,0,]
+	push path[0,1,2,0,],12,10
+cap:0,2,22vsflow:0,2,10
+!!!!cap: 22-10=12
+min: 12,12=12
+cap:0,3,14vsflow:0,3,14
+!!!!cap: 14-14=0
+cap:0,1,36vsflow:0,1,65
+!!!!cap: 36-65=-29
+	push path[2,0,1,2,0,],12,10
+cap:2,3,29vsflow:2,3,28
+!!!!cap: 29-28=1
+	push path[0,2,0,],10,10
+cap:0,2,22vsflow:0,2,10
+!!!!cap: 22-10=12
+cap:0,3,14vsflow:0,3,14
+!!!!cap: 14-14=0
+cap:0,1,36vsflow:0,1,65
+!!!!cap: 36-65=-29
+	push path[3,2,0,],1,10
+cap:3,4,42vsflow:3,4,42
+!!!!cap: 42-42=0
+match backward: [3,2,0,]
+match backward: [3,2,0,]
+	push path[2,3,2,0,],1,10
+cap:2,3,29vsflow:2,3,28
+!!!!cap: 29-28=1
+	push path[0,3,2,0,],1,10
+cap:0,2,22vsflow:0,2,10
+!!!!cap: 22-10=12
+cap:0,3,14vsflow:0,3,14
+!!!!cap: 14-14=0
+cap:0,1,36vsflow:0,1,65
+!!!!cap: 36-65=-29
+cap:2,4,47vsflow:2,4,47
+!!!!!!!!cap: 47-47=0
+cap:2,4,47vsflow:2,4,47
+!!!!!!!!cap: 47-47=0
+cap:2,4,47vsflow:2,4,47
+!!!!!!!!cap: 47-47=0
+cap:1,4,14vsflow:1,4,0
+!!!!!!!!cap: 14-0=14
+min: 12,14=12
+	push path[4,1,2,0,],12,10
+push: inc[4,1,2,0,], 12,10
+  update: 1,4->12+0=12
+push: inc[1,2,0,], 12,10
+  update back: 1,2->65-12=53
+push: inc[2,0,], 12,10
+  update: 0,2->12+10=22
+push: inc[0,], 12,10
+newstart: [0,4], 26,11
+	push path[4,0,],26,11
+push: inc[4,0,], 26,11
+  update: 0,4->26+0=26
+push: inc[0,], 26,11
+maxflow(127).goal(4).flow(3,4,42).flow(0,1,65).flow(0,3,14).flow(2,3,28).flow(2,4,47).flow(0,2,22).flow(1,2,53).flow(1,4,12).flow(1,3,0).flow(0,4,26).cap(0,4,26).cap(1,3,5).cap(1,4,14).cap(0,2,22).cap(2,4,47).cap(0,3,14).cap(3,4,42).cap(2,3,29).cap(1,2,45).cap(0,1,36).@4.

@@ -1,0 +1,52 @@
+//cap(cap)
+// example: https://www.msi.co.jp/solution/nuopt/docs/examples/html/02-07-00.html
+% cap(!X,!B,6),cap(!B,!C,4),cap(!C,!Y,8),
+% cap(!X,!A,4),cap(!A,!C,5),
+% cap(!B,!D,3),
+% cap(!D,!Y,5).
+
+% start(!X).goal(!Y).
+
+% start(!H0).goal(!H99).cap(!H0,!H42,20).cap(!H1,!H37,23).cap(!H2,!H44,45).cap(!H3,!H53,20).cap(!H4,!H72,20).cap(!H5,!H20,22).cap(!H6,!H49,21).cap(!H7,!H99,34).cap(!H8,!H20,44).cap(!H9,!H49,16).cap(!H10,!H32,37).cap(!H11,!H25,19).cap(!H12,!H59,26).cap(!H13,!H78,31).cap(!H14,!H15,17).cap(!H15,!H38,44).cap(!H16,!H65,12).cap(!H17,!H21,13).cap(!H18,!H38,9).cap(!H19,!H60,1).cap(!H20,!H31,31).cap(!H21,!H94,47).cap(!H22,!H60,50).cap(!H23,!H37,37).cap(!H24,!H57,7).cap(!H25,!H83,16).cap(!H26,!H38,23).cap(!H27,!H44,8).cap(!H28,!H35,39).cap(!H29,!H57,43).cap(!H30,!H49,2).cap(!H31,!H43,1).cap(!H32,!H33,33).cap(!H33,!H46,5).cap(!H34,!H79,1).cap(!H35,!H99,21).cap(!H36,!H85,46).cap(!H37,!H53,12).cap(!H38,!H58,2).cap(!H39,!H74,44).cap(!H40,!H58,17).cap(!H41,!H52,2).cap(!H42,!H72,13).cap(!H43,!H70,45).cap(!H44,!H94,34).cap(!H45,!H59,34).cap(!H46,!H90,13).cap(!H47,!H67,16).cap(!H48,!H67,24).cap(!H49,!H69,21).cap(!H50,!H74,35).cap(!H51,!H72,36).cap(!H52,!H73,23).cap(!H53,!H64,4).cap(!H54,!H73,26).cap(!H55,!H84,39).cap(!H56,!H62,31).cap(!H57,!H97,29).cap(!H58,!H60,25).cap(!H59,!H85,27).cap(!H60,!H71,35).cap(!H61,!H75,30).cap(!H62,!H68,10).cap(!H63,!H96,4).cap(!H64,!H78,22).cap(!H65,!H86,35).cap(!H66,!H70,8).cap(!H67,!H88,28).cap(!H68,!H74,13).cap(!H69,!H97,41).cap(!H70,!H78,23).cap(!H71,!H92,15).cap(!H72,!H75,5).cap(!H73,!H94,18).cap(!H74,!H78,49).cap(!H75,!H88,15).cap(!H76,!H82,42).cap(!H77,!H89,5).cap(!H78,!H99,36).cap(!H79,!H87,18).cap(!H80,!H95,40).cap(!H81,!H88,22).cap(!H82,!H86,32).cap(!H83,!H96,31).cap(!H84,!H91,24).cap(!H85,!H94,5).cap(!H86,!H90,42).cap(!H87,!H89,39).cap(!H88,!H89,15).cap(!H89,!H91,44).cap(!H90,!H91,9).cap(!H91,!H98,22).cap(!H92,!H97,13).cap(!H93,!H98,45).cap(!H94,!H95,23).cap(!H95,!H96,16).cap(!H96,!H98,47).cap(!H97,!H98,26).cap(!H98,!H99,10).cap(!H0,!H1,44).cap(!H0,!H2,20).cap(!H1,!H3,36).cap(!H1,!H4,40).cap(!H2,!H5,32).cap(!H4,!H6,4).cap(!H5,!H7,23).cap(!H2,!H8,30).cap(!H5,!H9,6).cap(!H6,!H10,33).cap(!H2,!H11,24).cap(!H7,!H12,40).cap(!H11,!H13,15).cap(!H6,!H14,46).cap(!H0,!H15,32).cap(!H13,!H16,19).cap(!H1,!H17,11).cap(!H15,!H18,35).cap(!H12,!H19,16).cap(!H11,!H20,23).cap(!H13,!H21,34).cap(!H4,!H22,33).cap(!H16,!H23,34).cap(!H18,!H24,26).cap(!H19,!H25,20).cap(!H25,!H26,45).cap(!H25,!H27,41).cap(!H3,!H28,33).cap(!H25,!H29,7).cap(!H0,!H30,1).cap(!H15,!H31,8).cap(!H8,!H32,14).cap(!H4,!H33,32).cap(!H20,!H34,43).cap(!H16,!H35,2).cap(!H34,!H36,17).cap(!H21,!H37,38).cap(!H9,!H38,21).cap(!H6,!H39,34).cap(!H32,!H40,1).cap(!H39,!H41,11).cap(!H19,!H42,36).cap(!H35,!H43,15).cap(!H33,!H44,24).cap(!H15,!H45,28).cap(!H29,!H46,7).cap(!H14,!H47,43).cap(!H13,!H48,31).cap(!H29,!H50,28).cap(!H13,!H51,32).cap(!H47,!H52,9).cap(!H24,!H53,28).cap(!H22,!H54,10).cap(!H4,!H55,38).cap(!H25,!H56,9).cap(!H0,!H57,4).cap(!H35,!H58,8).cap(!H51,!H59,23).cap(!H30,!H60,39).cap(!H7,!H61,1).cap(!H51,!H63,33).cap(!H40,!H64,49).cap(!H63,!H65,26).cap(!H61,!H66,38).cap(!H24,!H67,16).cap(!H20,!H68,15).cap(!H54,!H69,46).cap(!H56,!H70,43).cap(!H22,!H71,22).cap(!H23,!H72,11).cap(!H14,!H73,30).cap(!H18,!H74,21).cap(!H68,!H75,34).cap(!H34,!H76,27).cap(!H50,!H77,35).cap(!H42,!H78,10).cap(!H17,!H79,40).cap(!H41,!H80,2).cap(!H1,!H81,36).cap(!H59,!H82,48).cap(!H6,!H83,11).cap(!H35,!H84,4).cap(!H66,!H85,22).cap(!H37,!H86,2).cap(!H48,!H87,24).cap(!H79,!H88,34).cap(!H63,!H89,6).cap(!H85,!H90,17).cap(!H57,!H91,43).cap(!H73,!H92,4).cap(!H35,!H93,50).cap(!H25,!H94,25).cap(!H49,!H95,38).cap(!H77,!H96,36).cap(!H71,!H97,11).cap(!H89,!H98,33).cap(!H16,!H99,36).cap(!H30,!H68,17).cap(!H74,!H98,40).cap(!H60,!H97,34).cap(!H95,!H98,21).
+
+
+:- uniq | step(!H), do(!H).
+cap(!F,!T,C) \:- int(C), uniq(!F,!T) | flow(!F,!T,0).
+
+min@@R = min(A,B) :- A >= B | R=B.
+min@@R = min(A,B) :- A < B | R=A.
+
+find_startpath@@
+start(!A),cap(!A,!B,M),flow(!A,!B,N),step(!ST),do(!ST)\
+    :- R = M-N, R > 0, uniq(!ST,!B)
+    |path([!B,!A], R, !ST).
+
+increase_flow@@
+inc([!B,!A|L], F, !ST), flow(!A,!B,N) :- M = N+F | inc([!A|L], F, !ST), flow(!A,!B,M).
+decrease_flow@@
+inc([!A,!B|L], F, !ST), flow(!A,!B,N) :- M = N-F | inc([!B|L], F, !ST), flow(!A,!B,M).
+
+next_step@@
+inc([!S], F, !ST), step(!ST) :- int(F) | step(!New), do(!New).
+
+check_path@@
+step(!ST), goal(!G) \ path([!G|L], F, !ST), do(!ST)
+    :-  inc([!G|L], F, !ST).
+
+// 増加道は1ステップに1つ見つかればいいので、同じパスを使うのは高々1回でOK
+
+propagate_path@@
+step(!ST), do(!ST), path([!A|L], F, !ST),cap(!A,!B,M),flow(!A,!B,N) \
+    :- int(F), ground(L), R = M-N, R > 0, uniq(!ST,!A,!B)
+    | path([!B,!A|L], min(F,R), !ST).
+backward_path@@
+step(!ST), do(!ST), path([!A|L], F, !ST),cap(!B,!A,M),flow(!B,!A,N) \
+    :- int(F), ground(L), int(M), N > 0, uniq(!ST,!A,!B)
+    | path([!B,!A|L], min(F,N), !ST).
+
+// 整形用。計測時外す。上から実行前提
+% do(!Stop) \ path(L,F,!H) :- ground(L), int(F) | .
+
+% :- uniq | maxflow(0).
+% goal(!H) \ maxflow(N), flow(!A,!H,M) :- Max = N+M | maxflow(Max).
+

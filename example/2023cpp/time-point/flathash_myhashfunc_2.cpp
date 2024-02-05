@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
     }
 
     // 出力用ファイル 
-    string filename2 = "result_flathash_myhashfunc.csv";
+    string filename2 = "result_flathash_myhashfunc_time.csv";
 
 
     ifstream i_file(filename);
@@ -121,14 +121,18 @@ int main(int argc, char *argv[]){
     ska::flat_hash_set<hist_type, decltype(hash)> history_rule3(1024,hash);
     ska::flat_hash_set<hist_type, decltype(hash)> history_rule4(1024,hash); 
     // relates' of start atom 
+    auto s1 = std::chrono::steady_clock::now();
     while(!push_start_h.empty()){
         // start(!X) :- between(0,!X,0).
         int tmp = push_start_h.back();
         push_start_h.pop_back();
         push_between_ihi.push_back({0,tmp,0});
     }
+    auto e1 = std::chrono::steady_clock::now();
+    long d1 = std::chrono::duration_cast<std::chrono::milliseconds>(e1 - s1).count();
 
     // distance は ルールによって増えないので下のループに入れない
+    auto s2 = std::chrono::steady_clock::now();
     while(!push_distance_ihhi.empty()){
         tuple<int,int,int,int> tmp = push_distance_ihhi.back();
         push_distance_ihhi.pop_back();
@@ -165,16 +169,27 @@ int main(int argc, char *argv[]){
         distance_ihhi1[arg2].push_back({itr});
         distance_ihhi2[arg3].push_back({itr});
     }
+    auto e2 = std::chrono::steady_clock::now();
+    long d2 = std::chrono::duration_cast<std::chrono::milliseconds>(e2 - s2).count();
     
     // relates' of between atom
+    auto s3 = std::chrono::steady_clock::now();
+    long d4 = 0;
+    long d5 = 0;
+    long d6 = 0;
+    long d7 = 0;
+    // int loop_count = 0;
     while (!(push_between_ihi.empty()))
     {
-
+        // loop_count++;
+        // auto s4 = std::chrono::steady_clock::now();
         tuple<int,int,int> tmp = push_between_ihi.back();
         int arg1 = get<0>(tmp);
         int arg2 = get<1>(tmp);
         int arg3 = get<2>(tmp);
         push_between_ihi.pop_back();
+        // auto e4 = std::chrono::steady_clock::now();
+        // d4 += std::chrono::duration_cast<std::chrono::milliseconds>(e4 - s4).count();
 
         // cout << "target: " << arg1 << ", " << arg2 << ", " << arg3 << endl;
 
@@ -188,6 +203,7 @@ int main(int argc, char *argv[]){
         // between(A,!Y,B), between(C,!Y,D) :- between(max(A,C),!Y,min(B,D)).
         // max, min が消えるか消えないかを予め解析
         // 消えない場合は, between(int,int,int,int) になりえない
+        // auto s5 = std::chrono::steady_clock::now();
         if(!between_ihi[arg2].empty()){
             // 必ず消えるので pop back
             auto tmp2 = between_ihi[arg2].back();
@@ -219,7 +235,8 @@ int main(int argc, char *argv[]){
             
             continue;
         }
-
+        // auto e5 = std::chrono::steady_clock::now();
+        // d5 += std::chrono::duration_cast<std::chrono::milliseconds>(e5 - s5).count();
 
         // between(A,!Y,B), distance(C,!Y,!Z,D) \ 
         //     :- AC=A+C, BD=B+D, uniq(A,!Y,B,C,!Z,D) 
@@ -227,6 +244,7 @@ int main(int argc, char *argv[]){
         // between(A,!Y,B), distance(C,!Y,!Z,D) \ 
         //     :- AC=A-D, BD=B-C, uniq(A,!Y,B,C,!Z,D) 
         //     | between(AC,!Z,BD).
+        // auto s6 = std::chrono::steady_clock::now();
         for(auto i: distance_ihhi1[arg2]){
             if(history_rule3.insert({arg1,arg2,arg3,get<0>(*i),get<2>(*i),get<3>(*i)}).second){
                 int AC = arg1 + get<0>(*i);
@@ -243,11 +261,19 @@ int main(int argc, char *argv[]){
                 push_between_ihi.push_back({AC,get<1>(*i),BD});
             } 
         }
+        // auto e6 = std::chrono::steady_clock::now();
+        // d6 += std::chrono::duration_cast<std::chrono::milliseconds>(e6 - s6).count(); 
+        // auto s7 = std::chrono::steady_clock::now();
         al_between_ihi.push_back({arg1,arg2,arg3,between_ihi[arg2].size()});
         auto itr = al_between_ihi.end();
         --itr;
         between_ihi[arg2].push_back({itr});
+        // auto e7 = std::chrono::steady_clock::now();
+        // d7 += std::chrono::duration_cast<std::chrono::milliseconds>(e7 - s7).count();  
     }
+    
+    auto e3 = std::chrono::steady_clock::now();
+    long d3 = std::chrono::duration_cast<std::chrono::milliseconds>(e3 - s3).count();
 
     auto end = std::chrono::steady_clock::now();
     long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
@@ -255,11 +281,12 @@ int main(int argc, char *argv[]){
     ofstream o_file;
     o_file.open(filename2, ios::app);
 
-    o_file << duration << ",";
+    o_file << duration << "," << d1 << "," << d2 << "," << d3  << endl;
+    //<< "," << d4 << "," << d5 << "," << d6 << "," << d7 << "," << loop_count << ","  ;
 
-    print_distance(al_distance_ihhi);
-    print_between(al_between_ihi);
-    cout << "@4." << endl;
+    // print_distance(al_distance_ihhi);
+    // print_between(al_between_ihi);
+    // cout << "@4." << endl;
 
     return 0;
 }

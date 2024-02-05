@@ -254,9 +254,13 @@ int main(int argc, char *argv[]){
 
     o_file << duration << ",";
 
-    print_distance(al_distance_ihhi);
-    print_between(al_between_ihi);
-    cout << "@4." << endl;
+    // print_distance(al_distance_ihhi);
+    // print_between(al_between_ihi);
+    // cout << "@4." << endl;
+
+    delete[] distance_ihhi1;
+    delete[] distance_ihhi2;
+    delete[] between_ihi;
 
     return 0;
 }

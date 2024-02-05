@@ -1,0 +1,8 @@
+a(1) :- A =\= B | b.
+
+ok :- A =:= B | .
+
+test(L) :- LL = L + 1 | test2(LL).
+
+edge(N), a \ edge(M) :- N <. M | path(N).
+te(1).

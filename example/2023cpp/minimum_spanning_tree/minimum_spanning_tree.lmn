@@ -1,0 +1,17 @@
+e(!H0,10,!H1,!L0).e(!H0,5,!H3,!L1).
+e(!H1,1,!H2,!L2).e(!H1,1000,!H3,!L3).e(!H1,500,!H4,!L4).
+e(!H2,100,!H3,!L5).e(!H2,10000,!H4,!L6).
+e(!H3,5000,!H4,!L7).
+cost(0).
+
+% next(!L2).
+% order(!L2,!L1).order(!L1,!L0).order(!L0,!L5).order(!L5,!L4).
+% order(!L4,!L3).order(!L3,!L7).order(!L7,!L6).
+
+order([!L2,!L1,!L0,!L5,!L4,!L3,!L7,!L6]).
+
+order([!L|T]), e(!H0,C,!H1,!L), cost(Sum) :- 
+    !H0 \== !H1, S = Sum + C | order(T), cost(S), !H0 >< !H1.
+
+order([!L|T]), e(!H0,C,!H1,!L) :- 
+    !H0 = !H1, int(C)| order(T).

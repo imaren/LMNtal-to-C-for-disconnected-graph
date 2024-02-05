@@ -1,0 +1,2 @@
+path(A,B), path(C,D) \ :- B=:=C,int(A),int(D),uniq(A,D) | path(A,D).
+

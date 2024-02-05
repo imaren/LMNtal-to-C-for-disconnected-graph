@@ -1,0 +1,768 @@
+\section{アルゴリズムメモ}
+
+\algnewcommand\algorithmicinput{\textbf{Def: }}
+\algnewcommand\Def{\item[\algorithmicinput]}
+
+\begin{definition}[検索されうる引数]
+atom($arg_0, \dots, arg_n$) を Head に含み，
+かつ，いずれかの辺の式が $arg_i, 0\leq i\leq n$ を
+含むような, 比較を行う二項演算子 op を Guard に含むようなルールが存在する場合，
+atom の第 $i$ 引数は，\textbf{op によって検索されうる}（i th argument of atom can be searched by op）．
+\end{definition}
+
+\begin{definition}[labeled rule]
+これ以降，LMNtal ルールにおいて，
+Head :- Guard | Body. もしくは $\text{Head}_1 \backslash \text{Head}_2$ :- Guard | Body.
+のように記述された全てのルールについて，
+Head に出現するある1つのアトム（atom($arg_0,\dots, arg_n$)）にラベル付けしたルール(labeled rule) をラベル付きルール（もしくは単にルール, rule）と呼ぶ．
+ラベル付けされたアトムをターゲットアトム（target\_atom） と呼び，
+Head に出現する全てのアトムについてラベル付きルールが生成される．
+\end{definition}
+
+\begin{definition}[quated atom]
+    アトム atom($arg_0,\dots, arg\_n$) について，"atom" もしくは "atom($arg_0,\dots, arg\_n$)" と表記したとき，
+    そのアトムの名前を表す文字列を意味する
+\end{definition}
+
+\textbf{example}\\
+    LMNtal ルール
+    \texttt{a(A,B),b(C,D) :- A=C, B<D | .}
+    が存在するとき，
+    ラベル付けされたルール
+    \texttt{label:a(A,B), b(C,D) :- A=C, B<D | .},
+    \texttt{a(A,B), label:b(C,D) :- A=C, B<D | .}
+    が存在する．
+
+
+
+主に HyperLink （id を表すような増減しない整数値）が同一であることを確かめるケース
+を考えるためここでは "=" によって検索されうる引数について考える．\\
+他の演算子によって検索されうる引数については今後の課題とする（が，残っているのは int の比較だと思うので，普通に2分探索木を考えている）．
+例題がないので考えるモチベーションがないだけである．
+
+\begin{algorithm}
+\caption{全体のアルゴ memo}
+\label{alg:overall}
+\begin{algorithmic}[1]
+    \scriptsize
+
+\Require \Comment{"atom" $\in$ set of all atoms(functors)}
+    \State "atom"\_p is a list of "atom"s that have not been inserted into atomlist yet.   
+    \State "atom"\_al is a list of "atom"s that have already been inserted and can be used as part of the Head of rules.
+    \State "atom"\_vec\_i is a vector (or array) of vector (or list) of pointer to "atoms"s 
+    where "atom"\_vec\_i[j] is vector of pointer to the atom that HL\_id(or Int\_id) of i\_th argument is j
+    \Comment{Such vectors are exist if and only if i th argument of "atom" can be searched by "="}
+
+\Ensure
+    All "atom"\_p are empty.
+
+\Procedure{全体の処理}{}
+\ForAll{atom $\in$ set\_non\_increasable\_atoms}
+    \If {!("atom"\_p is empty)}
+        \State target\_atom $\gets$ "atom"\_p.front()
+        \State "atom"\_p\_pop\_front()
+        \ForAll{Rule $\gets$ Rules\_Head\_include\_target\_atom}
+            \If{Exec\_Rule(Rule, target\_atom) == Status\_Continue}
+                \State Continue
+            \EndIf
+            \State break
+        \EndFor
+        \State "atom"\_al.push\_back(target\_atom)
+        \ForAll{search\_vec:  "atom"\_vec\_0 $\dots$ "atom"\_vec\_n}
+            \State search\_vec.push\_back("atom"\_al.last())
+            \Comment{\parbox[t]{.4\linewidth}{.last() gets iterator to last element of list or vector}}
+        \EndFor
+    \EndIf  
+\EndFor
+
+\While{!(atom\_p is empty for all atoms)}
+    \ForAll{atom $\in$ set\_increasable\_atoms}
+        \If {!(atom\_p is empty)}
+            \State target\_atom $\gets$ atom\_p.front()
+            \State atom\_p.pop\_front()
+            \ForAll{Rule $\gets$ Rules\_Head\_include\_target\_atom}
+                \If{Exec\_Rule(Rule, target\_atom) == Status\_Continue}
+                    \State Continue
+                \EndIf
+                \State break
+            \EndFor
+            \State "atom"\_al.push\_back(target\_atom)
+            \ForAll{search\_vec:  "atom"\_vec\_0 $\dots$ "atom"\_vec\_n}
+                \State search\_vec.push\_back("atom"\_al.last())
+                \Comment{\parbox[t]{.4\linewidth}{.last() gets iterator to last element of list or vector}}
+            \EndFor
+        \EndIf  
+    \EndFor
+\EndWhile
+\EndProcedure
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \label{alg:exec_rule}
+\begin{algorithmic}[1]
+    \scriptsize
+    % \Comment{check the rule that can be fired by target\_atom}
+    \Require \Comment{these information are known at compile time}
+        \State "atom"\_vec\_i is a vector (or array) of vector (or list) of pointer to "atoms"s 
+            where "atom"\_vec\_i[j] is vector of pointer to the atom that HL\_id(or Int\_id) of i\_th argument is j
+        \Comment{Such vectors are exist if and only if i th argument of "atom" can be searched by "="}
+        \State input rule is a labeled rule
+    \Procedure{Exec\_Rule}{rule, target\_atom}
+        \State set $S = {\text{target\_atom}}$
+        \State set Head $\gets$ Head of rule
+            \State $\text{atom}_0$($arg_1,\dots, arg_n$) $\in$ Head
+            \State Head = Head $\setminus$ \{$\text{atom}_0$($arg_1,\dots, arg_n$)\}
+            \State \dots
+            \State $\text{atom}_l$($arg_1,\dots, arg_m$) $\in$ Head
+            \State Head = Head $\setminus$ \{$\text{atom}_l$($arg_1,\dots, arg_m$)\}    
+            \Comment{Head must be $\emptyset$ here}
+       \Loop
+            \State \dots (l)
+            \Loop
+                % \If{$arg_i$ can be searched by "=" and $\forall link \in L(\exists atm\in S(\exists a \in \text{args of }atm(link=a) ))$
+                %         where $0\leq i\leq n$ and L is set of links appears as operands of the "=" except for $arg_i$ }
+                \If{\parbox[t]{.9\linewidth}{$arg_i$ can be searched by "=" and $\forall link \in L(\exists atm\in S(\exists a \in \text{args of }atm(link=a) ))$
+                        where $0\leq i\leq m$ and L is set of links appears as operands of the "=" except for $arg_i$}}
+                    \State expr $\gets$ transform the expression into the form $arg_i$ "=" others  
+                    \State j $\gets$ result of the right side of expr  
+                    \If {atom\_vec\_i[j] is empty}
+                        \State \textbf{return} Status\_Not\_Continue
+                    \Else
+                        \State $\text{pair\_atom}_l$ $\gets$ atom\_vec\_i[j].next()
+                        \Comment{\parbox[t]{.4\linewidth}{.next() if it is called first time, gets first element; otherwise, gets next element(including the next of the last element)}}
+                        \If{$\text{pair\_atom}_l$ = atom\_vec\_i[j].end()}
+                            \Comment{.end() means the next of the last element}
+                            \State break
+                        \EndIf
+                    \EndIf
+                \Else
+                    \State $\text{pair\_atom}_l$ $\gets$ atom\_atomlist.next()
+                \EndIf
+                \If{Guard is true}
+                    \ForAll{body\_atom $\in$ Body of rule}
+                        \State "body\_atom"\_p.push\_back(body\_atom)
+                        \State delete atoms
+                        \If{target\_atom is deleted}
+                            \State \textbf{return} Status\_Continue
+                        \EndIf
+                    \EndFor
+                \EndIf
+            \EndLoop
+        \EndLoop
+        \State \textbf{return} Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{例}
+\begin{figure}
+    \label{ex1}
+    \lstinputlisting[]{progs/time-point.lmn}
+\end{figure}
+
+図\ref{ex1} のプログラムにおいて，ルールのヘッドに存在するアトムは，
+\begin{itemize}
+    \item start(HyperLink)
+    \item max(Int, Int, Link)
+    \item min(Int, Int, Link)
+    \item between(Int, HyperLink, Int)
+    \item distance(Int, HyperLink, HyperLink, Int)
+\end{itemize}
+である．
+尚，intersect ルールにおいて生成される \texttt{max(Int, Int, Link)}, \texttt{min(Int, Int, Link)} は生成時に \texttt{Link=Int} に書き換える．
+そのため，初期状態にこれらが含まれない場合は，max, min についてのアトムリスト等は生成されない．
+ここでは簡単のため，max, min は初期状態に含まれないものとする．
+また，"=" によって検索されうる引数は以下である.
+(HyperLink が等しいことを確かめるオペレータは "=" であるとする)
+\begin{itemize}
+    \item intersect他より， between(Int, HyperLink, Int) の第2引数
+    \item propagate\_forwardより，distance(Int, HyperLink, HyperLink, Int) の第2引数
+    \item propagate\_backwardより，distance(Int, HyperLink, HyperLink, Int) の第3引数
+\end{itemize}
+
+以上の事から，疑似コード\ref{alg:overall}において用意されるデータ構造は以下である．
+\begin{itemize}
+    \item start\_p
+    \item start\_al
+    \item between\_p
+    \item between\_al
+    \item between\_vec\_2
+    \item distance\_p
+    \item distance\_al
+    \item distance\_vec\_2
+    \item distance\_vec\_3
+\end{itemize}
+
+全体のアルゴリズム\ref{ald:overall}において，line 5 の for loop で処理されるアトムは \texttt{start(HyperLink)} と \texttt{distance(Int, HyperLink, HyperLink, Int)} であり，
+それに伴い実行されるルールは以下である．
+\begin{itemize}
+    \item ターゲットアトムが \texttt{start(!X)} である start ルール
+    \item ターゲットアトムが \texttt{distance(C,!Y,!Z,D)} である，propagation\_forward ルール
+    \item ターゲットアトムが \texttt{distance(C,!Z,!Y,D)} である，propagation\_backward ルール
+\end{itemize}
+その他のアトム，つまり \texttt{between(Int, HyperLink, Int)} (注: max, min は考えないことを思い出してください)
+については，line 21 の while loop 内で処理される．
+具体的な残りのルールは以下である
+\begin{itemize}
+    \item ターゲットアトムが \texttt{between(A,!X,B)} である inconsistent ルール
+    \item ターゲットアトムが \texttt{between(A,!Y,B)} である intersect ルール
+    \item ターゲットアトムが \texttt{between(C,!Y,D)} である intersect ルール
+    \item ターゲットアトムが \texttt{between(A,!Y,B)} である propagation\_forward ルール
+    \item ターゲットアトムが \texttt{between(A,!Y,B)} である propagation\_backward ルール
+\end{itemize}
+
+
+ここで，exec\_rule\ref{alg:exec_rule}について，
+ターゲットアトムが \texttt{between(A,!Y,B)}であったときの propagation\_forward ルールについての例を挙げる．
+まず，ターゲットアトム以外にヘッドに含まれるアトムは \texttt{distance(C,!Y,!Z,D)} ただ1つであるため， line 6-10 において$l=0$ である．
+そのため，line 11 以降の loop は 1重である．
+次に line 14 の if 文について，\texttt{between(A,!Y,B)} をターゲットアトムとして持っているため，
+\texttt{distance(C,!Y,!Z,D)}側の \texttt{!Y} は $arg_2$ から検索可能で，かつ "=" のオペランドとして出現するリンク，
+つまり \texttt{between(A,!Y,B)} 側の \texttt{!Y} がわかっているため，条件式は \texttt{true} を返す．
+その後，
+\begin{itemize}
+    \item line 15: expr $\gets$ \texttt{!Y} の HyperLink ID
+    \item line 16: j $\gets$ expr
+\end{itemize}
+となり，
+distance\_vec\_2[j] のベクタを得る．
+要素数が 0 の場合 line 17-18 によって return しルール実行が終了する．
+要素がある場合，line 20 によって先頭から順に要素を得て，line 28 でガード条件を処理する．
+その後、line 29-35 で between\_p に \texttt{between(AC,!Z,BD)} を push する．
+なお，ターゲットアトムが削除されないため，line 32-33 は条件が false なので実行されない．
+loop を繰り返し，line 20 の処理で要素を最後まで辿ったら line 22-23 によりループを抜け，
+line 39 により Status\_Not\_Continue を返して終了．
+なお， Status\_Not\_Continue を受け取った アルゴリズム\ref{alg:overall} line は，
+ターゲットアトム \texttt{between(A,!Y,B)} を between\_al に push し，処理を続ける．
+Status\_Continue はターゲットアトムが削除される場合に返され，アトムリストに push することなく処理を続ける．
+
+
+\begin{itemize}
+    \item "atom"\_p is deque
+    \item "atom"\_al is deque
+    \item "atom"\_vec\_i is Index structure of deque of pointer to element of "atom"\_al
+\end{itemize}
+
+\begin{algorithm}
+    \scriptsize
+\caption{例題に特殊化したアルゴ memo}
+\begin{algorithmic}[1]
+    \Procedure{全体}{}
+        \While{true}
+            \If{start\_p is empty}
+                \State break
+            \EndIf
+            \State target $\gets$ start\_p.front()
+            \State ret $\gets$ Exec start(target)
+            \If{ret == Stat\_Continue} 
+                \State continue
+            \EndIf
+            \State start\_al.push\_back(target) \Comment{never reach here}
+        \EndWhile
+        \While{true}
+            \If{distance\_p is empty}
+                \State break
+            \EndIf
+            \State target $\gets$ distance\_p.front()
+            \State distance\_p.pop\_front()
+            \State ret $\gets$ Exec propagate\_forward(target)
+            \If{ret == Stat\_Continue}
+                \State continue \Comment{never reach here}
+            \EndIf
+            \State ret $\gets$ Exec propagate\_backward(target)
+            \If{ret == Stat\_Continue}
+                \State continue \Comment{never reach here}
+            \EndIf
+            \State distance\_al.push\_back(target)
+            \State idx\_2nd $\gets$ ID of 2nd argument of target
+            \State idx\_3rd $\gets$ ID of 3rd argument of target   
+            \State distance\_vec\_2[idx\_2nd].push\_back(\&distance\_al.back())
+            \State distance\_vec\_3[idx\_3rd].push\_back(\&distance\_al.back())
+        \EndWhile
+        \While{true}
+            \If{between\_p is empty}
+                \State break
+            \EndIf
+            \State target $\gets$ between\_p.front()
+            \State between\_p.pop\_front()
+            \State ret $\gets$ Exec inconsistent(target)
+            \If {ret == Status\_Continue}
+                \State continue \Comment{if the rule fired}
+            \EndIf
+            \State ret $\gets$ Exec intersect(target)
+            \If {ret == Status\_Continue}
+                \State continue \Comment{if the rule fired}
+            \EndIf
+            \State ret $\gets$ Exec propagate\_forward(target)
+            \If {ret == Status\_Continue}
+                \State continue \Comment{never reach here}
+            \EndIf
+            \State ret $\gets$ Exec propagate\_backward(target)
+            \If {ret == Status\_Continue}
+                \State continue \Comment{never reach here}
+            \EndIf
+            \State between\_al.push\_back(target)
+            \State idx\_2nd $\gets$ ID of 2nd argument of target 
+            \State between\_vec\_2[idx\_2nd].push\_back(\&between\_al.back())
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{全体のアルゴリズム簡略版}
+\begin{algorithmic}
+    \scriptsize
+    \Require A はルールのヘッドに出現するアトムの集合
+    \Require Rule はラベル付きルールの集合 
+    \Procedure{全体}{}
+        \While{$\exists a\in A$, "a"\_p is not empty}
+            \ForAll{atom $\in$ A}
+                \State Exec\_Insert(atom) \Comment{Body に一度も出現しないアトムは while の外にくくりだせる}
+            \EndFor
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{全体のアルゴリズム特殊化}
+\begin{algorithmic}
+    \scriptsize
+    \Procedure{全体}{}
+        \State Exec\_Insert(start(HL))
+        \State Exec\_Insert(distance(Int,HL,HL,Int))
+        \While{$\exists deq \in \{\text{between\_p}\}$, deq is not empty}
+            \State Exec\_Insert(between(Int,HL,Int))
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Insertion Loop}
+\begin{algorithmic}
+    \scriptsize
+    \Require atom : 入力，アトム名と引数の型の組
+    \Require Rule : atom がターゲットアトムであるルールの集合
+    \Procedure{Exec\_Insert}{atom}
+        \While{"atom"\_p is not empty} \Comment{recall: "a" は変数 a に格納されたアトムのアトム名の文字列表現}
+            \State target $\gets$  "atom"\_p.front()
+            \State "atom"\_p.pop\_front()
+            \ForAll{rule $\in$ Rule}
+                \State ret $\gets$ Exec\_Rule(rule, target)
+                \If{ret == Status\_Continue} \Comment{If target atom is deleted}
+                    \State Flag $\gets$ true
+                    \State berak
+                \EndIf
+            \EndFor
+            \If{Flag}
+                \State continue
+            \EndIf
+            \State "atom"\_al.push\_back(target)
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Insertion Loop特殊化：start(HL)}
+\begin{algorithmic}
+    \scriptsize
+    \Require atom = start(HL)
+    \Require Rule = \{start \}
+    \Procedure{Exec\_Insert}{atom}
+        \While{start\_p is not empty}
+            \State target $\gets$  start\_p.front()
+            \State start\_p.pop\_front()
+            \ForAll{rule $\in$ Rule} \Comment{start ルール}
+                \State ret $\gets$ Exec\_Rule(rule, target)
+                \If{ret == Status\_Continue} \Comment{If target atom is deleted}
+                    \State Flag $\gets$ true
+                    \State berak
+                \EndIf
+            \EndFor
+            \If{Flag}
+                \State continue
+            \EndIf
+            \State start\_al.push\_back(target)
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Insertion Loop特殊化：between(Int,HL,Int)}
+\begin{algorithmic}
+    \scriptsize
+    \Require atom = between(Int,HL,Int)
+    \Require Rule = \{inconsistent, intersect, propagate\_forward, propagate\_backward \}
+    \Procedure{Exec\_Insert}{atom}
+        \While{between\_p is not empty}
+            \State target $\gets$  between\_p.front()
+            \State between\_p.pop\_front()
+            \ForAll{rule $\in$ Rule}
+                \State ret $\gets$ Exec\_Rule(rule, target)
+                \If{ret == Status\_Continue} \Comment{If target atom is deleted}
+                    \State Flag $\gets$ true
+                    \State berak
+                \EndIf
+            \EndFor
+            \If{Flag}
+                \State continue
+            \EndIf
+            \State between\_al.push\_back(target)
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Insertion Loop特殊化：distance(Int,HL,HL,Int)}
+\begin{algorithmic}
+    \scriptsize
+    \Require atom = distance(Int,HL,HL,Int)
+    \Require Rule = \{propagate\_forward, propagate\_backward \}
+    \Procedure{Exec\_Insert}{atom}
+        \While{distance\_p is not empty}
+            \State target $\gets$  distance\_p.front()
+            \State distance\_p.pop\_front()
+            \ForAll{rule $\in$ Rule}
+                \State ret $\gets$ Exec\_Rule(rule, target)
+                \If{ret == Status\_Continue} \Comment{If target atom is deleted}
+                    \State Flag $\gets$ true
+                    \State berak
+                \EndIf
+            \EndFor
+            \If{Flag}
+                \State continue
+            \EndIf
+            \State distance\_al.push\_back(target)
+        \EndWhile
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution, Head size = 1}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule : target をターゲットアトムとして使用できるルール
+    \Require target : ターゲットアトム
+    \Require Head : rule の Head に含まれるターゲットアトム以外のアトム
+    \Require Rody : rule の Body に含まれるアトム
+    \Procedure{Exec\_Rule}{rule, target}
+        \State case $|Head|=0$
+        \If{Guard of rule is true}
+            \ForAll{atom $\in$ Rody}
+                \If{"atom"\_p exists}
+                    \State "atom"\_p.push\_back(atom)
+                \Else
+                    \State dump\_text $\gets$ dump\_text + atom + "."
+                \EndIf
+            \EndFor
+            \If{target is deleted by this rule}
+                \State return Status\_Continue
+            \EndIf
+        \EndIf
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Rule Execution, Head size = 2}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule : target をターゲットアトムとして使用できるルール
+    \Require target : ターゲットアトム
+    \Require Head : rule の Head に含まれるターゲットアトム以外のアトム
+    \Require Body : rule の Body に含まれるアトム
+    \Require hist : uniq の引数（tuple）がkeyである hash table \Comment{uniq が Guard に存在する場合} 
+    \Procedure{Exec\_Rule}{rule, target}
+        \State case $|Head|=1$
+        \While{true}
+            \If{pair atom が ith arg = jで検索可能}
+                \State $\text{pair}_0 \gets$ "$\text{pair}_0$"\_vec\_i[j].next() \Comment{.next() fetches deque elements from front to end}
+            \Else
+                \State $\text{pair}_0 \gets$ "$\text{pair}_0$"\_al.next()
+            \EndIf
+            \If{$\text{pair}_0$ の取得に失敗} \Comment{deque iteration is complete}
+                \State break
+            \EndIf
+            \If{Guard of rule is true}
+                \ForAll{atom $\in$ Body}
+                    \If{"atom"\_p exists}
+                        \State "atom"\_p.push\_back(atom)
+                    \Else
+                        \State dump\_text $\gets$ dump\_text + atom + "."
+                    \EndIf
+                \EndFor
+                \If{target is deleted by this rule}
+                    \State return Status\_Continue
+                \EndIf
+            \EndIf
+        \EndWhile
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化：start}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = start
+    \Require target = start(!X)
+    \Require Head = {}
+    \Require Body = {between(0,!X,0)}
+    \Procedure{Exec\_Rule}{rule, target}
+        \If{true} \Comment{Guard doesn't exist}
+            \ForAll{atom $\in$ Body}
+                \State atom が連結グラフならできるだけ書き換える
+                \If{between\_p exists} \Comment{between\_p is deque for between(Int,HL,Int)}
+                    \State between\_p.push\_back(atom)
+                \Else \Comment{never reach here}
+                    \State dump\_text $\gets$ dump\_text + atom + "."
+                \EndIf
+            \EndFor
+            \If{target is deleted by this rule} \Comment{yes}
+                \State return Status\_Continue
+            \EndIf
+        \EndIf
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化２：start}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = start
+    \Require target = start(!H)
+    \Procedure{Exec\_Rule}{rule, target}
+            \State start\_p.push\_back(between(0,!X,0))
+            \State return Status\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化：inconsistent}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = inconsistent
+    \Require target = between(A,!X,B)
+    \Require Head = {}
+    \Require Body = {fail(A,!X,B)}
+    \Procedure{Exec\_Rule}{rule, target}
+        \If{A$>$B}
+            \ForAll{atom $\in$ Body}
+                \If{fail\_p exists} \Comment{fail\_p doesn't exist}
+                    \State fail\_p.push\_back(atom)
+                \Else \Comment{always reach here}
+                    \State dump\_text $\gets$ dump\_text + atom + "."
+                \EndIf
+            \EndFor
+            \If{target is deleted by this rule} \Comment{yes}
+                \State return Status\_Continue
+            \EndIf
+        \EndIf
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化２：inconsistent}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = inconsistent
+    \Require target = between(A,!X,B)
+    \Procedure{Exec\_Rule}{rule, target}
+        \If{A$>$B}
+            \State dump\_text $\gets$ dump\_text + fail(A,!X,B) + "."
+            \State return Status\_Continue
+        \EndIf
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化：intersect}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = intersect
+    \Require target = between(A,!Y,B) \Comment{between(A,!Y,B), between(C,!Y,D) をすべて入れ替えたものも同様}
+    \Require Head = {between(C,!Y,D)}
+    \Require Body = {between(max(A,C),!Y,min(B,D))}
+    \Procedure{Exec\_Rule}{rule, target}
+        \While{true}
+            \If{true} \Comment{between(C,!Y,D) が ith arg = j, i=2, j=id=HLID of !Y で検索可能}
+                \State $\text{pair}_0 \gets$ "between"\_vec\_2[id].next() \Comment{.next() fetches deque elements from front to end}
+            \Else
+                \State $\text{pair}_0 \gets$ "$\text{pair}_0$"\_al.next()
+            \EndIf
+            \If{$\text{pair}_0$ の取得に失敗} \Comment{deque iteration is complete}
+                \State break
+            \EndIf
+            \If{true}
+                \ForAll{atom $\in$ Body}
+                    \State atom が連結グラフならできるだけ書き換える
+                    \If{"atom"\_p exists} \Comment{= if atom is between(Int,HL,Int)}
+                        \State "atom"\_p.push\_back(atom) \Comment{常に between\_p.push}
+                    \Else \Comment{max, min が between の引数に残った場合}
+                        \State dump\_text $\gets$ dump\_text + atom + "."
+                    \EndIf
+                \EndFor
+                \If{true}
+                    \State return Status\_Continue
+                \EndIf
+            \EndIf
+        \EndWhile
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化２：intersect}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = intersect
+    \Require target = between(A,!Y,B)
+    \Require Head = {between(C,!Y,D)}
+    \Require Body = {between(max(A,C),!Y,min(B,D))}
+    \Procedure{Exec\_Rule}{rule, target}
+        \While{true}
+            \State $\text{pair}_0 \gets$ "between"\_vec\_2[id].next() \Comment{.next() fetches deque elements from front to end}
+            \If{$\text{pair}_0$ の取得に失敗} \Comment{deque iteration is complete}
+                \State break
+            \EndIf
+                \If{A$>$C}
+                    \State L0 $\gets$ A
+                \ElsIf{A$\leq$C}
+                    \State L0 $\gets$ C
+                \Else
+                    \State L0 $\gets$ max(A,C)
+                \EndIf
+                \If{B$>$D}
+                    \State L2 $\gets$ D
+                \ElsIf{B$\leq$D}
+                    \State L2 $\gets$ B
+                \Else
+                    \State L2 $\gets$ min(B,D)
+                \EndIf
+                \State atom $\gets$ between(L0,!Y,L2)
+                \If{"atom"\_p exists} \Comment{= if atom is between(Int,HL,Int)}
+                    \State between\_p.push\_back(atom)
+                \Else \Comment{max, min が between の引数に残った場合}
+                    \State dump\_text $\gets$ dump\_text + atom + "."
+                \EndIf
+                \State return Status\_Continue
+        \EndWhile
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化：propagation\_forward}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = propagation\_forward
+    \Require target = between(A,!Y,B) 
+    \Require Head = {distance(C,!Y,!Z,D)}
+    \Require Body = {between(AC,!Y,BD)}
+    \Require hist : tuple(A,!Y,B,C,!Z,D) を key とする hash table 
+    \Procedure{Exec\_Rule}{rule, target}
+        \While{true}
+            \If{true} \Comment{distance(C,!Y,!Z,D) が ith arg = j, i=2, j=id=HLID of !Y で検索可能}
+                \State $\text{pair}_0 \gets$ distance\_vec\_2[id].next() \Comment{.next() fetches deque elements from front to end}
+            \Else
+                \State $\text{pair}_0 \gets$ "$\text{pair}_0$"\_al.next()
+            \EndIf
+            \If{$\text{pair}_0$ の取得に失敗} \Comment{deque iteration is complete}
+                \State break
+            \EndIf
+            \If{hist.find((A,!Y,B,C,!Z,D)) == false}
+                \State hist.insert((A,!Y,B,C,!Z,D))
+                \State AC $\gets$ A $+$ C
+                \State BD $\gets$ B $+$ D
+                \ForAll{atom $\in$ Body}
+                    \If{"atom"\_p exists}
+                        \State ``atom''\_p.push\_back(atom)
+                    \Else \Comment{never reach here}
+                        \State dump\_text $\gets$ dump\_text + atom + "."
+                    \EndIf
+                \EndFor
+                \If{false}
+                    \State return Status\_Continue
+                \EndIf
+            \EndIf
+        \EndWhile
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化２：propagation\_forward}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = propagation\_forward
+    \Require target = between(A,!Y,B) 
+    \Require Head = {distance(C,!Y,!Z,D)}
+    \Require Body = {between(AC,!Y,BD)}
+    \Require hist : tuple(A,!Y,B,C,!Z,D) を key とする hash table 
+    \Procedure{Exec\_Rule}{rule, target}
+        \While{true}
+            \State $\text{pair}_0 \gets$ distance\_vec\_2[ID of !Y].next() \Comment{.next() fetches deque elements from front to end}
+            \If{$\text{pair}_0$ の取得に失敗} \Comment{deque iteration is complete}
+                \State break
+            \EndIf
+            \If{hist.find((A,!Y,B,C,!Z,D)) == false}
+                \State hist.insert((A,!Y,B,C,!Z,D))
+                \State AC $\gets$ A $+$ C
+                \State BD $\gets$ B $+$ D
+                \State between\_p.push\_back(between(AC,!Z,BD))
+            \EndIf
+        \EndWhile
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Rule Execution特殊化２：propagation\_forward}
+\begin{algorithmic}
+    \scriptsize
+    \Require rule = propagation\_forward
+    \Require target = distance(C,!Y,!Z,D) \Comment{target が入れ替わっても同様}
+    \Require Head = {between(A,!Y,B)}
+    \Require Body = {between(AC,!Y,BD)}
+    \Require hist : tuple(A,!Y,B,C,!Z,D) を key とする hash table 
+    \Procedure{Exec\_Rule}{rule, target}
+        \While{true}
+            \State $\text{pair}_0 \gets$ between\_vec\_2[Id of !Y].next() \Comment{.next() fetches deque elements from front to end}
+            \If{$\text{pair}_0$ の取得に失敗} \Comment{deque iteration is complete}
+                \State break
+            \EndIf
+            \If{hist.find((A,!Y,B,C,!Z,D)) == false}
+                \State hist.insert((A,!Y,B,C,!Z,D))
+                \State AC $\gets$ A $+$ C
+                \State BD $\gets$ B $+$ D
+                \State between\_p.push\_back(between(AC,!Z,BD))
+            \EndIf
+        \EndWhile
+        \State return Status\_Not\_Continue
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}

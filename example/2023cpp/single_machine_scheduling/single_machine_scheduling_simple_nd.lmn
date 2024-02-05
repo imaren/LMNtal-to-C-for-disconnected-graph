@@ -1,0 +1,16 @@
+
+//job の重要度を表す重み w
+//job の処理時間 p
+//w p と job 識別子の HL h の組 job(w,p,h)
+% job(2,5,!J1).job(3,2,!J2).job(2,2,!J3).
+
+
+//// schedule の計算結果（過程）s
+//// s(sum of weighsts , current time, order of jobs)
+//// start time = 1
+:- uniq | s(0,1,[]).
+
+% s(S, T, L), job(W,P,!H) :- Time = T + P, Weight = T * W, Sum = Weight + S | s(Sum,Time,[!H|L]).
+
+s(S, T, L), job(W,P,H) :- Time = T + P, Weight = T * W, Sum = Weight + S | s(Sum,Time,[H|L]).
+

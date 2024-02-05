@@ -1,0 +1,35 @@
+//job の重要度を表す重み w
+//job の処理時間 p
+//w p と job 識別子の HL h の組 job(w,p,h)
+% job(2,5,!J1).job(3,2,!J2).job(2,2,!J3).n(3).
+// job j の重み wj と開始時刻 sj に対して /Sigma(j=1|n){wj /times sj} を最小化したい
+//  -> 重み×開始時刻の総和が最小になるようにしたい 
+
+// 補助情報: n : number of jobs 
+//           f : factorial of n 
+:- uniq | f(1).
+n(I) \:- int(I), uniq | nn(I). 
+nn(I), f(A) :- J = I-1, B=A*I, I > 0 | nn(J),f(B).
+
+nn(0), f(A) :- m(A).
+
+//// schedule の計算結果（過程）s
+//// job の順番を保存しないバージョン（単にground のコピーを避けて、本質的な処理の時間だけを計測するため）
+//// aversion 1. s(sum of weighsts , current time, num of finished jobs, hl shows ID of this constraint)
+//// start time = 1
+m(N) :- M = N-1, N > 0 | m(M),s(0,1,0,!New).
+
+minimize@@
+n(N), s(S, T, J, !ID1) \ s(S2, T2, J2, !ID2) :- J =:= N, S < S2, int(J2), int(T2)| .
+
+% propagate@@
+% job(W, P, !H), s(S, T, J, !ID) \ :-int(W), int(P), uniq(!H,!ID) | job_s(W,P,!H,!ID).
+
+pertialpermution@@
+job_s(W, P, !H, !ID), s(S, T, J, !ID) :- 
+Time = T + P, Weight = T * W, Sum = Weight + S, J1 = J+1, uniq(S,J,!H) | 
+s(Sum,Time,J1,!ID).
+
+propagate@@
+job(W, P, !H), s(S, T, J, !ID) \ :-int(W), int(P), uniq(!H,!ID) | job_s(W,P,!H,!ID).
+

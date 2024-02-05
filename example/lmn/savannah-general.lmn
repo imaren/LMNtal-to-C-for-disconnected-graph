@@ -1,0 +1,1799 @@
+% This statement is needed to avoid bug in SLIM.
+init. init :-
+
+%% initial state
+
+bg(r0, !R0),
+bg(field, !R0, null),
+bg(aura, !R0, !S0, !L0), bg(aura, !R0, !S1, !L1), bg(aura, !R0, !S2, !L2),
+in(!S0, !S3), in(!S0, !S4), in(!S0, !S5),
+in(!S1, !S3), in(!S1, !S4), in(!S1, !S5),
+in(!S2, !S3), in(!S2, !S4), in(!S2, !S5),
+bg(child, !S3, null, !L0), bg(child, !S4, null, !L1), bg(child, !S5, null, !L2),
+bg(aura, !R0, !S6, !L3),
+in(!S6, !S7), 
+bg(child, !S7, null, !L3),
+
+bg(r1, !R1), 
+bg(locale, !R1, !P0, !L5), bg(locale, !R1, !P1, !L4),
+bg(lion, !P0, null, !L1), bg(lion, !P0, null, !L2),
+bg(lion, !P1, null, !L0), bg(impala, !P1, null, !L6),
+bg(locale, !R1, !P4, !L7),
+bg(lion, !P4, null, !L3),
+
+% area, gps については、bg の 4 引数目に識別子 (id のようなもの) を入れている
+bg(r2, !R2),
+bg(area, !R2, !P2, 0, !L4), bg(area, !R2, !P3, 1, !L5),
+bg(gps, !P2, null, 1, !L0), bg(gps, !P2, null, 0, !L6),
+bg(gps, !P3, null, 2, !L1), bg(gps, !P3, null, 3, !L2),
+bg(area, !R2, !P5, 2, !L7),
+bg(gps, !P5, null, 4, !L3).
+
+
+%% rules
+
+% attack
+attack@@
+bg(child, !R_0, null, !A), bg(locale, !R_1, !P, !M), bg(lion, !P, null, !A), bg(impala, !P, null, !B)
+:-
+bg(child_attack, !R_0, null, !A), bg(locale_attack, !R_1, !P, !M), bg(lion_attack, !P, null, !A, !L), 
+bg(impala_seen, !P, null, !B, !L).
+
+% timeout1
+timeout1@@
+bg(child_attack, !R_0, null, !A), bg(locale_attack, !R_1, !P, !M), bg(lion_attack, !P, null, !A, !L), 
+bg(impala_seen, !P, null, !B, !L)
+:-
+num(!L) =:= 2 |
+bg(child, !R_0, null, !A), bg(locale, !R_1, !P, !M), bg(lion, !P, null, !A), bg(impala, !P, null, !B).
+
+% join1
+join1@@
+bg(child, !R_0, null, !A_0),
+bg(child_attack, !R_1, null, !A_1),
+bg(lion, !R_2, null, !A_0), bg(lion_attack, !R_2, null, !A_1, !L), 
+bg(impala_seen, !R_2, null, !B, !L)
+:-
+num(!L) =:= 2 |
+bg(child_group, !R_0, null, !A_0),
+bg(child_group, !R_1, null, !A_1),
+bg(lion_group, !R_2, null, !A_0, !L), 
+bg(lion_group, !R_2, null, !A_1, !L), 
+bg(impala_held, !R_2, null, !B, !L).
+
+% timeout2
+timeout2@@
+bg(child_group, !R_0, null, !A_0), bg(child_group, !R_1, null, !A_1),
+bg(locale_attack, !R_2, !P, !M),
+bg(lion_group, !P, null, !A_0, !L), bg(lion_group, !P, null, !A_1, !L), 
+bg(impala_held, !P, null, !B, !L)
+:-
+num(!L) =:= 3 |
+bg(child, !R_0, null, !A_0),bg(child, !R_1, null, !A_1),
+bg(locale, !R_2, !P, !M),
+bg(lion, !P, null, !A_0), bg(lion, !P, null, !A_1), bg(impala, !P, null, !B).
+
+% join2
+join2@@
+bg(child, !R_0, null, !A_0),
+bg(lion, !R_1, null, !A_0), 
+bg(lion_group, !R_1, null, !A_1, !L),
+bg(lion_group, !R_1, null, !A_2, !L), 
+bg(impala_held, !R_1, null, !B, !L)
+:-
+num(!L) =:= 3 |
+bg(child_group, !R_0, null, !A_0),
+bg(lion_group, !R_1, null, !A_0, !L), 
+bg(lion_group, !R_1, null, !A_1, !L),
+bg(lion_group, !R_1, null, !A_2, !L), 
+bg(impala_held, !R_1, null, !B, !L).
+
+% kill
+kill_0@@
+bg(child_group, !R_0, null, !A_0), 
+bg(child_group, !R_1, null, !A_1),
+bg(child_group, !R_2, null, !A_2),
+bg(locale_attack, !R_3, !P, !M),
+bg(lion_group, !P, null, !A_0, !L),
+bg(lion_group, !P, null, !A_1, !L),
+bg(lion_group, !P, null, !A_2, !L),
+bg(impala_held, !P, null, !B, !L),
+bg(gps, !R_4, null, 0, !B)
+:-
+num(!B) =:= 2, num(!L) =:= 4 |
+bg(child, !R_0, null, !A_0),
+bg(child, !R_1, null, !A_1),
+bg(child, !R_2, null, !A_2),
+bg(locale, !R_3, !P, !M),
+bg(lion, !P, null, !A_0), 
+bg(lion, !P, null, !A_1), 
+bg(lion, !P, null, !A_2).
+
+% rules for GPS update
+% mov1(0, p0, p0')
+
+p0(0),p0(1),p0(5),p0(6),p0(8).
+pp0(0),pp0(1),pp0(5),pp0(6),pp0(8).
+
+p0(P0), pp(PP0) \ 
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, I0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)=
+:- num(!M) =:= 2, I0 =:= P0, int(PP0) |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, PP0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+
+% %% mov1_0_0_0
+mov1_0_0_0@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_0_1
+mov1_0_0_1@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_0_5
+mov1_0_0_5@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_0_6
+mov1_0_0_6@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_0_8
+mov1_0_0_8@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_1_0
+mov1_0_1_0@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_1_1
+mov1_0_1_1@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_1_5
+mov1_0_1_5@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_1_6
+mov1_0_1_6@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_1_8
+mov1_0_1_8@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_5_0
+mov1_0_5_0@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_5_1
+mov1_0_5_1@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_5_5
+mov1_0_5_5@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_5_6
+mov1_0_5_6@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_5_8
+mov1_0_5_8@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_6_0
+mov1_0_6_0@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_6_1
+mov1_0_6_1@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_6_5
+mov1_0_6_5@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_6_6
+mov1_0_6_6@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_6_8
+mov1_0_6_8@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_8_0
+mov1_0_8_0@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 0, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_8_1
+mov1_0_8_1@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 1, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_8_5
+mov1_0_8_5@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 5, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_8_6
+mov1_0_8_6@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 6, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_0_8_8
+mov1_0_8_8@@
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M), bg(gps, !P_0, null, 8, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+% mov1(1, p1, p1')
+%% mov1_1_2_2
+mov1_1_2_2@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_2_3
+mov1_1_2_3@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_2_7
+mov1_1_2_7@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_2_10
+mov1_1_2_10@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_2_11
+mov1_1_2_11@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_3_2
+mov1_1_3_2@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_3_3
+mov1_1_3_3@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_3_7
+mov1_1_3_7@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_3_10
+mov1_1_3_10@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_3_11
+mov1_1_3_11@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_7_2
+mov1_1_7_2@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_7_3
+mov1_1_7_3@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_7_7
+mov1_1_7_7@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_7_10
+mov1_1_7_10@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_7_11
+mov1_1_7_11@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_10_2
+mov1_1_10_2@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_10_3
+mov1_1_10_3@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_10_7
+mov1_1_10_7@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_10_10
+mov1_1_10_10@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_10_11
+mov1_1_10_11@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_11_2
+mov1_1_11_2@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 2, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_11_3
+mov1_1_11_3@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 3, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_11_7
+mov1_1_11_7@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 7, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_11_10
+mov1_1_11_10@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 10, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_1_11_11
+mov1_1_11_11@@
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M), bg(gps, !P_0, null, 11, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+
+% mov1(2, p2, p2')
+%% mov1_2_4_4
+mov1_2_4_4@@
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 4, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 4, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_2_4_9
+mov1_2_4_9@@
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 4, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 9, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_2_9_4
+mov1_2_9_4@@
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 9, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 4, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+%% mov1_2_9_9
+mov1_2_9_9@@
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 9, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A)
+:- 
+num(!M) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M), bg(gps, !P_0, null, 9, !A),
+bg(locale, !R_1, !P_1, !M), bg(lion, !P_1, null, !A).
+
+
+
+% mov2
+% mov2(0, 1, p0, p1)
+%% mov2_0_1_0_2
+mov2_0_1_0_2@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_0_3
+mov2_0_1_0_3@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_0_7
+mov2_0_1_0_7@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_0_10
+mov2_0_1_0_10@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_0_11
+mov2_0_1_0_11@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_1_2
+mov2_0_1_1_2@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_1_3
+mov2_0_1_1_3@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_1_7
+mov2_0_1_1_7@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_1_10
+mov2_0_1_1_10@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_1_11
+mov2_0_1_1_11@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_5_2
+mov2_0_1_5_2@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_5_3
+mov2_0_1_5_3@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_5_7
+mov2_0_1_5_7@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_5_10
+mov2_0_1_5_10@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_5_11
+mov2_0_1_5_11@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_6_2
+mov2_0_1_6_2@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_6_3
+mov2_0_1_6_3@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_6_7
+mov2_0_1_6_7@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_6_10
+mov2_0_1_6_10@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_6_11
+mov2_0_1_6_11@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_8_2
+mov2_0_1_8_2@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_8_3
+mov2_0_1_8_3@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_8_7
+mov2_0_1_8_7@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_8_10
+mov2_0_1_8_10@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_1_8_11
+mov2_0_1_8_11@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+% mov2(0, 2, p0, p2)
+%% mov2_0_2_0_4
+mov2_0_2_0_4@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_0_9
+mov2_0_2_0_9@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 0, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_1_4
+mov2_0_2_1_4@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_1_9
+mov2_0_2_1_9@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 1, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_5_4
+mov2_0_2_5_4@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_5_9
+mov2_0_2_5_9@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 5, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_6_4
+mov2_0_2_6_4@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_6_9
+mov2_0_2_6_9@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 6, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_8_4
+mov2_0_2_8_4@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_0_2_8_9
+mov2_0_2_8_9@@
+bg(area, !R_0, !P_0, 0, !M_0), bg(gps, !P_0, null, 8, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 0, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+% mov2(1, 0, p1, p0)
+%% mov2_1_0_2_0
+mov2_1_0_2_0@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_2_1
+mov2_1_0_2_1@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_2_5
+mov2_1_0_2_5@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_2_6
+mov2_1_0_2_6@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_2_8
+mov2_1_0_2_8@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_3_0
+mov2_1_0_3_0@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_3_1
+mov2_1_0_3_1@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_3_5
+mov2_1_0_3_5@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_3_6
+mov2_1_0_3_6@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_3_8
+mov2_1_0_3_8@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_7_0
+mov2_1_0_7_0@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_7_1
+mov2_1_0_7_1@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_7_5
+mov2_1_0_7_5@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_7_6
+mov2_1_0_7_6@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_7_8
+mov2_1_0_7_8@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_10_0
+mov2_1_0_10_0@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_10_1
+mov2_1_0_10_1@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_10_5
+mov2_1_0_10_5@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_10_6
+mov2_1_0_10_6@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_10_8
+mov2_1_0_10_8@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_11_0
+mov2_1_0_11_0@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_11_1
+mov2_1_0_11_1@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_11_5
+mov2_1_0_11_5@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_11_6
+mov2_1_0_11_6@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_0_11_8
+mov2_1_0_11_8@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+
+% mov2(1, 2, p1, p2)
+%% mov2_1_2_2_4
+mov2_1_2_2_4@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_2_9
+mov2_1_2_2_9@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 2, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_3_4
+mov2_1_2_3_4@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_3_9
+mov2_1_2_3_9@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 3, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_7_4
+mov2_1_2_7_4@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_7_9
+mov2_1_2_7_9@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 7, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_10_4
+mov2_1_2_10_4@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_10_9
+mov2_1_2_10_9@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 10, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_11_4
+mov2_1_2_11_4@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 4, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_1_2_11_9
+mov2_1_2_11_9@@
+bg(area, !R_0, !P_0, 1, !M_0), bg(gps, !P_0, null, 11, !A),
+bg(area, !R_0, !P_1, 2, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 1, !M_0),
+bg(area, !R_0, !P_1, 2, !M_1),  bg(gps, !P_1, null, 9, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+
+% mov2(2, 0, p2, p0)
+%% mov2_2_0_4_0
+mov2_2_0_4_0@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_4_1
+mov2_2_0_4_1@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_4_5
+mov2_2_0_4_5@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_4_6
+mov2_2_0_4_6@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_4_8
+mov2_2_0_4_8@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_9_0
+mov2_2_0_9_0@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 0, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_9_1
+mov2_2_0_9_1@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 1, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_9_5
+mov2_2_0_9_5@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 5, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_9_6
+mov2_2_0_9_6@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 6, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_0_9_8
+mov2_2_0_9_8@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 0, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 0, !M_1),  bg(gps, !P_1, null, 8, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+
+% mov2(2, 1, p2, p1)
+%% mov2_2_1_4_2
+mov2_2_1_4_2@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_4_3
+mov2_2_1_4_3@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_4_7
+mov2_2_1_4_7@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_4_10
+mov2_2_1_4_10@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_4_11
+mov2_2_1_4_11@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 4, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_9_2
+mov2_2_1_9_2@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 2, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_9_3
+mov2_2_1_9_3@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 3, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_9_7
+mov2_2_1_9_7@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 7, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_9_10
+mov2_2_1_9_10@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 10, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+%% mov2_2_1_9_11
+mov2_2_1_9_11@@
+bg(area, !R_0, !P_0, 2, !M_0), bg(gps, !P_0, null, 9, !A),
+bg(area, !R_0, !P_1, 1, !M_1),
+bg(locale, !R_1, !P_2, !M_0), bg(lion, !P_2, null, !A),
+bg(locale, !R_1, !P_3, !M_1)
+:-
+num(!M_0) =:= 2, num(!M_1) =:= 2 |
+bg(area, !R_0, !P_0, 2, !M_0),
+bg(area, !R_0, !P_1, 1, !M_1),  bg(gps, !P_1, null, 11, !A),
+bg(locale, !R_1, !P_2, !M_0), 
+bg(locale, !R_1, !P_3, !M_1), bg(lion, !P_3, null, !A).
+
+% rules for human perspective
+% aura_join not used
+% aura_disjoin not used

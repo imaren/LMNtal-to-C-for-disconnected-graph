@@ -1,0 +1,3 @@
+% job(C,N,H) :- int(C), int(N), int(H) |.
+job(C,N,!H) :- int(C), int(N) |.
+

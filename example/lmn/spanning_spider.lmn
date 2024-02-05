@@ -1,0 +1,92 @@
+{
+//繧ｰ繝ｩ繝慕函謌舌％縺薙°繧�
+make_graph{
+
+	input{
+		// 3x3
+		edge(a,b), edge(b,c), edge(a,d), edge(b,e), edge(c,f),
+		edge(d,e), edge(e,f), edge(d,g), edge(e,h), edge(f,i),
+		edge(g,h), edge(h,i).
+
+		//edge(a,b), edge(b,c), edge(d,b), edge(c,d), edge(a,c), edge(d,f), edge(b,e).
+			     //edge(a,b), edge(a,c), edge(a,d), edge(a,e), edge(e,d).
+			     		  //edge(a,b), edge(a,c),edge(a,d),edge(a,e),edge(c,f),edge(f,b).
+  					  
+  					  //edge(d,a).  edge(d,b).   edge(d,c). 
+  					  //edge(d,e).  edge(a,x).   edge(b,y).
+  					  //edge(c,z).  edge(a,b).   edge(c,y).
+  					  
+  					  //edge(a,c).  //edge(a,d).   //edge(a,e). 
+  					  
+  					  //edge(f,a).  edge(g,a).   edge(h,a). 
+  					  //edge(i,b).  //edge(j,b).   edge(k,b).
+  					  //edge(l,c).  edge(m,c).   edge(n,c).
+  					  //edge(f,h).  //edge(i,j).   edge(m,n).
+  					  //edge(g,j).  edge(j,l).   edge(z,f).
+  					  
+					  }.
+
+					  //隨ｬ菴穂ｸ紋ｻ｣縺ｾ縺ｧ繧ｵ繝悶げ繝ｩ繝輔ｒ逕滓�縺吶ｋ縺区ｱｺ繧√ｋ
+					  number{
+						edge_num(0).
+							node_num(0).
+							
+								edge(X, Y) \ edge_num(N) :- uniq(X, Y), N1=N+1 | edge_num(N1).
+									edge(X, Y) \ :- uniq(X, Y) | node(X, 1), node(Y, 1).
+										node(X1, N1), node(X2, N2) :- X1=X2, N3=N1+N2 | node(X1, N3).
+											 node(X, N) \ node_num(M) :- uniq(X), M1=M+1 | node_num(M1).
+											 }.
+
+											 //init
+											 input{$p[]}, number{$q, @q} :- uniq | number{input{$p[]}, $p[], $q, @q}.
+											 number{edge_num(E), node_num(N), $p, @p}/ :- E1=E-(N-1) | number{num(E1), $p, @p}.
+											 number{input{$p}, num(N), $q[], @q}/ :- unary(N) | graph{edges{$p}, num(N)}.
+
+											 //繧ｵ繝悶げ繝ｩ繝慕函謌舌Ν繝ｼ繝ｫ
+											 make_rule{
+												edges{edge(X, Y), $p[]}, num(N) \:- 
+													      	  unary(X), unary(Y), N>0, uniq(X, Y), N1=N-1 | graph{edges{$p[]}, num(N1)}.
+														  }.
+														  
+														  //繧ｵ繝悶げ繝ｩ繝慕函謌舌Ν繝ｼ繝ｫ�嗄ake_rule蜀��繝ｫ繝ｼ繝ｫ縺ｨ蜷医ｏ縺帙※4繝ｫ繝ｼ繝ｫ縺ｧ螳御ｺ�
+														  graph{$p}, make_rule{@p} :- graph{$p, @p}, make_rule{@p}.
+														  graph{graph{$p[]}, $q, @q}/ :- graph{$q, @q}, graph{$p[]}.
+														  graph{edges{}, @p}/ :- .
+}.
+
+
+//讀懈渊縺薙％縺九ｉ
+check_graph{
+
+	check_rule{
+		//髢芽ｷｯ謗｢邏｢
+			check{edge(X, Y), $p} :- unary(X), unary(Y), uniq | 
+				      	  check{visit(X), visit(Y), node(X, 1), node(Y, 1), $p}.
+					  		  check{visit(X1), edge(X2, Y), $p} :- X1=X2, unary(Y) | 
+							  		   	    check{visit(X1), visit(Y), node(X2, 1), node(Y, 1), $p}.
+										    		     check{visit(Y1), edge(X, Y2), $p} :- unary(X), Y1=Y2 | 
+												     		      	      check{visit(Y1), visit(X), node(X, 1), node(Y2, 1), $p}.
+															      		       check{visit(X1), visit(X2), $p[]} :- X1=X2 | . 
+																	       			
+																				 //繧ｯ繝｢謗｢邏｢
+																				  check{node(X1, N1), node(X2, N2), $p} :- 
+																				  		      X1=X2, N3=N1+N2 | check{node(X1, N3), $p}.
+																						      	     check{node(X, N), $p[]} :- unary(X), N>=3, uniq(X) |  check{$p[], spider}.
+																							     		   check{spider, spider, $p[]} :- .
+																									   }.
+
+																									   graph{$p}, check_rule{@p} :- graph{$p, @p}, check_rule{@p}.
+}.
+
+//make竊団heck
+check_graph{$c, @c}, make_graph{graph{edges{$p[]}, num(0), $q[], @q}, $r, @r}/ :- 
+		check_graph{graph{$p[], check{$p[]}}, $c, @c}, make_graph{$r, @r}.
+
+//讀懈渊邨ゆｺ�ｾ�
+output{}.
+output{$o}, check_graph{graph{check{spider, $p[]}, $q, @q}, $r, @r}/ :-
+	    output{$o, graph{$q}}, check_graph{$r, @r}.
+	    
+}.
+
+{output{$p}, $q[], @q}/ :- output{$p}.

@@ -1,0 +1,2 @@
+path(!S,!M), path(!M,!G) \ :- uniq(!S,!G) | path(!S,!G).
+
