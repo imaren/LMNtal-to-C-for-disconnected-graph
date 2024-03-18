@@ -3,7 +3,6 @@
 #include <string>
 #include <iterator>
 #include <fstream>
-#include <chrono>
 #include <list>
 #include <vector>
 
@@ -21,19 +20,12 @@ int main(int argc, char *argv[]){
     if(argc >= 2){
         filename = argv[1];
     }
-
-    string filename2 = "result_cpp.csv";
-
-
     ifstream i_file(filename);
     if(!i_file.is_open()){
         cerr << "Could not open input file - " << filename << endl;
         return 1;
     }
-    // 入力補助情報. test case では between, max, min は入力 0個 とする
     int n_v, n_e;
-    // 解析情報．今回はガードに比較演算がないので HL の id の数だけ
-   
     i_file >> n_v >> n_e; 
     int n_hl = n_v;
     typedef int used; 
@@ -51,9 +43,6 @@ int main(int argc, char *argv[]){
         i_file >> link1 >> link2;
         D_path_hh_p.push_back({link1,link2});
     }
-
-    //start calculate transitive closure
-    auto start = std::chrono::steady_clock::now();
 
     using hist_type = std::tuple<int,int>;
     const auto hash = [](const hist_type &key){
@@ -83,13 +72,6 @@ int main(int argc, char *argv[]){
         IS_path_hh_al_1[arg1].push_back({itr});
         IS_path_hh_al_2[arg2].push_back({itr});
     }
-
-    auto end = std::chrono::steady_clock::now();
-    long duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    ofstream o_file;
-    o_file.open(filename2, ios::app);
-
-    o_file << duration << ",";
 
     print_path(D_path_hh_al);
     cout << " @4." << endl;

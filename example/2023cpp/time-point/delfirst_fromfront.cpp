@@ -11,10 +11,6 @@
 
 using namespace std;
 
-//memory 削減作業予定 2023/11/08 ~
-
-// atom を push する際に，そのアトムが今までのどの計算結果を使っても削除されないことを確かめる
-// propagation については、al を使う．ターゲットが消える可能性があるルールだけ，p も使う
 
 struct i_pair{
     int first;
@@ -309,20 +305,18 @@ int main(int argc, char *argv[]){
 
     o_file << duration << ",";
 
-    // print_distance(al_distance_ihhi);
-    // print_between(al_between_ihi);
-    // cout << "@4." << endl;
-    cout << sizeof(tuple<int,int,int,int,int,int>) << " : "<< sizeof(int) << endl;
-    cout << history_rule3.size() << ", " << history_rule4.size() << endl;
-    cout << history_rule3.load_factor() << "," << history_rule3.max_load_factor() << endl;
+    print_distance(al_distance_ihhi);
+    print_between(al_between_ihi);
+    cout << "@4." << endl;
 
-    cout << al_between_ihi.size() << ", " << al_distance_ihhi.size() << endl;
+    // cout << sizeof(tuple<int,int,int,int,int,int>) << " : "<< sizeof(int) << endl;
+    // cout << history_rule3.size() << ", " << history_rule4.size() << endl;
+    // cout << history_rule3.load_factor() << "," << history_rule3.max_load_factor() << endl;
+
+    // cout << al_between_ihi.size() << ", " << al_distance_ihhi.size() << endl;
 
     // cout << try1 << "," << app1 << "," << try2 << "," << app2 << endl;
 
-    // delete[] distance_ihhi1;
-    // delete[] distance_ihhi2;
-    // delete[] between_ihi;
 
     return 0;
 }

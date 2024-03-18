@@ -953,17 +953,15 @@ int main(int argc, char *argv[]){
     cout << "maxflow(" << maxflow << ").";
 
     // cout << "goal(" << al_goal.back() << ").";
-    // string name = "flow";
-    // print_i3(al_flow,name);
-    // name = "cap";
-    // print_i3(al_cap, name);
-    // cout << "@4." << endl;
+    string name = "flow";
+    print_i3(al_flow,name);
+    name = "cap";
+    print_i3(al_cap, name);
+    cout << "@4." << endl;
 
     // cout << try1 << "," << app1 << "," << try2 << "," << app2 << endl;
 
-    // delete[] distance_ihhi1;
-    // delete[] distance_ihhi2;
-    // delete[] between_ihi;
+
 
     return 0;
 }
