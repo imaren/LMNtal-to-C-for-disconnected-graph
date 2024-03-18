@@ -307,7 +307,7 @@ int main(int argc, char *argv[]){
 
     print_distance(al_distance_ihhi);
     print_between(al_between_ihi);
-    cout << "@4." << endl;
+    // cout << "@4." << endl;
 
     // cout << sizeof(tuple<int,int,int,int,int,int>) << " : "<< sizeof(int) << endl;
     // cout << history_rule3.size() << ", " << history_rule4.size() << endl;

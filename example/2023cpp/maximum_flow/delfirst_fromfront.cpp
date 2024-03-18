@@ -942,15 +942,15 @@ int main(int argc, char *argv[]){
 
     o_file << duration << ",";
 
-    cout << "history sizse:" << endl;
-    cout << history_rule1.size() << ", " << history_rule2.size() << ", " 
-         << history_rule3.size() << ", " << history_rule4.size() << endl;
+    // cout << "history sizse:" << endl;
+    // cout << history_rule1.size() << ", " << history_rule2.size() << ", " 
+    //      << history_rule3.size() << ", " << history_rule4.size() << endl;
     int maxflow = 0;
     int G = al_goal.front();
     for(auto l : vec_flow2[G]){
         maxflow += get<2>(*l);
     }
-    cout << "maxflow(" << maxflow << ").";
+    // cout << "maxflow(" << maxflow << ").";
 
     // cout << "goal(" << al_goal.back() << ").";
     string name = "flow";

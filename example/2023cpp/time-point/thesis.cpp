@@ -141,11 +141,12 @@ int main(int argc, char *argv[]){
         }
         if(!IS_between_ihi_al[arg2].empty()){           
             int max,min;
-            auto tmp2 = IS_between_ihi_al[arg2].begin();
+            auto tmp2 = IS_between_ihi_al[arg2].front();
             int arg21 = get<0>(*tmp2);
             int arg22 = get<1>(*tmp2);
             int arg23 = get<2>(*tmp2);
             int arg24 = get<3>(*tmp2);
+
 
             max=arg1>arg21?arg1:arg21;
             min=arg3>arg23?arg23:arg3;
