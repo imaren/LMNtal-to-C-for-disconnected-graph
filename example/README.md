@@ -12,10 +12,13 @@
 ## Examples
 - example/2023cpp/
 - 以下の3題について計測
-- 各例題 delfirst_fromfront という名前の cpp プログラムが計測に用いたもの
+- 各例題 delfirst_fromfront.cpp という名前の cpp プログラムが計測に用いたもの
+    - thesis.cpp というプログラムが論文に載せたもので、変数名等を変えただけですが一応計測に使ったままのプログラム（delfirst_fromfront.cpp）を残してあります
 - テストケースは、C と L の後ろに書かれた文字列が同じものは同じ初期状態の C++ プログラム用記述と LMNtal プログラム用記述
 ### time-point
 - イベントスケジューリング例題
+- 元 LMNtal プログラム名
+    - time-point.lmn
 - testcase/C2_{number}-1 と testcase/C2n_{number}-1, testcase/L2-{number}-1 について計測
 - 入力
     - start アトムの数（今回の問題は start が 1つの場合を想定）
@@ -25,6 +28,8 @@
     - 初期状態 distance アトム
 ### maximum_flow
 - 整数最大流問題
+- 元 LMNtal プログラム名
+    - maxflow_fixed.lmn
 - testcase/ 下の各ケースについて計測
 - 入力
     - 初期状態のハイパーリンクの種類数
@@ -33,6 +38,8 @@
 
 ### closure
 - 単一の閉包計算からなる例題
+- 元 LMNtal プログラム名
+    - path.lmn
 - testcase/ 下の各ケースについて計測
 - 入力
     - 初期状態のハイパーリンクの種類数
