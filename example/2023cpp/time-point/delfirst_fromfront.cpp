@@ -210,6 +210,7 @@ int main(int argc, char *argv[]){
 
         // between(A,!Y,B), between(C,!Y,D) :- between(max(A,C),!Y,min(B,D)).
         // max, min が消えるか消えないかを予め解析
+        // --> 論文では、3項演算子を直接書くことにしました
         // 消えない場合は, between(int,int,int,int) になりえない
         if(between_p[arg2].size() > 0){
             auto itr = between_p[arg2].begin();
