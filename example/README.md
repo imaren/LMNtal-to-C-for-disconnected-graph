@@ -21,7 +21,7 @@
     - start アトムの数（今回の問題は start が 1つの場合を想定）
     - distance アトムの数
     - 初期状態のハイパーリンクの種類数
-    - 初期状態 start アトム（複数の可能性あり）
+    - 初期状態 start アトム
     - 初期状態 distance アトム
 ### maximum_flow
 - 整数最大流問題
